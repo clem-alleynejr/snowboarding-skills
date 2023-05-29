@@ -24,7 +24,7 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect: '/snowboarding-skills',
-    failureRedirect: '/snowboarding-skills'
+    failureRedirect: 'index'
   }
 ));
 
