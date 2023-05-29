@@ -22,9 +22,12 @@
             <a href="/snowboarding-skills/new" <%- title==='Add Skill' ? 'class="active"' : '' %>>
                 ADD SKILL</a>
             <a href="/sample-list" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF SKILLS</a>
+            <p><%= user.avatar %></p>
+            <p><%= user.name %></p>
             <a href="/logout">LOG OUT</a>
             <% } else { %>
                 <a href="/sample-list" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF SKILLS</a>
                 <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
                 <% } %>
     </nav>
+

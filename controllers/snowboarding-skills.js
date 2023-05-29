@@ -10,5 +10,5 @@ module.exports = {
 
 async function index(req, res) {
     const snowboardingSkills = await SnowboardingSkill.find({});
-    res.render('snowboarding-skills/index', { title: 'My Skills', snowboardingSkills });
+    res.render('snowboarding-skills/index', { title: 'My Skills', snowboardingSkills, user: req.user });
 }
