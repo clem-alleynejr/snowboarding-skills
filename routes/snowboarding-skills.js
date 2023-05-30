@@ -11,7 +11,7 @@ router.get('/new', ensureLoggedIn, snowboardingSkillsCtrl.new);
 // POST /snowboarding-skills
 router.post('/', ensureLoggedIn, snowboardingSkillsCtrl.create);
 // POST /snowboarding-skills/:id/notes-comments
-router.post('/snowboarding-skills/:id/notes-comments', ensureLoggedIn, snowboardingSkillsCtrl.createNoteComment)
+router.post('/:id/notes-comments', ensureLoggedIn, snowboardingSkillsCtrl.createNoteComment)
 // GET /snowboarding-skills/:id (show functionality) MUST be below new route
 router.get('/:id', snowboardingSkillsCtrl.show);
 
