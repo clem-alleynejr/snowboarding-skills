@@ -3,27 +3,27 @@
     <section id="show-page">
         <div>Skill: </div>
         <div>
-            <%= snowboardingSkills.skill %>
+            <%= snowboardingSkill.skill %>
         </div>
         <div>Difficulty Level: </div>
         <div>
-            <%= snowboardingSkills.difficultyLevel %>
+            <%= snowboardingSkill.difficultyLevel %>
         </div>
         <div>Proficiency Level: </div>
         <div>
-            <%= snowboardingSkills.myProficiency %>
+            <%= snowboardingSkill.myProficiency %>
         </div>
 
         <br><br>
         <h2>Notes/Comments:</h2>
-        <form id="add-note-form" method="POST" action="/snowboarding-skills/<%= snowbardingSkill._id %>/notes-comments">
+        <form id="add-note-form" method="POST" action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments">
             <label>Note/Comment:</label>
             <textarea name="content"></textarea>
             <label>Rating:</label>
             <input type="submit" value="Add Note/Comment">
         </form>
 
-        <% if (snowbardingSkill.notesComments.length) { %>
+        <% if (snowboardingSkill.notesComments.length) { %>
             <table>
                 <thead>
                     <tr>
@@ -47,11 +47,11 @@
                                 </form>
                             </td>
                         </tr>
-                        });
+                        <% }); %>
                 </tbody>
             </table>
             <% } else { %>
-                <h5>No Note/Comments Yet</h5>
+                <h5>No Notes or Comments Yet</h5>
                 <% } %>
 
                     <%- include('../partials/footer') %>

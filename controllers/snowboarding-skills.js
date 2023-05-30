@@ -66,7 +66,8 @@ async function show(req, res) {
     const snowboardingSkill = await SnowboardingSkill.findById(req.params.id)
     res.render('snowboarding-skills/show', {
         title: 'My Skills',
-        subTitle: 'Track Your Snowboarding Progression!',           
+        subTitle: 'Track Your Snowboarding Progression!',
+        snowboardingSkill       
         // errorMsg: err.message
     })
 }
