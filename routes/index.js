@@ -3,8 +3,12 @@ var router = express.Router();
 const passport = require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Snowboarding Skills Tracker', subTitle: 'Track Your Snowboarding Progression!', user: req.user });
+router.get('/', function (req, res, next) {
+  res.render('index', {
+    title: 'Snowboarding Skills Tracker',
+    subTitle: 'Track Your Snowboarding Progression!',
+    user: req.user
+  });
 });
 
 // Google OAuth login route
@@ -15,7 +19,7 @@ router.get('/auth/google', passport.authenticate(
     // Requesting the user's profile and email
     scope: ['profile', 'email'],
     // Optionally force pick account every time
-    // prompt: "select_account"
+    prompt: "select_account"
   }
 ));
 

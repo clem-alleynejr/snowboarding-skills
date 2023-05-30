@@ -10,7 +10,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const snowboardingSkills = await SnowboardingSkill.find({});
+    const snowboardingSkills = await SnowboardingSkill.find({ user: req.user._id });
     res.render('snowboarding-skills/index', { 
         title: 'My Skills', 
         subTitle: 'Track Your Snowboarding Progression!', 
@@ -28,6 +28,11 @@ function newSkill(req, res) {
 }
 
 async function create(req, res) {
+        // Add the user-centric info to req.body (the new review)
+        req.body.user = req.user._id;
+        req.body.userName = req.user.name;
+        req.body.userAvatar = req.user.avatar;
+    
     try {
         await SnowboardingSkill.create(req.body);
         res.redirect('/snowboarding-skills');
@@ -62,7 +67,7 @@ async function show(req, res) {
     res.render('snowboarding-skills/show', {
         title: 'My Skills',
         subTitle: 'Track Your Snowboarding Progression!',           
-        errorMsg: err.message 
+        // errorMsg: err.message
     })
 }
 
