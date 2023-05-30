@@ -8,9 +8,11 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', snowboardingSkillsCtrl.index);
 // GET /snowboarding-skills/new
 router.get('/new', ensureLoggedIn, snowboardingSkillsCtrl.new);
-// // GET /movies/:id (show functionality) MUST be below new route
-// router.get('/:id', moviesCtrl.show);
 // POST /snowboarding-skills
 router.post('/', ensureLoggedIn, snowboardingSkillsCtrl.create);
-	
+// POST /snowboarding-skills/:id/notes-comments
+router.post('/snowboarding-skills/:id/notes-comments', ensureLoggedIn, snowboardingSkillsCtrl.createNoteComment)
+// GET /snowboarding-skills/:id (show functionality) MUST be below new route
+router.get('/:id', snowboardingSkillsCtrl.show);
+
 module.exports = router;

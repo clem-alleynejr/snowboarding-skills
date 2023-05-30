@@ -3,9 +3,10 @@ const SnowboardingSkill = require('../models/snowboarding-skill.js');
 
 module.exports = {
     index,
-    // show,
     new: newSkill,
-    create
+    create,
+    createNoteComment,
+    show
 };
 
 async function index(req, res) {
@@ -38,3 +39,30 @@ async function create(req, res) {
         });
     }
 }
+
+async function createNoteComment(req, res) {
+    const snowboardingSkill = await SnowboardingSkill.findById(req.params.id);
+
+    // Add the user-centric info to req.body (the new review)
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
+
+    snowboardingSkill.notesComments.push(req.body);
+    try {
+        await snowboardingSkill.save();
+    } catch (err) {
+        console.log(err);
+    }
+    res.redirect(`/snowboarding-skills/${snowboardingSkill._id}`)
+}
+
+async function show(req, res) {
+    const snowboardingSkill = await SnowboardingSkill.findById(req.params.id)
+    res.render('snowboarding-skills/show', {
+        title: 'My Skills',
+        subTitle: 'Track Your Snowboarding Progression!',           
+        errorMsg: err.message 
+    })
+}
+
