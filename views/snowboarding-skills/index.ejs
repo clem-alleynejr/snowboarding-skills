@@ -1,5 +1,23 @@
 <%- include('../partials/header') %>
 
-
+<table id="list">
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Difficulty Level</th>
+        <th>Proficiency Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% snowboardingSkills.forEach(function(s) { %>
+        <tr>
+          <td><%= s.skill %></td>
+          <td><%= s.difficultyLevel %></td>
+          <td><%= s.myProficiency %></td>
+          <td><a href="/snowboarding-skills/<%= s._id %>">View Commments/Notes</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
 
 <%- include('../partials/footer') %>

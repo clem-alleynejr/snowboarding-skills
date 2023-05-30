@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Snowboarding Skills Tracker', user: req.user });
+  res.render('index', { title: 'Snowboarding Skills Tracker', subTitle: 'Track Your Snowboarding Progression!', user: req.user });
 });
 
 // Google OAuth login route

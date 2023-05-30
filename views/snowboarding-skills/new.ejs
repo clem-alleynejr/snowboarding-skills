@@ -1,5 +1,44 @@
 <%- include('../partials/header') %>
 
-
+<h2>Enter a New Snowboarding Skill:</h2>
+<form action="/snowboarding-skills" method="POST">
+  <label>Skill:
+    <input type="text" name="skill">
+  </label><br>
+  <label>Difficulty Level:
+    <select name="difficultyLevel">
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+      <option value="Expert">Expert</option>
+    </select>
+  </label><br>
+  <label>Proficiency Level:<br>
+    <input type="radio" name="myProficiency" value="0">
+    <label for="0">0</label><br>
+    <input type="radio" name="myProficiency" value="1">
+    <label for="1">1</label><br>
+    <input type="radio" name="myProficiency" value="2">
+    <label for="2">2</label><br>
+    <input type="radio" name="myProficiency" value="3">
+    <label for="3">3</label><br>
+    <input type="radio" name="myProficiency" value="4">
+    <label for="4">4</label><br>
+    <input type="radio" name="myProficiency" value="5">
+    <label for="5">5</label><br>
+    <input type="radio" name="myProficiency" value="6">
+    <label for="6">6</label><br>
+    <input type="radio" name="myProficiency" value="7">
+    <label for="7">7</label><br>
+    <input type="radio" name="myProficiency" value="8">
+    <label for="8">8</label><br>
+    <input type="radio" name="myProficiency" value="9">
+    <label for="9">9</label><br>
+    <input type="radio" name="myProficiency" value="10">
+    <label for="10">10</label><br>
+  </label><br>
+  <input type="submit" value="Add Skill">
+</form>
+<p><%= errorMsg %></p>
 
 <%- include('../partials/footer') %>

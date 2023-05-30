@@ -7,7 +7,7 @@ const snowboardingSkillSchema = new Schema({
         type: String,
         required: true
     },
-    skillDifficulty: {
+    difficultyLevel: {
         type: String,
         enum: ['Beginner', 'Intermediate', 'Advanced', 'Expert'],
         required: true
@@ -17,6 +17,8 @@ const snowboardingSkillSchema = new Schema({
         enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         required: true
     }
+}, {
+    timestamps: true
 })
 
 
