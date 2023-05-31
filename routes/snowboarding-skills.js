@@ -14,5 +14,7 @@ router.post('/', ensureLoggedIn, snowboardingSkillsCtrl.create);
 router.post('/:id/notes-comments', ensureLoggedIn, snowboardingSkillsCtrl.createNoteComment)
 // GET /snowboarding-skills/:id (show functionality) MUST be below new route
 router.get('/:id', snowboardingSkillsCtrl.show);
+// DELETE /snowboarding-skills/:id 
+router.delete('/:id', snowboardingSkillsCtrl.delete);
 
 module.exports = router;

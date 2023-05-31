@@ -15,6 +15,11 @@
           <td><%= s.difficultyLevel %></td>
           <td><%= s.myProficiency %></td>
           <td><a href="/snowboarding-skills/<%= s._id %>">View Notes/Comments</a></td>
+          <td>
+            <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Skill</button>
+            </form>
+        </td>
         </tr>
         <% }); %>
       </tbody>

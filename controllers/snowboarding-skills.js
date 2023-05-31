@@ -6,8 +6,14 @@ module.exports = {
     new: newSkill,
     create,
     createNoteComment,
-    show
+    show,
+    delete: deleteSkill
 };
+
+async function deleteSkill(req, res) {
+    await SnowboardingSkill.findByIdAndDelete(req.params.id)
+    res.redirect('/snowboarding-skills')
+}
 
 async function index(req, res) {
     const snowboardingSkills = await SnowboardingSkill.find({ user: req.user._id });
@@ -71,4 +77,6 @@ async function show(req, res) {
         // errorMsg: err.message
     })
 }
+
+
 

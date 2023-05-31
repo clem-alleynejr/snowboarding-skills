@@ -29,7 +29,6 @@
                     <tr>
                         <th>Date</th>
                         <th>Note/Comment</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,11 +39,6 @@
                             </td>
                             <td>
                                 <%= n.content %>
-                            </td>
-                            <td>
-                                <form action="/snowboarding-skills/<%= n._id %>?_method=DELETE" method="POST">
-                                    <button type="submit">X</button>
-                                </form>
                             </td>
                         </tr>
                         <% }); %>
