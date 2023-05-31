@@ -37,7 +37,7 @@ async function update(req, res) {
         // options object {new: true} returns updated doc
         {new: true}
       );
-      return res.redirect(`/books/${updatedSnowboardSkill._id}`);
+      return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
     } catch (err) {
       console.log(err.message);
       return res.redirect('/snowboarding-skills');
