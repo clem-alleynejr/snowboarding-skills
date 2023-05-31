@@ -7,16 +7,53 @@ module.exports = {
     create,
     createNoteComment,
     show,
-    delete: deleteSkill
+    delete: deleteSkill,
+    edit,
+    update
 };
 
+async function edit(req, res) {
+    const snowboardingSkill = await SnowboardingSkill.findOne({
+        _id: req.params.id, 
+        user: req.user._id
+    });
+    if (!snowboardingSkill) return res.redirect('/snowboarding-skills');
+    res.render('snowboarding-skills/edit', { 
+        title: 'Add Snowboarding Skill Below:', 
+        subTitle: 'Track Your Snowboarding Progression!',         
+        snowboardingSkill,
+        errorMsg: ''
+     });
+  }
+
+async function update(req, res) {
+    try {
+      const updatedSnowboardSkill = await SnowboardingSkill.findOneAndUpdate({
+        _id: req.params.id, 
+        user: req.user._id
+    },
+        // update object with updated properties
+        req.body,
+        // options object {new: true} returns updated doc
+        {new: true}
+      );
+      return res.redirect(`/books/${updatedSnowboardSkill._id}`);
+    } catch (err) {
+      console.log(err.message);
+      return res.redirect('/snowboarding-skills');
+    }
+  }
+
 async function deleteSkill(req, res) {
-    await SnowboardingSkill.findByIdAndDelete(req.params.id)
-    res.redirect('/snowboarding-skills')
+    await SnowboardingSkill.findOneAndDelete({
+        _id: req.params.id,
+        user: req.user._id
+    });
+    res.redirect('/snowboarding-skills');
 }
 
 async function index(req, res) {
-    const snowboardingSkills = await SnowboardingSkill.find({ user: req.user._id });
+    const snowboardingSkills = await SnowboardingSkill.find({user: req.user._id});
     res.render('snowboarding-skills/index', { 
         title: 'My Skills', 
         subTitle: 'Track Your Snowboarding Progression!', 

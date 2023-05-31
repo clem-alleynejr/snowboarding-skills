@@ -13,8 +13,12 @@ router.post('/', ensureLoggedIn, snowboardingSkillsCtrl.create);
 // POST /snowboarding-skills/:id/notes-comments
 router.post('/:id/notes-comments', ensureLoggedIn, snowboardingSkillsCtrl.createNoteComment)
 // GET /snowboarding-skills/:id (show functionality) MUST be below new route
-router.get('/:id', snowboardingSkillsCtrl.show);
+router.get('/:id', ensureLoggedIn, snowboardingSkillsCtrl.show);
 // DELETE /snowboarding-skills/:id 
-router.delete('/:id', snowboardingSkillsCtrl.delete);
+router.delete('/:id', ensureLoggedIn, snowboardingSkillsCtrl.delete);
+// GET /snowboarding-skills/:id/edit
+router.get('/:id/edit', ensureLoggedIn, snowboardingSkillsCtrl.edit);
+// PUT /snowboarding-skills/:id
+router.put('/:id', ensureLoggedIn, snowboardingSkillsCtrl.update);
 
 module.exports = router;

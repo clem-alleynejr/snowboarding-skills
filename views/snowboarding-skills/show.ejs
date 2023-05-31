@@ -13,6 +13,11 @@
         <div>
             <%= snowboardingSkill.myProficiency %>
         </div>
+        <div>
+            <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/edit" method="GET">
+                <button type="submit">Edit Skill</button>
+            </form>
+        </div>
 
         <br><br>
         <h2>Notes/Comments:</h2>
