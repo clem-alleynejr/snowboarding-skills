@@ -3,12 +3,13 @@
 <form action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=PUT" method="POST">
     <div class="mb-3">
         <label class="form-label">Skill:</label>
-        <input type="text" name="skill" class="form-control" autocomplete="off" placeholder="<%= snowboardingSkill.skill %>">
+        <input type="text" name="skill" class="form-control" autocomplete="off" value="<%= snowboardingSkill.skill %>">
     </div>      
 
     <div class="mb-3">
     <label class="form-label">Difficulty Level:</label>
-        <select name="difficultyLevel" class="form-select" aria-label="Default select example" placeholder="<%= snowboardingSkill.difficultyLevel %>">
+        <select name="difficultyLevel" class="form-select" aria-label="Default select example" value="<%= snowboardingSkill.difficultyLevel %>">
+            <option value="" disabled selected hidden><%= snowboardingSkill.difficultyLevel %></option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
@@ -18,47 +19,47 @@
 
     <label class="form-label">Proficiency Level:</label><br>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="0">
+            <input type="radio" name="myProficiency" class="form-check-input" value="0" <%= snowboardingSkill.myProficiency === 0 ? 'checked' : '' %>>
             <label class="form-check-label" for="0">0</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="1">
+            <input type="radio" name="myProficiency" class="form-check-input" value="1" <%= snowboardingSkill.myProficiency === 1 ? 'checked' : '' %>>
             <label class="form-check-label" for="1">1</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="2">
+            <input type="radio" name="myProficiency" class="form-check-input" value="2" <%= snowboardingSkill.myProficiency === 2 ? 'checked' : '' %>>
             <label class="form-check-label" for="2">2</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="3">
+            <input type="radio" name="myProficiency" class="form-check-input" value="3" <%= snowboardingSkill.myProficiency === 3 ? 'checked' : '' %>>
             <label class="form-check-label" for="3">3</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="4">
+            <input type="radio" name="myProficiency" class="form-check-input" value="4" <%= snowboardingSkill.myProficiency === 4 ? 'checked' : '' %>>
             <label class="form-check-label" for="4">4</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="5">
+            <input type="radio" name="myProficiency" class="form-check-input" value="5" <%= snowboardingSkill.myProficiency === 5 ? 'checked' : '' %>>
             <label class="form-check-label" for="5">5</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="6">
+            <input type="radio" name="myProficiency" class="form-check-input" value="6" <%= snowboardingSkill.myProficiency === 6 ? 'checked' : '' %>>
             <label class="form-check-label" for="6">6</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="7">
+            <input type="radio" name="myProficiency" class="form-check-input" value="7" <%= snowboardingSkill.myProficiency === 7 ? 'checked' : '' %>>
             <label class="form-check-label" for="7">7</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="8">
+            <input type="radio" name="myProficiency" class="form-check-input" value="8" <%= snowboardingSkill.myProficiency === 8 ? 'checked' : '' %>>
             <label class="form-check-label" for="8">8</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="9">
+            <input type="radio" name="myProficiency" class="form-check-input" value="9" <%= snowboardingSkill.myProficiency === 9 ? 'checked' : '' %>>
             <label class="form-check-label" for="9">9</label><br>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" name="myProficiency" class="form-check-input" value="10">
+            <input type="radio" name="myProficiency" class="form-check-input" value="10" <%= snowboardingSkill.myProficiency === 10 ? 'checked' : '' %>>
             <label class="form-check-label" for="10">10</label><br>
         </div>
 
@@ -69,3 +70,5 @@
 <p><%= errorMsg %></p>
 
 <%- include('../partials/footer') %>
+
+<!-- checked=`${snowboardingSkill.myProficiency === value ? "checked" : ""}` -->
