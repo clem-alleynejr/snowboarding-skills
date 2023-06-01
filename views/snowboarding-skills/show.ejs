@@ -1,35 +1,33 @@
 <%- include('../partials/header') %>
 
     <section id="show-page">
-        <div>Skill: </div>
-        <div>
-            <%= snowboardingSkill.skill %>
-        </div>
-        <div>Difficulty Level: </div>
-        <div>
-            <%= snowboardingSkill.difficultyLevel %>
-        </div>
-        <div>Proficiency Level: </div>
-        <div>
-            <%= snowboardingSkill.myProficiency %>
-        </div>
+        <table class="table">
+        <tbody>
+            <tr>
+                <td>Difficulty Level: <%= snowboardingSkill.difficultyLevel %></td>
+            </tr>
+            <tr>
+                <td>Proficiency Level: <%= snowboardingSkill.myProficiency %></td>
+            </tr>
+        </tbody>
+    </table>
+        
+        
         <div>
             <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/edit" method="GET">
-                <button type="submit">Edit Skill</button>
+                <button type="submit" class="btn btn-primary">Edit Skill</button>
             </form>
         </div>
 
         <br><br>
         <h2>Notes/Comments:</h2>
         <form id="add-note-form" method="POST" action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments">
-            <label>Note/Comment:</label>
             <textarea name="content"></textarea>
-            <label>Rating:</label>
             <input type="submit" value="Add Note/Comment">
         </form>
 
         <% if (snowboardingSkill.notesComments.length) { %>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Date</th>
