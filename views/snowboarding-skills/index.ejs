@@ -1,11 +1,13 @@
 <%- include('../partials/header') %>
 
-<table id="list">
+<table id="list" class="table">
     <thead>
       <tr>
         <th>Skill</th>
         <th>Difficulty Level</th>
         <th>Proficiency Level</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -14,7 +16,7 @@
           <td><%= s.skill %></td>
           <td><%= s.difficultyLevel %></td>
           <td><%= s.myProficiency %></td>
-          <td><a href="/snowboarding-skills/<%= s._id %>">View Notes/Comments</a></td>
+          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details</a></td>
           <td>
             <% if (user?._id.equals(s.user)) { %>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
