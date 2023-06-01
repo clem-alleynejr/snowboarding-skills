@@ -20,7 +20,7 @@
           <td>
             <% if (user?._id.equals(s.user)) { %>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Skill</button>
+                <button type="submit" class="btn btn-danger">Delete Skill</button>
             </form>
             <% } %>
         </td>
