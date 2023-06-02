@@ -22,19 +22,19 @@
                 HOME
             </a>
             <% if (user) { %>
-                <a href="/snowboarding-skills" <%- title==='My Skills' ? 'class="active"' : '' %>>MY SKILLS</a>
-                <a href="/snowboarding-skills/new" <%- title==='Add Skill' ? 'class="active"' : '' %>>
+                <a href="/snowboarding-skills" class="nav-link" style="color: lightskyblue" <%- title==='My Skills' ? 'class="active"' : '' %>>MY SKILLS</a>
+                <a href="/snowboarding-skills/new" class="nav-link" style="color: lightskyblue"" <%- title==='Add Skill' ? 'class="active"' : '' %>>
                     ADD SKILL</a>
-                <a href="/sample-list" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF SKILLS</a>
+                <a href="/sample-list" class="nav-link" style="color: lightskyblue" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF SKILLS</a>
                 <img src="<%= user.avatar %>" alt="Avatar" width="30" height="30">
                 <p style="color:white">
                     <%= user.name %>
                 </p>
-                <a href="/logout">LOG OUT</a>
+                <a href="/logout" class="nav-link" style="color: lightskyblue">LOG OUT</a>
                 <% } else { %>
-                    <a href="/sample-list" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF
+                    <a href="/sample-list" class="nav-link" style="color: lightskyblue" <%- title==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF
                         SKILLS</a>
-                    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+                    <a href="/auth/google" style="text-decoration: none" class="login" class="nav-link" style="color: lightskyblue">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
                     <% } %>
         </div>
     </nav>
