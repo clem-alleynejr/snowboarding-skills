@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -22,4 +24,16 @@ a {
 
 .login img {
   height: 30px;
+}
+
+.homepage-title {
+  font: 48px "Rubik Doodle Shadow";
+  color: white;
+  text-align: center;
+}
+
+.homepage-sub-title {
+  font: 24px "Rubik Doodle Shadow";
+  color: white;
+  text-align: center;
 }

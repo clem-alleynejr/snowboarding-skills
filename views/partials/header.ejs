@@ -40,9 +40,9 @@
         </div>
     </nav>
     <div class="container-fluid">
-    <h1>
+    <h1 class="<%= (locals.title === 'Snowboarding Skills Tracker') ? 'homepage-title' : '' %>">
         <%= title %>
     </h1>
-    <p>
+    <p class="<%= (locals.title === 'Snowboarding Skills Tracker') ? 'homepage-sub-title' : '' %>">
         <%= subTitle %>
     </p>
