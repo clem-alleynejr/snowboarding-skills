@@ -10,10 +10,12 @@
     <p class="homepage-sub-title">
         Track Your Snowboarding Progression!
     </p>
-    <buttontype="button" class="btn btn-primary btn-lg home-signin-btn">
+    <form action="/auth/google" method="GET">
+    <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
         <span>SIGN IN</span>
         <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
     </button>
+    </form>
 </div>
 
 <%- include('./partials/footer') %>
