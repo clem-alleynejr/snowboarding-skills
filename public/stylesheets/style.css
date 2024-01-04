@@ -15,15 +15,15 @@ a {
   color: #00B7FF;
 }
 
-.login {
+.signin {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
 }
 
-.login img {
-  height: 30px;
+.signin img {
+  width: 30px;
 }
 
 .homepage-title {
@@ -36,4 +36,13 @@ a {
   font: 24px "Rubik Doodle Shadow";
   color: white;
   text-align: center;
+}
+
+.homepage {
+  text-align: center;
+}
+
+.home-signin-btn > img, span {
+  display: inline-block;
+  vertical-align: middle;
 }

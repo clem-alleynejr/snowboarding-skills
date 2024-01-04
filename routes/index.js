@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-// Google OAuth login route
+// Google OAuth signin route
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
