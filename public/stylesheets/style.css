@@ -38,8 +38,19 @@ a {
   text-align: center;
 }
 
+
+/* Note: .homepage-container div needed to allow for .homepage card to be centered */
+.homepage-container {
+  text-align: center;
+}
+
 .homepage {
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3vw;
+  padding: 8px 15px;
+  margin: 10px auto 0;
+  display: inline-block;
 }
 
 .home-signin-btn > img, span {

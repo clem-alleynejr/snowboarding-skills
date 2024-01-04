@@ -1,21 +1,27 @@
 <%- include('./partials/header') %>
 
+<!-- Note: .homepage-container div needed to allow for .homepage card to be centered -->
+<div class="homepage-container">
 <div class="homepage">
     <h1 class="homepage-title">
         Welcome To
     </h1>
+
     <h1 class="homepage-title">
         Snowboarding Skills Tracker
     </h1>
+
     <p class="homepage-sub-title">
         Track Your Snowboarding Progression!
     </p>
+
     <form action="/auth/google" method="GET">
     <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
         <span>SIGN IN</span>
         <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
     </button>
     </form>
+</div>
 </div>
 
 <%- include('./partials/footer') %>
