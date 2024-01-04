@@ -57,3 +57,13 @@ a {
   display: inline-block;
   vertical-align: middle;
 }
+
+.home-new-skill-btn {
+  background-color: green;
+  border-color: green;
+  margin-left: 20px;
+}
+
+.user-home-btn {
+  display: inline-block;
+}
