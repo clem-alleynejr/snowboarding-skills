@@ -18,9 +18,9 @@ async function edit(req, res) {
         user: req.user._id
     });
     if (!snowboardingSkill) return res.redirect('/snowboarding-skills');
-    res.render('snowboarding-skills/edit', { 
-        title: 'Edit Snowboarding Skill Below:', 
-        subTitle: '',         
+    res.render('snowboarding-skills/edit', {
+        viewType: 'Edit Skill', 
+        title: 'Edit Snowboarding Skill Below:',   
         snowboardingSkill,
         errorMsg: ''
      });
@@ -54,9 +54,9 @@ async function deleteSkill(req, res) {
 
 async function index(req, res) {
     const snowboardingSkills = await SnowboardingSkill.find({user: req.user._id});
-    res.render('snowboarding-skills/index', { 
+    res.render('snowboarding-skills/index', {
+        viewType: 'My Skills', 
         title: 'My Snowboarding Skills', 
-        subTitle: '', 
         snowboardingSkills, 
         user: req.user 
     });
@@ -64,8 +64,8 @@ async function index(req, res) {
 
 function newSkill(req, res) {
     res.render('snowboarding-skills/new', { 
+        viewType: 'Add Skill',
         title: 'Add Snowboarding Skill Below:', 
-        subTitle: '', 
         errorMsg: '' 
     });
 }
@@ -81,8 +81,8 @@ async function create(req, res) {
         res.redirect('/snowboarding-skills');
     } catch (err) {
         res.render('snowboarding-skills/new', { 
-            title: 'Add Snowboarding Skill Below:',
-            subTitle: '',           
+            viewType: 'Add Skill',
+            title: 'Add Snowboarding Skill Below:',       
             errorMsg: err.message 
         });
     }
@@ -108,8 +108,8 @@ async function createNoteComment(req, res) {
 async function show(req, res) {
     const snowboardingSkill = await SnowboardingSkill.findById(req.params.id)
     res.render('snowboarding-skills/show', {
+        viewType: `Skill: ${snowboardingSkill.skill}`,
         title: snowboardingSkill.skill,
-        subTitle: '',
         snowboardingSkill       
         // errorMsg: err.message
     })

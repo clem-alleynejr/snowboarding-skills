@@ -5,13 +5,12 @@ const passport = require('passport');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: 'Snowboarding Skills Tracker',
-    subTitle: 'Track Your Snowboarding Progression!',
+    viewType: 'home',
     user: req.user
   });
 });
 
-// Google OAuth login route
+// Google OAuth signin route
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
