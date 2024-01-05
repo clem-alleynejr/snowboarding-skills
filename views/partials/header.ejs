@@ -31,7 +31,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a href="/snowboarding-skills" class="nav-link" <%- viewType==='My Skills' ? 'class="active"' : '' %>>MY SKILLS</a>
+                    <a href="/snowboarding-skills" class="nav-link">MY SKILLS <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="/snowboarding-skills/new" class="nav-link" <%- viewType==='Add Skill' ? 'class="active"' : '' %>>
@@ -54,12 +54,12 @@
             <% } else { %>
 
             <ul class="navbar-nav mr-auto">
-                <!-- <li>    -->
+                <!-- <li class="nav-item">    -->
                     <!-- <a href="/sample-list" class="nav-link" <%- viewType==='Sample List' ? 'class="active"' : '' %>>SAMPLE LIST OF
                         SKILLS</a> -->
                 <!-- </li> -->
                 <li class="nav-item">
-                    <a href="/auth/google" style="text-decoration: none" class="signin" class="nav-link">SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+                    <a href="/auth/google" class="signin" class="nav-link">SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
                 </li>    
             </ul>
 
