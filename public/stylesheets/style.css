@@ -26,6 +26,8 @@ a {
   width: 30px;
 }
 
+/* Homepage CSS */
+
 .homepage-title {
   font: 48px "Rubik Doodle Shadow";
   color: white;
@@ -66,4 +68,11 @@ a {
 
 .user-home-btn {
   display: inline-block;
+}
+
+
+/* NavBar CSS */
+
+a.nav-link {
+  color: lightskyblue;
 }
