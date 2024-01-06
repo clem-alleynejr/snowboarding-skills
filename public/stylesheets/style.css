@@ -100,6 +100,10 @@ a.nav-link {
   align-items: center;
 }
 
+#navbarSupportedContentNoUser {
+  justify-content: flex-end;
+}
+
 .navbar {
   align-items: center;
 }
@@ -115,3 +119,8 @@ a.nav-link {
   align-items: center;
   gap: 8px;
 }
+
+#navbarSupportedContentNoUser .nav-item {
+  margin-right: 10px;
+}
+
