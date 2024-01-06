@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title><%= locals.viewType %></title>
+    <link rel="icon" type="image/x-icon" href="/images/snowboarding-logo.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<head>
-    <title>
-        <%= locals.viewType %>
-    </title>
-    <link rel="icon" type="image/x-icon" href="/images/snowboarding-logo.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark"
+      data-bs-theme="dark"
+    >
+      <a class="navbar-brand" href="/">
+        <img
+          src="/images/snowboarding-logo.svg"
+          alt="Logo"
+          class="d-inline-block align-text-top"
+        />
+        HOME
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if (user) { %>
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
-        <a class="navbar-brand" href="/">
-            <img src="/images/snowboarding-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            HOME
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul class="navbar-nav mr-auto">
+          <li
+            class="nav-item <%= locals.viewType === 'My Skills' ? 'active' : null %>"
+          >
+            <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
+          </li>
+          <li
+            class="nav-item <%= locals.viewType === 'Add Skill' ? 'active' : null %>"
+          >
+            <a href="/snowboarding-skills/new" class="nav-link"> ADD SKILL</a>
+          </li>
+          <!-- <li class="nav-item"> -->
+          <!-- <a href="/sample-list" class="nav-link" >SAMPLE LIST OF SKILLS</a> -->
+          <!-- </li> -->
+        </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto authorization">
+          <li class="nav-item">
+            <p style="color: white" id="username-and-photo">
+              <img
+                src="<%= user.avatar %>"
+                alt="Avatar"
+                width="30"
+                height="30"
+              />
+              <%= user.name %>
+            </p>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">LOG OUT</a>
+          </li>
+        </ul>
 
-            <% if (user) { %>
+        <% } else { %>
 
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item <%= locals.viewType === 'My Skills' ? 'active' : null %>">
-                    <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
-                </li>
-                <li class="nav-item <%= locals.viewType === 'Add Skill' ? 'active' : null %>">
-                    <a href="/snowboarding-skills/new" class="nav-link">
-                        ADD SKILL</a>
-                </li>
-                <!-- <li class="nav-item"> -->
-                    <!-- <a href="/sample-list" class="nav-link" >SAMPLE LIST OF SKILLS</a> -->
-                <!-- </li> -->
-                <li class="nav-item">
-                    <p style="color:white">
-                        <img src="<%= user.avatar %>" alt="Avatar" width="30" height="30">
-                        <%= user.name %>
-                    </p>
-                </li>
-                <li class="nav-item">
-                    <a href="/logout" class="nav-link">LOG OUT</a>
-                </li>    
-            </ul>
-            
-            <% } else { %>
+        <ul class="navbar-nav mr-auto authorization">
+          <!-- <li class="nav-item">    -->
+          <!-- <a href="/sample-list" class="nav-link" >SAMPLE LIST OF
+                                        SKILLS</a> -->
+          <!-- </li> -->
+          <li class="nav-item">
+            <a href="/auth/google" class="signin" class="nav-link"
+              >SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+            /></a>
+          </li>
+        </ul>
 
-            <ul class="navbar-nav mr-auto">
-                <!-- <li class="nav-item">    -->
-                    <!-- <a href="/sample-list" class="nav-link" >SAMPLE LIST OF
-                        SKILLS</a> -->
-                <!-- </li> -->
-                <li class="nav-item">
-                    <a href="/auth/google" class="signin" class="nav-link">SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-                </li>    
-            </ul>
-
-            <% } %>
-        </div>
+        <% } %>
+      </div>
     </nav>
 
+    <!-- Title at the top of page if this isn't the home landing page -->
     <% if (locals.viewType !== 'Home') {%>
-        <h1>
-            <%= title %>
-        </h1>
+    <h1><%= title %></h1>
     <% } %>
-
-
+  </body>
+</html>

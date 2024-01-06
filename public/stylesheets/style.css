@@ -78,6 +78,36 @@ a.nav-link {
   color: lightskyblue;
 }
 
+.nav-item.active {
+  background-color: gold;
+}
+
 .nav-item.active > a {
   color: red;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand > img {
+  width: 30px;
+}
+
+#navbarSupportedContent {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  align-items: center;
+}
+
+#username-and-photo {
+  margin: 0;
+}
+
+.authorization > a.nav-link {
+  padding: 0;
 }
