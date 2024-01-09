@@ -78,6 +78,11 @@ a.nav-link {
   color: lightskyblue;
 }
 
+
+.nav-item {
+  border-radius: 6px;
+}
+
 .nav-item.active {
   background-color: gold;
 }
@@ -86,9 +91,31 @@ a.nav-link {
   color: red;
 }
 
+.nav-item > a {
+  transition: color 0.8s;
+}
+
+.nav-item:hover > a {
+  color: red;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
+  padding-right: 10px;
+  margin-right: 6px;
+  margin-left: 8px;
+  border-radius: 6px;
+  transition: color 0.8s;
+}
+
+.navbar-brand:hover {
+  color: red;
+}
+
+.navbar-brand.active {
+  color: red;
+  background-color: gold;
 }
 
 .navbar-brand > img {
