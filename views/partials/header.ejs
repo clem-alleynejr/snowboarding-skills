@@ -22,7 +22,7 @@
       class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark"
       data-bs-theme="dark"
     >
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand <%= locals.viewType === 'Home' ? 'active' : null %>" href="/">
         <img
           src="/images/snowboarding-logo.svg"
           alt="Logo"
