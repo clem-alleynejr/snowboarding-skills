@@ -16,7 +16,7 @@
           <td><%= s.skill %></td>
           <td><%= s.difficultyLevel %></td>
           <td><%= s.myProficiency %></td>
-          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details</a></td>
+          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details/Edit Skill</a></td>
           <td>
             <% if (user?._id.equals(s.user)) { %>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">

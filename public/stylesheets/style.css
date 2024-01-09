@@ -156,8 +156,7 @@ a.nav-link {
 }
 
 .home-new-skill-btn {
-  background-color: green;
-  border-color: green;
+
   margin-left: 20px;
 }
 
@@ -166,7 +165,13 @@ a.nav-link {
 }
 
 
-/* My Skills CSS */
+/* My Skills Page CSS */
+
+.skills-table {
+  text-align: center;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
 
 .skills-table tr:first-child th:first-child {
   border-top-left-radius: 1.8vw;
@@ -182,4 +187,8 @@ a.nav-link {
 
 .skills-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 1.8vw;
+}
+
+.skills-table tbody tr td:nth-child(4) {
+  
 }
