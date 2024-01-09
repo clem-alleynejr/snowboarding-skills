@@ -91,10 +91,13 @@
         <% } %>
       </div>
     </nav>
-
+    
+    
     <!-- Title at the top of page if this isn't the home landing page -->
     <% if (locals.viewType !== 'Home') {%>
-    <h1><%= title %></h1>
+    <div class="content-container">
+    <h1 class="page-title"><%= title %></h1>
     <% } %>
-  </body>
-</html>
+
+
+    <!-- Note: footer partial ejs will have the closing /div, /body, and /html tags  -->

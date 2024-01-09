@@ -27,6 +27,15 @@ a {
   width: 30px;
 }
 
+.page-title {
+  font: 48px "Rubik Doodle Shadow";
+  color: white;
+}
+
+.content-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Homepage CSS */
 
 .homepage-title {
