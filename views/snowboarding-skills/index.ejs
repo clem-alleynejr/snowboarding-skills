@@ -8,6 +8,7 @@
         <th>My<br>Proficiency Level</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,12 +17,17 @@
           <td><%= s.skill %></td>
           <td><%= s.difficultyLevel %></td>
           <td><%= s.myProficiency %></td>
-          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details/<br>Edit Skill</a></td>
+          <td><a href="/snowboarding-skills/<%= s._id %>">View Notes/<br>Comments Log</a></td>
+          <td>
+            <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-primary">Edit Skill</button>
+            </form>
+          </td>
           <td>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger">Delete Skill</button>
             </form>
-        </td>
+          </td>
         </tr>
         <% }); %>
       </tbody>
