@@ -5,7 +5,7 @@
       <tr>
         <th>Skill</th>
         <th>Difficulty Level</th>
-        <th>Proficiency Level</th>
+        <th>My<br>Proficiency Level</th>
         <th></th>
         <th></th>
       </tr>
@@ -16,7 +16,7 @@
           <td><%= s.skill %></td>
           <td><%= s.difficultyLevel %></td>
           <td><%= s.myProficiency %></td>
-          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details/Edit Skill</a></td>
+          <td><a href="/snowboarding-skills/<%= s._id %>">View More Details/<br>Edit Skill</a></td>
           <td>
             <% if (user?._id.equals(s.user)) { %>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">

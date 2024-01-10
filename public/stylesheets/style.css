@@ -171,6 +171,8 @@ a.nav-link {
   text-align: center;
   border-collapse: collapse;
   vertical-align: middle;
+  background-color: white;
+  border-radius: 1.8vw;
 }
 
 .skills-table tr:first-child th:first-child {
@@ -190,5 +192,5 @@ a.nav-link {
 }
 
 .skills-table tbody tr td:nth-child(4) {
-  
+
 }
