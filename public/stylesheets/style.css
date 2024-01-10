@@ -30,6 +30,7 @@ a {
 .page-title {
   font: 48px "Rubik Doodle Shadow";
   color: white;
+  margin: 10px auto;
 }
 
 .content-container {
@@ -173,6 +174,7 @@ a.nav-link {
   vertical-align: middle;
   background-color: white;
   border-radius: 1.8vw;
+  margin-top: 20px;
 }
 
 .skills-table tr:first-child th:first-child {
@@ -183,6 +185,14 @@ a.nav-link {
   border-top-right-radius: 1.8vw;
 }
 
+.skills-table thead tr th {
+  background-color: skyblue;
+}
+
+.skills-table thead tr {
+  background-color: skyblue;
+}
+
 .skills-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 1.8vw;
 }
@@ -191,6 +201,11 @@ a.nav-link {
   border-bottom-left-radius: 1.8vw;
 }
 
-.skills-table tbody tr td:nth-child(4) {
-
+.skills-table tbody tr:nth-child(even) td {
+  background-color: lightgray;
 }
+
+.skills-table tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+

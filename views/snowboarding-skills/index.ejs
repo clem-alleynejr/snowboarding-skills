@@ -18,11 +18,9 @@
           <td><%= s.myProficiency %></td>
           <td><a href="/snowboarding-skills/<%= s._id %>">View More Details/<br>Edit Skill</a></td>
           <td>
-            <% if (user?._id.equals(s.user)) { %>
             <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger">Delete Skill</button>
             </form>
-            <% } %>
         </td>
         </tr>
         <% }); %>
