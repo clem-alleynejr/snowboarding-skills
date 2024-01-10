@@ -42,6 +42,11 @@ a {
   display: inline-block;
 }
 
+/* Note: seemingly superfluous .centered-container div is needed to allow for .content-container to be centered */
+.centered-container {
+  text-align: center;
+}
+
 
 
 /* NavBar CSS */
@@ -143,12 +148,6 @@ a.nav-link {
   text-align: center;
 }
 
-/* Note: seemingly superfluous .centered-container div is needed to allow for .homepage card to be centered */
-.centered-container {
-  text-align: center;
-}
-
-
 .homepage {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -195,6 +194,8 @@ a.nav-link {
 
 .skills-table thead tr th {
   background-color: skyblue;
+  height: 65px;
+  vertical-align: middle;
 }
 
 .skills-table thead tr {
@@ -233,6 +234,10 @@ a.nav-link {
   background-color: lightgray;
 }
 
+.skills-table tbody td {
+  height: 80px;
+}
+
 .skill-interaction {
   display: flex;
   justify-content: space-between;
@@ -243,4 +248,6 @@ a.nav-link {
   margin-right: 2px;
   margin-left: 2px;
 }
+
+
 
