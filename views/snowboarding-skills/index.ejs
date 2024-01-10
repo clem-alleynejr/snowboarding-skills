@@ -6,7 +6,7 @@
       <th id="skill-column">Skill</th>
       <th id="difficulty-column">Difficulty Level</th>
       <th id="proficiency-column">My<br />Proficiency Level</th>
-      <th></th>
+      <th id="interaction-column"></th>
     </tr>
   </thead>
   <tbody>
@@ -16,21 +16,22 @@
       <td><%= s.difficultyLevel %></td>
       <td><%= s.myProficiency %></td>
       <td>
-        <a href="/snowboarding-skills/<%= s._id %>"
-          >View Notes/<br />Comments Log</a
-        >
-        <form
-          action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button type="submit" class="btn btn-primary">Edit Skill</button>
-        </form>
-        <form
-          action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button type="submit" class="btn btn-danger">Delete Skill</button>
-        </form>
+        <div class="skill-interaction">
+          <a href="/snowboarding-skills/<%= s._id %>"
+            >View Notes/<br />Comments Log</a
+          >
+          <form
+          action="/snowboarding-skills/<%= s._id %>/edit" method="GET"
+          >
+            <button type="submit" class="btn btn-primary">Edit Skill</button>
+          </form>
+          <form
+            action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" class="btn btn-danger">Delete Skill</button>
+          </form>
+        </div>
       </td>
     </tr>
     <% }); %>

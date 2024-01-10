@@ -172,10 +172,10 @@ a.nav-link {
   text-align: center;
   border-collapse: collapse;
   vertical-align: middle;
-  /* background-color: white; */
-  background-color: black;
+  background-color: white;
   border-radius: 1.8vw;
   margin-top: 20px;
+  width: auto;
 }
 
 .skills-table tr:first-child th:first-child {
@@ -194,6 +194,22 @@ a.nav-link {
   background-color: skyblue;
 }
 
+#skill-column {
+  width: 165px;
+}
+
+#difficulty-column {
+  width: 165px;
+}
+
+#proficiency-column {
+  width: 165px;
+}
+
+#interaction-column {
+  width: 365px;
+}
+
 .skills-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 1.8vw;
 }
@@ -208,5 +224,10 @@ a.nav-link {
 
 .skills-table tbody tr:nth-child(even) {
   background-color: lightgray;
+}
+
+.skill-interaction {
+  display: flex;
+  justify-content: space-between;
 }
 
