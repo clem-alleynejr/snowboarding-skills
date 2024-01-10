@@ -95,9 +95,13 @@
     
     <!-- Title at the top of page if this isn't the home landing page -->
     <% if (locals.viewType !== 'Home') {%>
-    <div class="content-container">
-    <h1 class="page-title"><%= title %></h1>
-    <% } %>
+    <!-- seemingly extra .centered-container div is required to center content card -->
+    <div class="centered-container">
+        <div class="content-container">
+            <h1 class="page-title">
+                <%= title %>
+            </h1>
+            <% } %>
 
 
     <!-- Note: footer partial ejs will have the closing /div, /body, and /html tags  -->

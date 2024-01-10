@@ -138,10 +138,16 @@ a.nav-link {
   text-align: center;
 }
 
-/* Note: seemingly extra .homepage-container div is needed to allow for .homepage card to be centered */
+/* Note: seemingly superfluous .homepage-container div is needed to allow for .homepage card to be centered */
 .homepage-container {
   text-align: center;
 }
+
+/* Note: seemingly superfluous .centered-container div is needed to allow for .homepage card to be centered */
+.centered-container {
+  text-align: center;
+}
+
 
 .homepage {
   text-align: center;
