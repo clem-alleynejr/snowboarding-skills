@@ -172,7 +172,8 @@ a.nav-link {
   text-align: center;
   border-collapse: collapse;
   vertical-align: middle;
-  background-color: white;
+  /* background-color: white; */
+  background-color: black;
   border-radius: 1.8vw;
   margin-top: 20px;
 }

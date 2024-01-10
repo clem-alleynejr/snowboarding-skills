@@ -1,36 +1,40 @@
 <%- include('../partials/header') %>
 
 <table id="list" class="table skills-table">
-    <thead>
-      <tr>
-        <th>Skill</th>
-        <th>Difficulty Level</th>
-        <th>My<br>Proficiency Level</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% snowboardingSkills.forEach(function(s) { %>
-        <tr>
-          <td><%= s.skill %></td>
-          <td><%= s.difficultyLevel %></td>
-          <td><%= s.myProficiency %></td>
-          <td><a href="/snowboarding-skills/<%= s._id %>">View Notes/<br>Comments Log</a></td>
-          <td>
-            <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-primary">Edit Skill</button>
-            </form>
-          </td>
-          <td>
-            <form action="/snowboarding-skills/<%= s._id %>?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-danger">Delete Skill</button>
-            </form>
-          </td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+  <thead>
+    <tr>
+      <th id="skill-column">Skill</th>
+      <th id="difficulty-column">Difficulty Level</th>
+      <th id="proficiency-column">My<br />Proficiency Level</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% snowboardingSkills.forEach(function(s) { %>
+    <tr>
+      <td><%= s.skill %></td>
+      <td><%= s.difficultyLevel %></td>
+      <td><%= s.myProficiency %></td>
+      <td>
+        <a href="/snowboarding-skills/<%= s._id %>"
+          >View Notes/<br />Comments Log</a
+        >
+        <form
+          action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit" class="btn btn-primary">Edit Skill</button>
+        </form>
+        <form
+          action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit" class="btn btn-danger">Delete Skill</button>
+        </form>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>
