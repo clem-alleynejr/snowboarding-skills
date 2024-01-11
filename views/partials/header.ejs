@@ -15,6 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://kit.fontawesome.com/f6f70b293c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -42,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li
-            class="nav-item <%= locals.viewType === 'My Skills' ? 'active' : null %>"
+            class="nav-item <%= locals.viewType === ('My Skills' || 'Edit Skill') ? 'active' : null %>"
           >
             <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
           </li>
@@ -91,10 +92,17 @@
         <% } %>
       </div>
     </nav>
-
-    <!-- Title at the top of page if this isn't the home landing page -->
+    
+    
+    <!-- Page title at the top of page if this isn't the home landing page -->
     <% if (locals.viewType !== 'Home') {%>
-    <h1><%= title %></h1>
-    <% } %>
-  </body>
-</html>
+    <!-- seemingly extra .centered-container div is required to center content card -->
+    <div class="centered-container">
+        <div class="content-container">
+            <h1 class="page-title">
+                <%= title %>
+            </h1>
+            <% } %>
+
+
+    <!-- Note: footer.ejs partial contains the closing /div, /body, and /html tags  -->
