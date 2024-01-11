@@ -258,7 +258,24 @@ a.nav-link {
 
 /* Add Skill Page CSS */
 
-.add-skill-form {
+.add-skill-form,
+.edit-skill-form {
   margin-top: 20px;
 }
 
+.form-check-label {
+  color: white;
+}
+
+
+
+/* Show Skill Page CSS */
+
+#show-page {
+  margin-top: 25px;
+}
+
+#show-page h2,
+#show-page h5 {
+  color: white;
+}
