@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
+<form action="/snowboarding-skills/new" method="GET" class="user-home-btn">
+  <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
+    <i class="fa-solid fa-plus"></i>
+    <span>ADD SKILL</span>
+  </button>
+</form>
+
 <table id="list" class="table skills-table">
   <thead>
     <tr>
@@ -17,13 +24,17 @@
       <td><%= s.myProficiency %></td>
       <td>
         <div class="skill-interaction">
-          <a href="/snowboarding-skills/<%= s._id %>"
+          <!-- <a href="/snowboarding-skills/<%= s._id %>"
             >View Notes/<br />Comments Log</a
-          >
-          <form
-          action="/snowboarding-skills/<%= s._id %>/edit" method="GET"
-          >
-            <button type="submit" class="btn btn-primary">
+          > -->
+          <form action="/snowboarding-skills/<%= s._id %>" method="GET">
+            <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
+              <i class="fa-solid fa-book"></i>
+              <span>View Notes/<br />Comments Log</span>
+            </button>
+          </form>
+          <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
+            <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
               Edit Skill
             </button>
@@ -32,7 +43,7 @@
             action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
             method="POST"
           >
-            <button type="submit" class="btn btn-danger">
+            <button type="submit" class="btn btn-danger btn-sm">
               <i class="fa-solid fa-x"></i>
               Delete Skill
             </button>
@@ -43,6 +54,5 @@
     <% }); %>
   </tbody>
 </table>
-
 
 <%- include('../partials/footer') %>
