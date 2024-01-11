@@ -215,7 +215,7 @@ a.nav-link {
 }
 
 #interaction-column {
-  width: 375px;
+  width: 400px;
 }
 
 .skills-table tbody tr:last-child td:last-child {
@@ -244,10 +244,7 @@ a.nav-link {
   margin-right: 10px;
 }
 
-.skill-interaction a {
-  margin-right: 2px;
-  margin-left: 2px;
-}
+
 
 
 

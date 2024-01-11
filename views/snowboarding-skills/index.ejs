@@ -23,13 +23,19 @@
           <form
           action="/snowboarding-skills/<%= s._id %>/edit" method="GET"
           >
-            <button type="submit" class="btn btn-primary">Edit Skill</button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-pencil"></i>
+              Edit Skill
+            </button>
           </form>
           <form
             action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
             method="POST"
           >
-            <button type="submit" class="btn btn-danger">Delete Skill</button>
+            <button type="submit" class="btn btn-danger">
+              <i class="fa-solid fa-x"></i>
+              Delete Skill
+            </button>
           </form>
         </div>
       </td>
