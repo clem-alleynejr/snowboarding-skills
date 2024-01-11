@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=PUT" method="POST">
+<form action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=PUT" method="POST" class="edit-skill-form">
     <div class="mb-3">
         <label class="form-label">Skill:</label>
         <input type="text" name="skill" class="form-control" autocomplete="off" value="<%= snowboardingSkill.skill %>">
