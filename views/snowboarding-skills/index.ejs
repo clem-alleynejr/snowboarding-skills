@@ -2,9 +2,10 @@
 
 <form action="/snowboarding-skills/new" method="GET" class="user-home-btn">
   <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
-      <span>ADD SKILL</span>
+    <i class="fa-solid fa-plus"></i>
+    <span>ADD SKILL</span>
   </button>
-  </form>
+</form>
 
 <table id="list" class="table skills-table">
   <thead>
@@ -26,9 +27,7 @@
           <a href="/snowboarding-skills/<%= s._id %>"
             >View Notes/<br />Comments Log</a
           >
-          <form
-          action="/snowboarding-skills/<%= s._id %>/edit" method="GET"
-          >
+          <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary">
               <i class="fa-solid fa-pencil"></i>
               Edit Skill
@@ -49,6 +48,5 @@
     <% }); %>
   </tbody>
 </table>
-
 
 <%- include('../partials/footer') %>
