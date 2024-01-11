@@ -47,6 +47,10 @@ a {
   text-align: center;
 }
 
+.form-label {
+  font: 24px "Rubik Doodle Shadow";
+  color: white;
+}
 
 
 /* NavBar CSS */
@@ -252,6 +256,9 @@ a.nav-link {
 }
 
 
+/* Add Skill Page CSS */
 
-
+.add-skill-form {
+  margin-top: 20px;
+}
 
