@@ -42,9 +42,19 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li
-            class="nav-item <%= locals.viewType === ('My Skills' || 'Edit Skill') ? 'active' : null %>"
-          >
+            <!-- "if" statement needed for the 'My Skills' tab on navbar for deciding if it active or not -->
+            <!-- If on any page other than the home landing page... -->
+            <% if (locals.viewType !== 'Home') {%>
+                <li
+                class="nav-item <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType === `Skill: ${snowboardingSkill.skill}` ? 'active' : null %>"
+              >
+            <!-- else, we are just on the homepage, and the tab should be inactive  -->
+                <% } else { %>
+                    <li
+                    class="nav-item"
+                  >
+                    <% } %>
+
             <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
           </li>
           <li
