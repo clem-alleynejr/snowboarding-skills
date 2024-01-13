@@ -79,14 +79,36 @@ async function create(req, res) {
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
 
+  // Below function validates if New Skill is fully filled with the required information and returns list of fields not filled
+
+  const validateSnowboardingSkill = (body) => {
+    const errors = [];
+
+    if (!body.skill) {
+      errors.push('"Skill" is required.');
+    }
+  
+    if (!body.difficultyLevel) {
+      errors.push('"Difficulty Level" is required.');
+    }
+  
+    if (!body.myProficiency) {
+      errors.push('"My Proficiency Level" is required.');
+    }
+  
+    return errors;
+  }
+
   try {
     await SnowboardingSkill.create(req.body);
     res.redirect("/snowboarding-skills");
   } catch (err) {
+    const validationErrors = validateSnowboardingSkill(req.body);
+    console.log(validationErrors);
     res.render("snowboarding-skills/new", {
       viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
-      errorMsg: err.message,
+      errorMsg: validationErrors
     });
   }
 }

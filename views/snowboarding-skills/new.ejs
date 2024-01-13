@@ -86,9 +86,13 @@
 
         <input type="submit" value="Add Skill" class="btn btn-primary">
     </form>
-    <p class="error-message">
-        <%= errorMsg %>
-    </p>
+    <% if (errorMsg.length > 0) { %>
+    <ul class="error-messages">
+        <% errorMsg.forEach(function(error) { %>
+            <li><%= error %></li>
+        <% }); %>
+    </ul>
+    <% } %>
 
 
     <%- include('../partials/footer') %>
