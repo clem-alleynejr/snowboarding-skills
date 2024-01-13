@@ -82,16 +82,16 @@
                 <label class="form-check-label" for="10">10</label><br>
             </div> -->
 
-            <br><br>
-
         <input type="submit" value="Add Skill" class="btn btn-primary">
     </form>
+
+    <!-- Error Messages for missing inputs: -->
     <% if (errorMsg.length > 0) { %>
-    <ul class="error-messages">
+    <div class="error-messages">
         <% errorMsg.forEach(function(error) { %>
-            <li><%= error %></li>
+            <p class="error-message"><%= error %></p>
         <% }); %>
-    </ul>
+        </div>
     <% } %>
 
 

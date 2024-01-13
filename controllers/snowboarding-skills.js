@@ -85,15 +85,15 @@ async function create(req, res) {
     const errors = [];
 
     if (!body.skill) {
-      errors.push('"Skill" is required.');
+      errors.push('Error: "Skill" is required.');
     }
   
     if (!body.difficultyLevel) {
-      errors.push('"Difficulty Level" is required.');
+      errors.push('Error: "Difficulty Level" is required.');
     }
   
     if (!body.myProficiency) {
-      errors.push('"My Proficiency Level" is required.');
+      errors.push('Error: "My Proficiency Level" is required.');
     }
   
     return errors;
@@ -104,7 +104,6 @@ async function create(req, res) {
     res.redirect("/snowboarding-skills");
   } catch (err) {
     const validationErrors = validateSnowboardingSkill(req.body);
-    console.log(validationErrors);
     res.render("snowboarding-skills/new", {
       viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
