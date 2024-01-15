@@ -330,6 +330,9 @@ a.nav-link {
   border-bottom-left-radius: 1vw;
 }
 
-#show-page .edit-btn {
+#show-page .skill-interaction {
   margin-bottom: 34px;
+  margin-right: 0;
+  justify-content: center;
+  gap: 20px;
 }
