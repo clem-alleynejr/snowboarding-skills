@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li
-            class="nav-item <%= locals.viewType === ('My Skills' || 'Edit Skill') ? 'active' : null %>"
+            class="nav-item <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType.includes('Skill:') ? 'active' : null %>"
           >
             <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
           </li>
