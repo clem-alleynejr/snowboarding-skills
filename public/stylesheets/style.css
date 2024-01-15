@@ -336,3 +336,7 @@ a.nav-link {
   justify-content: center;
   gap: 20px;
 }
+
+#show-page textarea {
+  width: 100%;
+}
