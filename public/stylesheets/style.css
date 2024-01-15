@@ -299,3 +299,7 @@ a.nav-link {
 #show-page h5 {
   color: white;
 }
+
+#show-page tr td:first-child {
+  background-color: skyblue;
+}
