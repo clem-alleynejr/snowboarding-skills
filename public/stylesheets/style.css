@@ -300,6 +300,36 @@ a.nav-link {
   color: white;
 }
 
+#show-page h2 {
+  font: 26px "Rubik Doodle Shadow";
+  text-align: left;
+}
+
+#show-page h5 {
+  font: 20px "Rubik Doodle Shadow";
+}
+
 #show-page tr td:first-child {
   background-color: skyblue;
+  font-weight: bold;
+}
+
+#show-page tr:first-child td:first-child {
+  border-top-left-radius: 1vw;
+}
+
+#show-page tr:first-child td:last-child {
+  border-top-right-radius: 1vw;
+}
+
+#show-page tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1vw;
+}
+
+#show-page tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1vw;
+}
+
+#show-page .edit-btn {
+  margin-bottom: 34px;
 }
