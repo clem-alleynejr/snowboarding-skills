@@ -3,84 +3,37 @@
     <form action="/snowboarding-skills" method="POST" class="add-skill-form">
         <div class="mb-3">
             <label class="form-label">Skill:</label>
-            <input type="text" name="skill" class="form-control" autocomplete="off" placeholder="Enter Skill (Ex. Ollie, Boardslide, etc.)">
+            <input type="text" name="skill" class="form-control" autocomplete="off" value="<%= locals.skill ? locals.skill : null %>" placeholder="<%= !locals.skill ? "Enter Skill (Ex. Ollie, Boardslide, etc.)" : null %>">
         </div>      
 
         <div class="mb-3">
         <label class="form-label">Difficulty Level:</label>
             <select name="difficultyLevel" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select Difficulty Level</option>
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-                <option value="Expert">Expert</option>
+                <option value="" disabled <%= !locals.difficultyLevel ? 'selected' : null %>>Select Difficulty Level</option>
+                <option value="Beginner" <%= locals.difficultyLevel === 'Beginner' ? 'selected' : null %>>Beginner</option>
+                <option value="Intermediate" <%= locals.difficultyLevel === 'Intermediate' ? 'selected' : null %>>Intermediate</option>
+                <option value="Advanced" <%= locals.difficultyLevel === 'Advanced' ? 'selected' : null %>>Advanced</option>
+                <option value="Expert" <%= locals.difficultyLevel === 'Expert' ? 'selected' : null %>>Expert</option>
             </select>
         </div>
         
         <div class="mb-3">
         <label class="form-label">My Proficiency Level:</label>
             <select name="myProficiency" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select My Proficiency Level</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                <option value="" disabled <%= !locals.myProficiency ? 'selected' : null %>>Select My Proficiency Level</option>
+                <option value="0" <%= locals.myProficiency === '0' ? 'selected' : null %>>0</option>
+                <option value="1" <%= locals.myProficiency === '1' ? 'selected' : null %>>1</option>
+                <option value="2" <%= locals.myProficiency === '2' ? 'selected' : null %>>2</option>
+                <option value="3" <%= locals.myProficiency === '3' ? 'selected' : null %>>3</option>
+                <option value="4" <%= locals.myProficiency === '4' ? 'selected' : null %>>4</option>
+                <option value="5" <%= locals.myProficiency === '5' ? 'selected' : null %>>5</option>
+                <option value="6" <%= locals.myProficiency === '6' ? 'selected' : null %>>6</option>
+                <option value="7" <%= locals.myProficiency === '7' ? 'selected' : null %>>7</option>
+                <option value="8" <%= locals.myProficiency === '8' ? 'selected' : null %>>8</option>
+                <option value="9" <%= locals.myProficiency === '9' ? 'selected' : null %>>9</option>
+                <option value="10" <%= locals.myProficiency === '10' ? 'selected' : null %>>10</option>
             </select>
         </div>
-
-
-        <!-- <label class="form-label">My Proficiency Level:</label><br>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="0">
-                <label class="form-check-label" for="0">0</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="1">
-                <label class="form-check-label" for="1">1</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="2">
-                <label class="form-check-label" for="2">2</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="3">
-                <label class="form-check-label" for="3">3</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="4">
-                <label class="form-check-label" for="4">4</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="5">
-                <label class="form-check-label" for="5">5</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="6">
-                <label class="form-check-label" for="6">6</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="7">
-                <label class="form-check-label" for="7">7</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="8">
-                <label class="form-check-label" for="8">8</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="9">
-                <label class="form-check-label" for="9">9</label><br>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="myProficiency" class="form-check-input" value="10">
-                <label class="form-check-label" for="10">10</label><br>
-            </div> -->
 
         <input type="submit" value="Add Skill" class="btn btn-primary">
     </form>

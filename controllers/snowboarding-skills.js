@@ -80,7 +80,6 @@ async function create(req, res) {
   req.body.userAvatar = req.user.avatar;
 
   // Below function validates if New Skill is fully filled with the required information and returns list of fields not filled
-
   const validateSnowboardingSkill = (body) => {
     const errors = [];
 
@@ -105,6 +104,9 @@ async function create(req, res) {
   } catch (err) {
     const validationErrors = validateSnowboardingSkill(req.body);
     res.render("snowboarding-skills/new", {
+      skill: req.body.skill,
+      difficultyLevel: req.body.difficultyLevel,
+      myProficiency: req.body.myProficiency,
       viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
       errorMsg: validationErrors
