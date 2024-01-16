@@ -98,7 +98,7 @@
     <% if (locals.viewType !== 'Home') {%>
     <!-- seemingly extra .centered-container div is required to center content card -->
     <div class="centered-container">
-        <div class="content-container">
+        <div class="content-container <%= locals.viewType.includes('Skill:') ? 'skill-content-container' : `${locals.viewType}-content-container` %>">
             <h1 class="page-title">
                 <%= title %>
             </h1>
