@@ -19,22 +19,19 @@
     <div class="mb-3">
         <label class="form-label">My Proficiency Level:</label>
             <select name="myProficiency" class="form-select" aria-label="Default select example">
-                <option value="" disabled <%= !locals.myProficiency ? 'selected' : null %>>Select My Proficiency Level</option>
-                <option value="0" <%= locals.myProficiency === '0' ? 'selected' : null %>>0</option>
-                <option value="1" <%= locals.myProficiency === '1' ? 'selected' : null %>>1</option>
-                <option value="2" <%= locals.myProficiency === '2' ? 'selected' : null %>>2</option>
-                <option value="3" <%= locals.myProficiency === '3' ? 'selected' : null %>>3</option>
-                <option value="4" <%= locals.myProficiency === '4' ? 'selected' : null %>>4</option>
-                <option value="5" <%= locals.myProficiency === '5' ? 'selected' : null %>>5</option>
-                <option value="6" <%= locals.myProficiency === '6' ? 'selected' : null %>>6</option>
-                <option value="7" <%= locals.myProficiency === '7' ? 'selected' : null %>>7</option>
-                <option value="8" <%= locals.myProficiency === '8' ? 'selected' : null %>>8</option>
-                <option value="9" <%= locals.myProficiency === '9' ? 'selected' : null %>>9</option>
-                <option value="10" <%= locals.myProficiency === '10' ? 'selected' : null %>>10</option>
+                <option value="0" <%= snowboardingSkill.myProficiency === 0 ? 'selected' : null %>>0</option>
+                <option value="1" <%= snowboardingSkill.myProficiency === 1 ? 'selected' : null %>>1</option>
+                <option value="2" <%= snowboardingSkill.myProficiency === 2 ? 'selected' : null %>>2</option>
+                <option value="3" <%= snowboardingSkill.myProficiency === 3 ? 'selected' : null %>>3</option>
+                <option value="4" <%= snowboardingSkill.myProficiency === 4 ? 'selected' : null %>>4</option>
+                <option value="5" <%= snowboardingSkill.myProficiency === 5 ? 'selected' : null %>>5</option>
+                <option value="6" <%= snowboardingSkill.myProficiency === 6 ? 'selected' : null %>>6</option>
+                <option value="7" <%= snowboardingSkill.myProficiency === 7 ? 'selected' : null %>>7</option>
+                <option value="8" <%= snowboardingSkill.myProficiency === 8 ? 'selected' : null %>>8</option>
+                <option value="9" <%= snowboardingSkill.myProficiency === 9 ? 'selected' : null %>>9</option>
+                <option value="10" <%= snowboardingSkill.myProficiency === 10 ? 'selected' : null %>>10</option>
             </select>
         </div>
-
-        <br><br>
 
         <button type="submit" class="btn btn-primary btn-lg">
             <span>CONFIRM EDIT</span>
