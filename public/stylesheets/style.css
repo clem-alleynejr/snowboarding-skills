@@ -284,10 +284,26 @@ a.nav-link {
 }
 
 .add-skill-form .btn {
-  margin-top: 10px;
+  margin-top: -5px;
 }
 
+.Add.Skill-content-container {
+  width: 700px;
+}
 
+.Add.Skill-content-container form div:first-child {
+  margin-top: -5px;
+}
+
+.Add.Skill-content-container .mb-3 {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.Add.Skill-content-container .mb-3 .form-label {
+  align-self: flex-start;
+}
 
 /* Show Skill Page CSS */
 
@@ -298,4 +314,118 @@ a.nav-link {
 #show-page h2,
 #show-page h5 {
   color: white;
+}
+
+#show-page h2 {
+  font: 26px "Rubik Doodle Shadow";
+  text-align: left;
+}
+
+#show-page h5 {
+  font: 20px "Rubik Doodle Shadow";
+  text-align: left;
+}
+
+#show-page table {
+  width: 350px;
+  margin: 0 auto 16px;
+}
+
+#show-page tr td:first-child {
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+#show-page tr:first-child td:first-child {
+  border-top-left-radius: 1vw;
+}
+
+#show-page tr:first-child td:last-child {
+  border-top-right-radius: 1vw;
+}
+
+#show-page tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1vw;
+}
+
+#show-page tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1vw;
+}
+
+#show-page .skill-interaction {
+  margin-bottom: 34px;
+  margin-top: 20px;
+  margin-right: 0;
+  justify-content: center;
+  gap: 20px;
+}
+
+#show-page textarea {
+  width: 100%;
+}
+
+.add-comment-btn {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 25px;
+}
+
+.skill-content-container {
+  width: 700px;
+}
+
+#comments-table.table {
+  width: 100%;
+}
+
+#comments-table tr:first-child th:first-child {
+  border-top-left-radius: 1.8vw;
+}
+
+#comments-table tr:first-child th:last-child {
+  border-top-right-radius: 1.8vw;
+}
+
+#comments-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1.8vw;
+}
+
+#comments-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1.8vw;
+}
+
+#comments-table tr:first-child td:first-child {
+  border-top-left-radius: 0;
+}
+
+#comments-table tr:first-child td:last-child {
+  border-top-right-radius: 0;
+}
+
+#comments-table thead tr th {
+  background-color: skyblue;
+}
+
+#comments-table thead tr {
+  background-color: skyblue;
+}
+
+#comments-table tr td:first-child {
+  background-color: white;
+}
+
+#comments-table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+#comments-table tbody tr:nth-child(even) td {
+  background-color: lightgray;
+}
+
+#comments-table tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+#comments-table tr td:first-child {
+  font-weight: normal;
 }

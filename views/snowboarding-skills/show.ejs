@@ -1,55 +1,73 @@
 <%- include('../partials/header') %>
 
-    <section id="show-page">
-        <table class="table">
-        <tbody>
-            <tr>
-                <td>Difficulty Level: <%= snowboardingSkill.difficultyLevel %></td>
-            </tr>
-            <tr>
-                <td>Proficiency Level: <%= snowboardingSkill.myProficiency %></td>
-            </tr>
-        </tbody>
-    </table>
-        
-        
-        <div>
-            <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/edit" method="GET">
-                <button type="submit" class="btn btn-primary">Edit Skill</button>
-            </form>
-        </div>
+<section id="show-page">
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Difficulty Level:</td>
+        <td><%= snowboardingSkill.difficultyLevel %></td>
+      </tr>
+      <tr>
+        <td>My Proficiency Level:</td>
+        <td><%= snowboardingSkill.myProficiency %></td>
+      </tr>
+    </tbody>
+  </table>
 
-        <br><br>
-        <h2>Notes/Comments:</h2>
-        <form id="add-note-form" method="POST" action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments">
-            <textarea name="content"></textarea>
-            <input type="submit" value="Add Note/Comment">
-        </form>
+  <div class="skill-interaction">
+    <form
+      action="/snowboarding-skills/<%= snowboardingSkill._id %>/edit"
+      method="GET"
+    >
+      <button type="submit" class="btn btn-primary edit-btn">
+        <i class="fa-solid fa-pencil"></i>
+        Edit Skill
+      </button>
+    </form>
+    <form
+    action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button type="submit" class="btn btn-danger">
+      <i class="fa-solid fa-x"></i>
+      Delete Skill
+    </button>
+  </form>
+  </div>
 
-        <% if (snowboardingSkill.notesComments.length) { %>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Note/Comment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% snowboardingSkill.notesComments.forEach(function(n) { %>
-                        <tr>
-                            <td>
-                                <%= n.createdAt.toLocaleDateString() %>
-                            </td>
-                            <td>
-                                <%= n.content %>
-                            </td>
-                        </tr>
-                        <% }); %>
-                </tbody>
-            </table>
-            <% } else { %>
-                <h5>No Notes or Comments Yet</h5>
-                <% } %>
+  <h2>Notes/Comments:</h2>
+  <form
+    id="add-note-form"
+    method="POST"
+    action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments"
+  >
+    <div>
+      <textarea name="content" placeholder="Add a note/comment..."></textarea>
+    </div>
 
+    <div class="add-comment-btn">
+    <input type="submit" value="Add Note/Comment"/>
+    </div>
+  </form>
 
-                    <%- include('../partials/footer') %>
+  <% if (snowboardingSkill.notesComments.length) { %>
+  <table id="comments-table" class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Note/Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% snowboardingSkill.notesComments.forEach(function(n) { %>
+      <tr>
+        <td><%= n.createdAt.toLocaleDateString() %></td>
+        <td><%= n.content %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <h5>No Notes or Comments Yet</h5>
+  <% } %> <%- include('../partials/footer') %>
+</section>
