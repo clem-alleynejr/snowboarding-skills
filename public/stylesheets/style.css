@@ -327,7 +327,7 @@ a.nav-link {
 }
 
 #show-page table {
-  width: auto;
+  width: 350px;
   margin: 0 auto 16px;
 }
 
@@ -354,6 +354,7 @@ a.nav-link {
 
 #show-page .skill-interaction {
   margin-bottom: 34px;
+  margin-top: 20px;
   margin-right: 0;
   justify-content: center;
   gap: 20px;
@@ -371,4 +372,60 @@ a.nav-link {
 
 .skill-content-container {
   width: 700px;
+}
+
+#comments-table.table {
+  width: 100%;
+}
+
+#comments-table tr:first-child th:first-child {
+  border-top-left-radius: 1.8vw;
+}
+
+#comments-table tr:first-child th:last-child {
+  border-top-right-radius: 1.8vw;
+}
+
+#comments-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1.8vw;
+}
+
+#comments-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1.8vw;
+}
+
+#comments-table tr:first-child td:first-child {
+  border-top-left-radius: 0;
+}
+
+#comments-table tr:first-child td:last-child {
+  border-top-right-radius: 0;
+}
+
+#comments-table thead tr th {
+  background-color: skyblue;
+}
+
+#comments-table thead tr {
+  background-color: skyblue;
+}
+
+#comments-table tr td:first-child {
+  background-color: white;
+}
+
+#comments-table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+#comments-table tbody tr:nth-child(even) td {
+  background-color: lightgray;
+}
+
+#comments-table tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+#comments-table tr td:first-child {
+  font-weight: normal;
 }
