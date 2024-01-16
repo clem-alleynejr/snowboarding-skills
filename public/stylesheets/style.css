@@ -276,7 +276,7 @@ a.nav-link {
 }
 
 
-/* Add Skill Page CSS */
+/* Add Skill/Edit Skill Page CSS */
 
 .add-skill-form,
 .edit-skill-form {
@@ -287,26 +287,29 @@ a.nav-link {
   color: white;
 }
 
-
-
-.Add.Skill-content-container {
+.Add.Skill-content-container,
+.Edit.Skill-content-container {
   width: 700px;
   padding-bottom: 20px;
 }
 
-.Add.Skill-content-container form div:first-child {
+.Add.Skill-content-container form div:first-child,
+.Edit.Skill-content-container form div:first-child {
   margin-top: -5px;
 }
 
-.Add.Skill-content-container .mb-3 {
+.Add.Skill-content-container .mb-3,
+.Edit.Skill-content-container .mb-3 {
   display: flex;
   flex-direction: column;
   padding-bottom: 15px;
 }
 
-.Add.Skill-content-container .mb-3 .form-label {
+.Add.Skill-content-container .mb-3 .form-label,
+.Edit.Skill-content-container .mb-3 .form-label {
   align-self: flex-start;
 }
+
 
 /* Show Skill Page CSS */
 
