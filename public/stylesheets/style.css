@@ -173,8 +173,13 @@ a.nav-link {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3vw;
   padding: 10px 20px;
+  padding-bottom: 20px;
   margin: 20px auto 0;
   display: inline-block;
+}
+
+.homepage form {
+  margin-top: 10px;
 }
 
 .home-signin-btn > img, span {
@@ -183,7 +188,6 @@ a.nav-link {
 }
 
 .home-new-skill-btn {
-
   margin-left: 20px;
 }
 
@@ -283,12 +287,11 @@ a.nav-link {
   color: white;
 }
 
-.add-skill-form .btn {
-  margin-top: -5px;
-}
+
 
 .Add.Skill-content-container {
   width: 700px;
+  padding-bottom: 20px;
 }
 
 .Add.Skill-content-container form div:first-child {
