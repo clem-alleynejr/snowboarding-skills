@@ -15,7 +15,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var snowboardingSkillsRouter = require('./routes/snowboarding-skills')
+var snowboardingSkillsRouter = require('./routes/snowboarding-skills');
+var sampleSkillsProgressionRouter = require('.routes/sample-skills-progression');
 
 var app = express();
 
@@ -43,7 +44,8 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/snowboarding-skills', snowboardingSkillsRouter)
+app.use('/snowboarding-skills', snowboardingSkillsRouter);
+app.use('/sample-skills-progression', sampleSkillsProgressionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

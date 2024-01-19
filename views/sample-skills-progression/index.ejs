@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<table id="list" class="table skills-table">
+    <thead>
+      <tr>
+        <th id="skill-column">Skill</th>
+        <th id="difficulty-column">Difficulty Level</th>
+        <th id="proficiency-column">My<br />Proficiency Level</th>
+        <th id="interaction-column"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% snowboardingSkills.forEach(function(s) { %>
+      <tr>
+        <td><%= s.skill %></td>
+        <td><%= s.difficultyLevel %></td>
+        <td><%= s.myProficiency %></td>
+        <td>
+          <div class="skill-interaction">
+            <!-- <a href="/snowboarding-skills/<%= s._id %>"
+              >View Notes/<br />Comments Log</a
+            > -->
+            <form action="/snowboarding-skills/<%= s._id %>" method="GET">
+              <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
+                <i class="fa-solid fa-book"></i>
+                <span>View My Notes/<br />Comments Log</span>
+              </button>
+            </form>
+            <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-pencil"></i>
+                Edit Skill
+              </button>
+            </form>
+            <form
+              action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-x"></i>
+                Delete Skill
+              </button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+<%- include('../partials/footer') %>
