@@ -8,6 +8,35 @@
   )
 </p>
 
+
+
+<% if (!user) { %>
+  <form action="/auth/google" method="GET">
+      <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
+          <span>SIGN IN</span>
+          <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
+      </button>
+  </form>
+  <% } else { %>
+      
+      <form action="/snowboarding-skills" method="GET" class="user-home-btn">
+      <button type="submit" class="btn btn-primary btn-lg home-skills-btn">
+          <i class="fa-regular fa-eye"></i>
+          <span>MY SKILLS</span>
+      </button>
+      </form>   
+      
+      <form action="/snowboarding-skills/new" method="GET" class="user-home-btn">
+      <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span>ADD SKILL</span>
+      </button>
+      </form>
+      
+  <% } %>
+
+
+
 <table id="list" class="table skills-table beginner-skills">
   <thead>
     <tr>
