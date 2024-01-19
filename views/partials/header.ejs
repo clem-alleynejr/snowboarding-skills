@@ -52,9 +52,9 @@
           >
             <a href="/snowboarding-skills/new" class="nav-link"> ADD SKILL</a>
           </li>
-          <!-- <li class="nav-item"> -->
-          <!-- <a href="/sample-list" class="nav-link" >SAMPLE LIST OF SKILLS</a> -->
-          <!-- </li> -->
+          <li class="nav-item <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>">
+            <a href="/sample-skills-progression" class="nav-link" >SAMPLE SKILLS/PROGRESSION</a>
+          </li>
         </ul>
 
         <ul class="navbar-nav mr-auto authorization">
@@ -79,6 +79,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContentNoUser">
 
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>">
+              <a href="/sample-skills-progression" class="nav-link" >SAMPLE SKILLS/PROGRESSION</a>
+            </li>
+          </ul>
+
+
             <ul class="navbar-nav mr-auto authorization">
                 <li class="nav-item">
                 <a href="/auth/google" class="signin" class="nav-link"
@@ -100,7 +107,7 @@
     <div class="centered-container">
         <div class="content-container <%= locals.viewType.includes('Skill:') ? 'skill-content-container' : `${locals.viewType}-content-container` %>">
             <h1 class="page-title">
-                <%= title %>
+                <%= locals.title %>
             </h1>
             <% } %>
 

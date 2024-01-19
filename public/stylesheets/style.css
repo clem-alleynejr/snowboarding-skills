@@ -124,7 +124,7 @@ a.nav-link {
 }
 
 #navbarSupportedContentNoUser {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -173,8 +173,13 @@ a.nav-link {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3vw;
   padding: 10px 20px;
+  padding-bottom: 20px;
   margin: 20px auto 0;
   display: inline-block;
+}
+
+.homepage form {
+  margin-top: 10px;
 }
 
 .home-signin-btn > img, span {
@@ -183,7 +188,6 @@ a.nav-link {
 }
 
 .home-new-skill-btn {
-
   margin-left: 20px;
 }
 
@@ -272,7 +276,7 @@ a.nav-link {
 }
 
 
-/* Add Skill Page CSS */
+/* Add Skill/Edit Skill Page CSS */
 
 .add-skill-form,
 .edit-skill-form {
@@ -283,27 +287,29 @@ a.nav-link {
   color: white;
 }
 
-.add-skill-form .btn {
-  margin-top: -5px;
-}
-
-.Add.Skill-content-container {
+.Add.Skill-content-container,
+.Edit.Skill-content-container {
   width: 700px;
+  padding-bottom: 20px;
 }
 
-.Add.Skill-content-container form div:first-child {
+.Add.Skill-content-container form div:first-child,
+.Edit.Skill-content-container form div:first-child {
   margin-top: -5px;
 }
 
-.Add.Skill-content-container .mb-3 {
+.Add.Skill-content-container .mb-3,
+.Edit.Skill-content-container .mb-3 {
   display: flex;
   flex-direction: column;
   padding-bottom: 15px;
 }
 
-.Add.Skill-content-container .mb-3 .form-label {
+.Add.Skill-content-container .mb-3 .form-label,
+.Edit.Skill-content-container .mb-3 .form-label {
   align-self: flex-start;
 }
+
 
 /* Show Skill Page CSS */
 
@@ -428,4 +434,20 @@ a.nav-link {
 
 #comments-table tr td:first-child {
   font-weight: normal;
+}
+
+
+
+/* Sample Skills/Progression CSS */
+
+.Sample.Skills\/Progression-content-container #interaction-column {
+  width: 100px;
+}
+
+.Sample.Skills\/Progression-content-container table {
+  margin: 20px auto;
+}
+
+.list-source {
+  color: white;
 }
