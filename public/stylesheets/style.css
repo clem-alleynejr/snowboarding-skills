@@ -124,7 +124,7 @@ a.nav-link {
 }
 
 #navbarSupportedContentNoUser {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .navbar {
