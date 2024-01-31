@@ -124,7 +124,7 @@ a.nav-link {
 }
 
 #navbarSupportedContentNoUser {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -434,4 +434,20 @@ a.nav-link {
 
 #comments-table tr td:first-child {
   font-weight: normal;
+}
+
+
+
+/* Sample Skills/Progression CSS */
+
+.Sample.Skills\/Progression-content-container #interaction-column {
+  width: 100px;
+}
+
+.Sample.Skills\/Progression-content-container table {
+  margin: 20px auto;
+}
+
+.list-source {
+  color: white;
 }

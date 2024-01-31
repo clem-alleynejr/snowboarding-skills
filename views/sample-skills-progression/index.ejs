@@ -1,0 +1,357 @@
+<%- include('../partials/header') %>
+
+<p class="list-source ">
+  ( Sample List Based On
+  <a href="https://snowboardingprofiles.com/get-better-at-snowboarding-with-this-snowboard-progression-plan" target="_blank">
+    This Blog
+  </a>
+  )
+</p>
+
+
+
+<% if (!user) { %>
+  <form action="/auth/google" method="GET">
+      <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
+          <span>SIGN IN</span>
+          <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
+      </button>
+  </form>
+  <% } else { %>
+      
+      <form action="/snowboarding-skills" method="GET" class="user-home-btn">
+      <button type="submit" class="btn btn-primary btn-lg home-skills-btn">
+          <i class="fa-regular fa-eye"></i>
+          <span>MY SKILLS</span>
+      </button>
+      </form>   
+      
+      <form action="/snowboarding-skills/new" method="GET" class="user-home-btn">
+      <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span>ADD SKILL</span>
+      </button>
+      </form>
+      
+  <% } %>
+
+
+
+<table id="list" class="table skills-table beginner-skills">
+  <thead>
+    <tr>
+      <th id="skill-column">Skill</th>
+      <th id="difficulty-column">Difficulty Level</th>
+      <th id="interaction-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Skating</td>
+      <td>Beginner</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Heelside Snowflaking</td>
+      <td>Beginner</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Toeside Snowflaking</td>
+      <td>Beginner</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Linking C Turns</td>
+      <td>Beginner</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table id="list" class="table skills-table intermediate-skills">
+  <thead>
+    <tr>
+      <th id="skill-column">Skill</th>
+      <th id="difficulty-column">Difficulty Level</th>
+      <th id="interaction-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Linking S turns on Blue Run</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Ollies</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Small Jumps</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Riding Switch</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Carving</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Black Diamond Runs</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Manuals</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>50-50s on Boxes</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Indy Grabs</td>
+      <td>Intermediate</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table id="list" class="table skills-table advanced-skills">
+  <thead>
+    <tr>
+      <th id="skill-column">Skill</th>
+      <th id="difficulty-column">Difficulty Level</th>
+      <th id="interaction-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>360s</td>
+      <td>Advanced</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Large Jumps</td>
+      <td>Advanced</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Halfpipe</td>
+      <td>Advanced</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table id="list" class="table skills-table expert-skills">
+  <thead>
+    <tr>
+      <th id="skill-column">Skill</th>
+      <th id="difficulty-column">Difficulty Level</th>
+      <th id="interaction-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XL Jumps</td>
+      <td>Expert</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>540s</td>
+      <td>Expert</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+    <tr>
+      <td>Backflips</td>
+      <td>Expert</td>
+      <td>
+        <!-- <div class="skill-interaction">
+          <form action="/snowboarding-skills/new" method="GET">
+            <button type="submit" class="btn btn-success btn-sm">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD SKILL</span>
+            </button>
+          </form>
+        </div> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
