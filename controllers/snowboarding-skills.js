@@ -27,21 +27,50 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
+  // find the Skill to Update:
+  const updatedSnowboardSkill = await SnowboardingSkill.findOne({
+    _id: req.params.id,
+    user: req.user._id,
+  });
+
+  // update skill with updated properties
+  updatedSnowboardSkill.skill = req.body.skill;
+  updatedSnowboardSkill.difficultyLevel = req.body.difficultyLevel;
+  updatedSnowboardSkill.myProficiency = req.body.myProficiency;
+
+  // Below function validates if updated skillname isn't blank
+  const validateSnowboardingSkill = (body) => {
+    const errors = [];
+    if (!body.skill) {
+      errors.push('Error: "Skill" is required.');
+    }
+    return errors;
+  };
+
   try {
-    const updatedSnowboardSkill = await SnowboardingSkill.findOneAndUpdate(
-      {
-        _id: req.params.id,
-        user: req.user._id,
-      },
-      // update object with updated properties
-      req.body,
-      // options object {new: true} returns updated doc
-      { new: true }
-    );
+    // save skill
+    await updatedSnowboardSkill.save();
+
+    // if successful, return the new updated skill page
     return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
+    
+    //if unsuccessful...
   } catch (err) {
-    console.log(err.message);
-    return res.redirect("/snowboarding-skills");
+    const validationErrors = validateSnowboardingSkill(req.body);
+    // Pass in attempted skill edit into locals and
+    // re-render the edit page with what user tried to input
+    const snowboardingSkill = updatedSnowboardSkill;
+    res.render("snowboarding-skills/edit", {
+      viewType: "Edit Skill",
+      title: "Edit Snowboarding Skill Below:",
+      snowboardingSkill,
+      skill: updatedSnowboardSkill.skill,
+      difficultyLevel: updatedSnowboardSkill.difficultyLevel,
+      myProficiency: updatedSnowboardSkill.myProficiency,
+      viewType: "Edit Skill",
+      title: "Edit Snowboarding Skill Below:",
+      errorMsg: validationErrors
+    });
   }
 }
 
@@ -74,11 +103,6 @@ function newSkill(req, res) {
 }
 
 async function create(req, res) {
-  // Add the user-centric info to req.body (the new review)
-  req.body.user = req.user._id;
-  req.body.userName = req.user.name;
-  req.body.userAvatar = req.user.avatar;
-
   // Below function validates if New Skill is fully filled with the required information and returns list of fields not filled
   const validateSnowboardingSkill = (body) => {
     const errors = [];
@@ -86,17 +110,17 @@ async function create(req, res) {
     if (!body.skill) {
       errors.push('Error: "Skill" is required.');
     }
-  
+
     if (!body.difficultyLevel) {
       errors.push('Error: "Difficulty Level" is required.');
     }
-  
+
     if (!body.myProficiency) {
       errors.push('Error: "My Proficiency Level" is required.');
     }
-  
+
     return errors;
-  }
+  };
 
   try {
     await SnowboardingSkill.create(req.body);
@@ -109,7 +133,7 @@ async function create(req, res) {
       myProficiency: req.body.myProficiency,
       viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
-      errorMsg: validationErrors
+      errorMsg: validationErrors,
     });
   }
 }
