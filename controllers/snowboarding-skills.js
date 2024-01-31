@@ -28,16 +28,22 @@ async function edit(req, res) {
 
 async function update(req, res) {
   try {
-    const updatedSnowboardSkill = await SnowboardingSkill.findOneAndUpdate(
+    const updatedSnowboardSkill = await SnowboardingSkill.findOne(
+      // find the Skill to Update:
       {
         _id: req.params.id,
         user: req.user._id,
-      },
-      // update object with updated properties
-      req.body,
-      // options object {new: true} returns updated doc
-      { new: true }
-    );
+      });
+
+    // update skill with updated properties
+    updatedSnowboardSkill.skill = req.body.skill;
+    updatedSnowboardSkill.difficultyLevel = req.body.difficultyLevel;
+    updatedSnowboardSkill.myProficiency = req.body.myProficiency;  
+
+    // save skill
+    await updatedSnowboardSkill.save();
+
+    // return the new updated skill page
     return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
   } catch (err) {
     console.log(err.message);
@@ -86,17 +92,17 @@ async function create(req, res) {
     if (!body.skill) {
       errors.push('Error: "Skill" is required.');
     }
-  
+
     if (!body.difficultyLevel) {
       errors.push('Error: "Difficulty Level" is required.');
     }
-  
+
     if (!body.myProficiency) {
       errors.push('Error: "My Proficiency Level" is required.');
     }
-  
+
     return errors;
-  }
+  };
 
   try {
     await SnowboardingSkill.create(req.body);
@@ -109,7 +115,7 @@ async function create(req, res) {
       myProficiency: req.body.myProficiency,
       viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
-      errorMsg: validationErrors
+      errorMsg: validationErrors,
     });
   }
 }
