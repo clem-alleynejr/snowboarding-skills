@@ -65,13 +65,13 @@
         <td><%= n.createdAt.toLocaleDateString() %></td>
         <td><%= n.content %></td>
         <td class="comment-interaction">
-          <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
+          <form action="/snowboarding-skills/notes-comments/<%= n._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
             </button>
           </form>
           <form
-            action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
+            action="/snowboarding-skills/notes-comments/<%= n._id %>?_method=DELETE"
             method="POST"
           >
             <button type="submit" class="btn btn-danger btn-sm">
