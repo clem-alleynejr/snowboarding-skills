@@ -141,12 +141,11 @@ async function create(req, res) {
 async function createNoteComment(req, res) {
   const snowboardingSkill = await SnowboardingSkill.findById(req.params.id);
 
-  // Add the user-centric info to req.body (the new review)
+  // Add the user info to req.body
   req.body.user = req.user._id;
-  req.body.userName = req.user.name;
-  req.body.userAvatar = req.user.avatar;
 
   snowboardingSkill.notesComments.push(req.body);
+
   try {
     await snowboardingSkill.save();
   } catch (err) {
