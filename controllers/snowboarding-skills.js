@@ -168,7 +168,20 @@ async function show(req, res) {
 }
 
 async function editNoteComment(req, res) {
+  const snowboardingSkillId = req.params.snowboardingSkillId;
+  const noteCommentId = req.params.noteCommentId;
 
+  const snowboardingSkill = await SnowboardingSkill.findOne({
+    _id: snowboardingSkillId,
+    user: req.user._id,
+  });
+  if (!snowboardingSkill) return res.redirect("/snowboarding-skills");
+  res.render("snowboarding-skills/notes-comments/edit", {
+    viewType: "Edit Skill",
+    title: "Edit Snowboarding Skill Below:",
+    snowboardingSkill,
+    errorMsg: "",
+  });
 };
 
 async function updateNoteComment(req, res) {
