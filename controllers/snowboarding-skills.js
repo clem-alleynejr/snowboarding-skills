@@ -10,6 +10,9 @@ module.exports = {
   delete: deleteSkill,
   edit,
   update,
+  editNoteComment,
+  updateNoteComment,
+  deleteNoteComment
 };
 
 async function edit(req, res) {
@@ -163,3 +166,17 @@ async function show(req, res) {
     // errorMsg: err.message
   });
 }
+
+async function editNoteComment(req, res) {
+
+};
+
+async function updateNoteComment(req, res) {
+
+};
+
+async function deleteNoteComment(req, res) {
+
+};
+
+
