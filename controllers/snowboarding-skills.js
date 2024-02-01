@@ -12,7 +12,7 @@ module.exports = {
   update,
   editNoteComment,
   updateNoteComment,
-  deleteNoteComment
+  deleteNoteComment,
 };
 
 async function edit(req, res) {
@@ -56,7 +56,7 @@ async function update(req, res) {
 
     // if successful, return the new updated skill page
     return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
-    
+
     //if unsuccessful...
   } catch (err) {
     const validationErrors = validateSnowboardingSkill(req.body);
@@ -72,7 +72,7 @@ async function update(req, res) {
       myProficiency: updatedSnowboardSkill.myProficiency,
       viewType: "Edit Skill",
       title: "Edit Snowboarding Skill Below:",
-      errorMsg: validationErrors
+      errorMsg: validationErrors,
     });
   }
 }
@@ -171,25 +171,46 @@ async function editNoteComment(req, res) {
   const snowboardingSkillId = req.params.snowboardingSkillId;
   const noteCommentId = req.params.noteCommentId;
 
+  // Find the Snowboarding Skill
   const snowboardingSkill = await SnowboardingSkill.findOne({
     _id: snowboardingSkillId,
     user: req.user._id,
   });
-  if (!snowboardingSkill) return res.redirect("/snowboarding-skills");
+
+  // Find the Specific Comment
+  const noteComment = snowboardingSkill.notesComments.find(nc => nc._id.toString() === noteCommentId);
+
   res.render("snowboarding-skills/notes-comments/edit", {
-    viewType: "Edit Skill",
-    title: "Edit Snowboarding Skill Below:",
+    viewType: "Edit Note/Comment",
+    title: "Edit Note/Comment Below:",
     snowboardingSkill,
+    noteComment,
     errorMsg: "",
   });
-};
+}
 
 async function updateNoteComment(req, res) {
+  const snowboardingSkillId = req.params.snowboardingSkillId;
+  const noteCommentId = req.params.noteCommentId;
 
-};
+    // Find the Snowboarding Skill
+    const snowboardingSkill = await SnowboardingSkill.findOne({
+      _id: snowboardingSkillId,
+      user: req.user._id,
+    });
+  
+    // Find the Specific Comment
+    const noteComment = snowboardingSkill.notesComments.find(nc => nc._id.toString() === noteCommentId);
 
-async function deleteNoteComment(req, res) {
+    // Edit the Comment
+    noteComment.content = req.body.content;
 
-};
+    // Save the comment by saving the snowboarding skill model
+    await snowboardingSkill.save()
 
+    // Redirect to the skill page
+    return res.redirect(`/snowboarding-skills/${snowboardingSkillId}`)
 
+}
+
+async function deleteNoteComment(req, res) {}
