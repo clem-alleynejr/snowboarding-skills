@@ -262,7 +262,8 @@ a.nav-link {
   height: 80px;
 }
 
-.skill-interaction {
+.skill-interaction,
+.comment-interaction {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -436,6 +437,26 @@ a.nav-link {
   font-weight: normal;
 }
 
+#note-comment-date {
+  width: 150px;
+}
+
+#note-comment {
+  text-align: left;
+}
+
+#note-comment-interaction {
+  width: 93px;
+}
+
+#comments-table .comment-interaction {
+  margin-right: 0;
+}
+
+.note-comment-content {
+  text-align: left;
+}
+
 
 
 /* Sample Skills/Progression CSS */
@@ -451,3 +472,8 @@ a.nav-link {
 .list-source {
   color: white;
 }
+
+
+
+/* Edit Note/Comment Page CSS */
+
