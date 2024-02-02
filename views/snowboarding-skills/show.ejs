@@ -42,13 +42,27 @@
     action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments"
   >
     <div>
-      <textarea name="content" placeholder="Add a note/comment..."></textarea>
+      <textarea name="content" id="note-content" placeholder="Add a note/comment..."></textarea>
     </div>
 
     <div class="add-comment-btn">
-    <input type="submit" value="Add Note/Comment"/>
+    <input type="submit" id="submit-btn" value="Add Note/Comment" disabled/>
     </div>
   </form>
+
+  <!-- disable submit button if note/comment is blank -->
+<script>
+  const textarea = document.getElementById("note-content");
+  const submitBtn = document.getElementById("submit-btn");
+
+  textarea.addEventListener("input", function () {
+    if (textarea.value.trim() === "") {
+      submitBtn.disabled = true;
+    } else {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
 
   <% if (snowboardingSkill.notesComments.length) { %>
   <table id="comments-table" class="table">

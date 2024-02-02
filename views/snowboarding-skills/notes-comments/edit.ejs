@@ -22,13 +22,17 @@
   const textarea = document.getElementById("note-content");
   const submitBtn = document.getElementById("submit-btn");
 
-  textarea.addEventListener("input", function () {
+  function checkTextArea() {
     if (textarea.value.trim() === "") {
       submitBtn.disabled = true;
     } else {
       submitBtn.disabled = false;
     }
-  });
+  }
+
+  checkTextArea();
+
+  textarea.addEventListener("input", checkTextArea)
 </script>
 
 <%- include('../../partials/footer') %>
