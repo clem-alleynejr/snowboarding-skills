@@ -1,21 +1,44 @@
 <%- include('../../partials/header') %>
 
-<form
-  id="add-note-form"
-  method="POST"
-  action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= noteComment._id %>?_method=PUT"
->
-  <div>
-    <textarea
-      name="content"
-      id="note-content"
-    ><%= noteComment.content %></textarea>
-  </div>
+<h2>For <%= snowboardingSkill.skill %></h2>
 
-  <div class="add-comment-btn">
-    <input type="submit" id="submit-btn" value="Finish Editing" disabled />
-  </div>
-</form>
+<table class="table">
+  <thead>
+    <th>Date</th>
+    <th>Note/Comment</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= noteComment.createdAt.toLocaleDateString() %></td>
+      <td>
+        <form
+          id="add-note-form"
+          method="POST"
+          action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= noteComment._id %>?_method=PUT"
+        >
+          <div>
+            <textarea name="content" id="note-content">
+          <%= noteComment.content %></textarea
+            >
+          </div>
+
+          <div class="add-comment-btn">
+            <input
+              type="submit"
+              id="submit-btn"
+              value="Finish Editing"
+              disabled
+            />
+          </div>
+        </form>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- disable submit button if note/comment is blank -->
 <script>
@@ -32,7 +55,7 @@
 
   checkTextArea();
 
-  textarea.addEventListener("input", checkTextArea)
+  textarea.addEventListener("input", checkTextArea);
 </script>
 
 <%- include('../../partials/footer') %>
