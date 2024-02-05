@@ -157,7 +157,8 @@ a.nav-link {
   text-align: center;
 }
 
-.homepage-sub-title {
+.homepage-sub-title,
+#comment-edit-subtitle {
   font: 24px "Rubik Doodle Shadow";
   color: white;
   text-align: center;
@@ -332,29 +333,29 @@ a.nav-link {
   text-align: left;
 }
 
-#show-page table {
+#current-stats-table {
   width: 350px;
   margin: 0 auto 16px;
 }
 
-#show-page tr td:first-child {
+#current-stats-table tr td:first-child {
   background-color: skyblue;
   font-weight: bold;
 }
 
-#show-page tr:first-child td:first-child {
+#current-stats-table tr:first-child td:first-child {
   border-top-left-radius: 1vw;
 }
 
-#show-page tr:first-child td:last-child {
+#current-stats-table tr:first-child td:last-child {
   border-top-right-radius: 1vw;
 }
 
-#show-page tbody tr:last-child td:last-child {
+#current-stats-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 1vw;
 }
 
-#show-page tbody tr:last-child td:first-child {
+#current-stats-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 1vw;
 }
 
@@ -380,39 +381,49 @@ a.nav-link {
   width: 700px;
 }
 
-#comments-table.table {
+#comments-table,
+#edit-comment-table {
   width: 100%;
 }
 
-#comments-table tr:first-child th:first-child {
+#comments-table tr:first-child th:first-child,
+#edit-comment-table tr:first-child th:first-child {
   border-top-left-radius: 1.8vw;
 }
 
-#comments-table tr:first-child th:last-child {
+#comments-table tr:first-child th:last-child,
+#edit-comment-table tr:first-child th:last-child {
   border-top-right-radius: 1.8vw;
 }
 
-#comments-table tbody tr:last-child td:last-child {
+#comments-table tbody tr:last-child td:last-child,
+#edit-comment-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 1.8vw;
 }
 
-#comments-table tbody tr:last-child td:first-child {
+#comments-table tbody tr:last-child td:first-child,
+#edit-comment-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 1.8vw;
 }
 
-#comments-table tr:first-child td:first-child {
+#comments-table tr:first-child td:first-child,
+#edit-comment-table tr:first-child td:first-child {
   border-top-left-radius: 0;
 }
 
-#comments-table tr:first-child td:last-child {
+#comments-table tr:first-child td:last-child,
+#edit-comment-table tr:first-child td:last-child {
   border-top-right-radius: 0;
 }
 
-#comments-table thead tr th {
+#comments-table thead tr th,
+#edit-comment-table thead tr th {
   background-color: skyblue;
 }
 
-#comments-table thead tr {
+
+#comments-table thead tr,
+#edit-comment-table thead tr {
   background-color: skyblue;
 }
 
@@ -436,6 +447,35 @@ a.nav-link {
   font-weight: normal;
 }
 
+#note-comment-date,
+#edit-note-comment-date {
+  width: 150px;
+}
+
+#note-comment {
+  text-align: left;
+}
+
+#note-comment-interaction {
+  width: 105px;
+}
+
+#comments-table .comment-interaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0;
+}
+
+
+.note-comment-content {
+  text-align: left;
+}
+
+.comment-interaction {
+  padding-right: 13px;
+}
+
 
 
 /* Sample Skills/Progression CSS */
@@ -450,4 +490,20 @@ a.nav-link {
 
 .list-source {
   color: white;
+}
+
+
+
+/* Edit Note/Comment Page CSS */
+
+.Edit.Note\/Comment-content-container #edit-comment-table {
+  margin-top: 20px;
+}
+
+.Edit.Note\/Comment-content-container #note-content {
+  width: 100%;
+}
+
+.Edit.Note\/Comment-content-container .add-comment-btn {
+  margin-bottom: 0;
 }

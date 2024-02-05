@@ -18,9 +18,9 @@
         </div>
         
         <div class="mb-3">
-        <label class="form-label">My Proficiency Level:</label>
+        <label class="form-label">My Proficiency Level (/10):</label>
             <select name="myProficiency" class="form-select" aria-label="Default select example">
-                <option value="" disabled <%= !locals.myProficiency ? 'selected' : null %>>Select My Proficiency Level</option>
+                <option value="" disabled <%= !locals.myProficiency ? 'selected' : null %>>Select My Proficiency Level (/10)</option>
                 <option value="0" <%= locals.myProficiency === '0' ? 'selected' : null %>>0</option>
                 <option value="1" <%= locals.myProficiency === '1' ? 'selected' : null %>>1</option>
                 <option value="2" <%= locals.myProficiency === '2' ? 'selected' : null %>>2</option>

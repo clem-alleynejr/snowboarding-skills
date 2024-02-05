@@ -15,7 +15,7 @@ const notesCommentsSchema = new Schema({
       userName: String,
       userAvatar: String
 }, {
-    timestamps: true
+    timestamps: true // automatically add 'createdAt' and 'updatedAt' fields
 })
 
 const snowboardingSkillSchema = new Schema({

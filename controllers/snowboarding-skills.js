@@ -10,6 +10,9 @@ module.exports = {
   delete: deleteSkill,
   edit,
   update,
+  editNoteComment,
+  updateNoteComment,
+  deleteNoteComment,
 };
 
 async function edit(req, res) {
@@ -53,7 +56,7 @@ async function update(req, res) {
 
     // if successful, return the new updated skill page
     return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
-    
+
     //if unsuccessful...
   } catch (err) {
     const validationErrors = validateSnowboardingSkill(req.body);
@@ -69,7 +72,7 @@ async function update(req, res) {
       myProficiency: updatedSnowboardSkill.myProficiency,
       viewType: "Edit Skill",
       title: "Edit Snowboarding Skill Below:",
-      errorMsg: validationErrors
+      errorMsg: validationErrors,
     });
   }
 }
@@ -141,12 +144,11 @@ async function create(req, res) {
 async function createNoteComment(req, res) {
   const snowboardingSkill = await SnowboardingSkill.findById(req.params.id);
 
-  // Add the user-centric info to req.body (the new review)
+  // Add the user info to req.body
   req.body.user = req.user._id;
-  req.body.userName = req.user.name;
-  req.body.userAvatar = req.user.avatar;
 
   snowboardingSkill.notesComments.push(req.body);
+
   try {
     await snowboardingSkill.save();
   } catch (err) {
@@ -163,4 +165,83 @@ async function show(req, res) {
     snowboardingSkill,
     // errorMsg: err.message
   });
+}
+
+async function editNoteComment(req, res) {
+  const snowboardingSkillId = req.params.snowboardingSkillId;
+  const noteCommentId = req.params.noteCommentId;
+
+  // Find the Snowboarding Skill
+  const snowboardingSkill = await SnowboardingSkill.findOne({
+    _id: snowboardingSkillId,
+    user: req.user._id,
+  });
+
+  // Find the Specific Comment
+  const noteComment = snowboardingSkill.notesComments.find(
+    (nc) => nc._id.toString() === noteCommentId
+  );
+
+  res.render("snowboarding-skills/notes-comments/edit", {
+    viewType: "Edit Note/Comment",
+    title: "Edit Note/Comment",
+    snowboardingSkill,
+    noteComment,
+    errorMsg: "",
+  });
+}
+
+async function updateNoteComment(req, res) {
+  const snowboardingSkillId = req.params.snowboardingSkillId;
+  const noteCommentId = req.params.noteCommentId;
+
+  // Find the Snowboarding Skill
+  const snowboardingSkill = await SnowboardingSkill.findOne({
+    _id: snowboardingSkillId,
+    user: req.user._id,
+  });
+
+  // Find the Specific Comment
+  const noteComment = snowboardingSkill.notesComments.find(
+    (nc) => nc._id.toString() === noteCommentId
+  );
+
+  // Edit the Comment
+  noteComment.content = req.body.content;
+
+  // Save the comment by saving the snowboarding skill model
+  await snowboardingSkill.save();
+
+  // Redirect to the skill page
+  return res.redirect(`/snowboarding-skills/${snowboardingSkillId}`);
+}
+
+async function deleteNoteComment(req, res) {
+  const snowboardingSkillId = req.params.snowboardingSkillId;
+  const noteCommentId = req.params.noteCommentId;
+
+  // Find the Snowboarding Skill
+  const snowboardingSkill = await SnowboardingSkill.findOne({
+    _id: snowboardingSkillId,
+    user: req.user._id,
+  });
+
+  // Find the Specific Comment
+  const noteComment = snowboardingSkill.notesComments.find(
+    (nc) => nc._id.toString() === noteCommentId
+  );
+
+  // Find the index of the comment in the notesComments Array
+  const noteCommentIndex = snowboardingSkill.notesComments.findIndex(
+    (nc) => nc._id.toString() === noteCommentId
+  );
+
+  // Remove the note/comment from the notesComments Array
+  snowboardingSkill.notesComments.splice(noteCommentIndex, 1);
+
+  // Save the Snowboarding Skill
+  await snowboardingSkill.save();
+
+  // Redirect to the Snowboarding Skill page
+  res.redirect(`/snowboarding-skills/${snowboardingSkillId}`)
 }
