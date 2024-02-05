@@ -457,7 +457,7 @@ a.nav-link {
 }
 
 #note-comment-interaction {
-  width: 93px;
+  width: 105px;
 }
 
 #comments-table .comment-interaction {
@@ -470,6 +470,10 @@ a.nav-link {
 
 .note-comment-content {
   text-align: left;
+}
+
+.comment-interaction {
+  padding-right: 13px;
 }
 
 
