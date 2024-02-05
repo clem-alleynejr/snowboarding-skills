@@ -15,7 +15,10 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script src="https://kit.fontawesome.com/f6f70b293c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f6f70b293c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -23,124 +26,63 @@
       class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark"
       data-bs-theme="dark"
     >
-    <div class="container-fluid">
-      <a class="navbar-brand <%= locals.viewType === 'Home' ? 'active' : null %>" href="/">
-        <img
-          src="/images/snowboarding-logo.svg"
-          alt="Logo"
-          class="d-inline-block align-text-top"
-        />
-        HOME
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <% if (user) { %>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li
-            class="nav-item <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType.includes('Skill:') ? 'active' : null %>"
-          >
-            <a href="/snowboarding-skills" class="nav-link">MY SKILLS</a>
-          </li>
-          <li
-            class="nav-item <%= locals.viewType === 'Add Skill' ? 'active' : null %>"
-          >
-            <a href="/snowboarding-skills/new" class="nav-link"> ADD SKILL</a>
-          </li>
-          <li class="nav-item <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>">
-            <a href="/sample-skills-progression" class="nav-link" >SAMPLE SKILLS/PROGRESSION</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav mr-auto authorization">
-          <li class="nav-item">
-            <p style="color: white" id="username-and-photo">
-              <img
-                src="<%= user.avatar %>"
-                alt="Avatar"
-              />
-              <%= user.name %>
-            </p>
-          </li>
-          <li class="nav-item">
-            <a href="/logout" class="nav-link">SIGN OUT</a>
-          </li>
-        </ul>
-        </div>
-
-        <% } else { %>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContentNoUser">
-
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>">
-              <a href="/sample-skills-progression" class="nav-link" >SAMPLE SKILLS/PROGRESSION</a>
-            </li>
-          </ul>
-
-
-            <ul class="navbar-nav mr-auto authorization">
-                <li class="nav-item">
-                <a href="/auth/google" class="signin" class="nav-link"
-                    >SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
-                /></a>
-                </li>
-            </ul>
-
-        </div>
-
-        <% } %>
-      </div>
-    </nav>
-    
-
-
-
-
-    <nav class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
-      
       <div class="container-fluid">
-        
-        <a class="navbar-brand <%= locals.viewType === 'Home' ? 'active' : null %>" href="/">
+        <a
+          class="navbar-brand <%= locals.viewType === 'Home' ? 'active' : null %>"
+          href="/"
+        >
           <img
-          src="/images/snowboarding-logo.svg"
-          alt="Logo"
-          class="d-inline-block align-text-top"
-        />
-        HOME
-      </a>
+            src="/images/snowboarding-logo.svg"
+            alt="Logo"
+            class="d-inline-block align-text-top"
+          />
+          HOME
+        </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType.includes('Skill:') ? 'active' : null %>" aria-current="page" href="/snowboarding-skills">MY SKILLS</a>
+              <a
+                class="nav-link <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType.includes('Skill:') ? 'active' : null %>"
+                aria-current="page"
+                href="/snowboarding-skills"
+                >MY SKILLS</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link <%= locals.viewType === 'Add Skill' ? 'active' : null %>" href="/snowboarding-skills/new">ADD SKILL</a>
+              <a
+                class="nav-link <%= locals.viewType === 'Add Skill' ? 'active' : null %>"
+                href="/snowboarding-skills/new"
+                >ADD SKILL</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>" href="/sample-skills-progression">SAMPLE SKILLS/PROGRESSION</a>
+              <a
+                class="nav-link <%= locals.viewType === 'Sample Skills/Progression' ? 'active' : null %>"
+                href="/sample-skills-progression"
+                >SAMPLE SKILLS/PROGRESSION</a
+              >
             </li>
           </ul>
+
+          <% if (user) { %>
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 authorization">
             <li class="nav-item">
               <p style="color: white" id="username-and-photo">
-                <img
-                  src="<%= user.avatar %>"
-                  alt="Avatar"
-                />
+                <img src="<%= user.avatar %>" alt="Avatar" />
                 <%= user.name %>
               </p>
             </li>
@@ -149,20 +91,33 @@
             </li>
           </ul>
 
+          <% } else { %>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 authorization">
+            <li class="nav-item">
+              <a href="/auth/google" class="signin" class="nav-link"
+                >SIGN IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+              /></a>
+            </li>
+          </ul>
+
+          <% } %>
         </div>
       </div>
     </nav>
-
 
     <!-- Page title at the top of page if this isn't the home landing page -->
     <% if (locals.viewType !== 'Home') {%>
     <!-- seemingly extra .centered-container div is required to center content card -->
     <div class="centered-container">
-        <div class="content-container <%= locals.viewType.includes('Skill:') ? 'skill-content-container' : `${locals.viewType}-content-container` %>">
-            <h1 class="page-title">
-                <%= locals.title %>
-            </h1>
-            <% } %>
+      <div
+        class="content-container <%= locals.viewType.includes('Skill:') ? 'skill-content-container' : `${locals.viewType}-content-container` %>"
+      >
+        <h1 class="page-title"><%= locals.title %></h1>
+        <% } %>
 
-
-    <!-- Note: footer.ejs partial contains the closing /div, /body, and /html tags  -->
+        <!-- Note: footer.ejs partial contains the closing /div, /body, and /html tags  -->
+      </div>
+    </div>
+  </body>
+</html>
