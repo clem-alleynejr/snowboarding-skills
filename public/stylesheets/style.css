@@ -157,7 +157,8 @@ a.nav-link {
   text-align: center;
 }
 
-.homepage-sub-title {
+.homepage-sub-title,
+#comment-edit-subtitle {
   font: 24px "Rubik Doodle Shadow";
   color: white;
   text-align: center;
@@ -491,3 +492,14 @@ a.nav-link {
 
 /* Edit Note/Comment Page CSS */
 
+.Edit.Note\/Comment-content-container #edit-comment-table {
+  margin-top: 20px;
+}
+
+.Edit.Note\/Comment-content-container #note-content {
+  width: 100%;
+}
+
+.Edit.Note\/Comment-content-container .add-comment-btn {
+  margin-bottom: 0;
+}
