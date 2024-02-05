@@ -64,8 +64,6 @@
               <img
                 src="<%= user.avatar %>"
                 alt="Avatar"
-                width="30"
-                height="30"
               />
               <%= user.name %>
             </p>
@@ -104,8 +102,8 @@
 
 
 
-    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
       
       <div class="container-fluid">
         
@@ -136,14 +134,12 @@
             </li>
           </ul>
 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 authorization">
             <li class="nav-item">
               <p style="color: white" id="username-and-photo">
                 <img
                   src="<%= user.avatar %>"
                   alt="Avatar"
-                  width="30"
-                  height="30"
                 />
                 <%= user.name %>
               </p>

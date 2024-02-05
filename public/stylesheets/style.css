@@ -138,6 +138,11 @@ a.nav-link {
   gap: 8px;
 }
 
+#username-and-photo img {
+  width: 30px;
+  height: 30px;
+}
+
 .authorization {
   align-items: center;
   gap: 8px;
