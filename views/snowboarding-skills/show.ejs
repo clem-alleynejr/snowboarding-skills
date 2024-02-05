@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <table class="table">
+  <table class="table" id="current-stats-table">
     <tbody>
       <tr>
         <td>Difficulty Level:</td>
@@ -78,12 +78,14 @@
       <tr>
         <td><%= n.createdAt.toLocaleDateString() %></td>
         <td class="note-comment-content"><%= n.content %></td>
-        <td class="comment-interaction">
+        <td>
+          <div class="comment-interaction">
           <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
             </button>
           </form>
+        
           <form
             action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>?_method=DELETE"
             method="POST"
@@ -92,6 +94,7 @@
               <i class="fa-solid fa-x"></i>
             </button>
           </form>
+        </div>
         </td>
       </tr>
       <% }); %>
