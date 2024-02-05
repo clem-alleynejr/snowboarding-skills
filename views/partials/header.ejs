@@ -57,14 +57,14 @@
               <a
                 class="nav-link <%= locals.viewType === 'My Skills' || locals.viewType === 'Edit Skill' || locals.viewType.includes('Skill:') ? 'active' : null %>"
                 aria-current="page"
-                href="/snowboarding-skills"
+                href="<%= user ? '/snowboarding-skills' : '/auth/google' %>"
                 >MY SKILLS</a
               >
             </li>
             <li class="nav-item">
               <a
                 class="nav-link <%= locals.viewType === 'Add Skill' ? 'active' : null %>"
-                href="/snowboarding-skills/new"
+                href="<%= user ? '/snowboarding-skills/new' : '/auth/google' %>"
                 >ADD SKILL</a
               >
             </li>
@@ -117,7 +117,4 @@
         <% } %>
 
         <!-- Note: footer.ejs partial contains the closing /div, /body, and /html tags  -->
-      </div>
-    </div>
-  </body>
-</html>
+
