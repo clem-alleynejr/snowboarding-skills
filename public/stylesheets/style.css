@@ -527,4 +527,22 @@ a.nav-link {
     flex-direction: column;
     gap: 15px;
     }
+
+  .skills-table #interaction-column {
+    width: 180px;
+  }
+
 }
+
+
+
+@media (max-width: 768px) {
+  .skills-table .skill-interaction {
+    flex-direction: row;
+  }
+  
+  .my-skills-btn-span {
+    display: none;
+  }
+}
+
