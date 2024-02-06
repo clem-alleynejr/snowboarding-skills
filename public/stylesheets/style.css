@@ -503,6 +503,10 @@ a.nav-link {
 }
 
 
+
+/* Mobile Design */
+
+
 @media (max-width: 991px) {
   .non-auth-links {
     margin-top: 15px;
@@ -518,4 +522,9 @@ a.nav-link {
     padding-top: 25px;
     border-radius: 0;
   }
+
+  .skills-table .skill-interaction {
+    flex-direction: column;
+    gap: 15px;
+    }
 }
