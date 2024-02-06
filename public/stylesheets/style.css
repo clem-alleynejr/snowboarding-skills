@@ -502,6 +502,10 @@ a.nav-link {
   margin-bottom: 0;
 }
 
+button.toggle-btn {
+  display: none;
+}
+
 
 
 /* Mobile Design */
@@ -536,9 +540,9 @@ a.nav-link {
     display: none;
   }
 
-  .toggle-btn {
+  button.toggle-btn {
     margin: 0 auto 10px;
-
+    display: block;
   }
 }
 
