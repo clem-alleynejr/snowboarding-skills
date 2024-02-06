@@ -1,0 +1,57 @@
+<%- include('../../partials/header') %>
+
+<h2 id="comment-edit-subtitle">For <%= snowboardingSkill.skill %>:</h2>
+
+<table id="edit-comment-table" class="table">
+  <thead>
+    <th id="edit-note-comment-date">Date</th>
+    <th>Note/Comment</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= noteComment.createdAt.toLocaleDateString() %></td>
+      <td>
+        <form
+          id="add-note-form"
+          method="POST"
+          action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= noteComment._id %>?_method=PUT"
+        >
+          <div>
+            <textarea name="content" id="note-content">
+          <%= noteComment.content %></textarea
+            >
+          </div>
+
+          <div class="add-comment-btn">
+            <input
+              type="submit"
+              id="submit-btn"
+              value="Finish Editing"
+              disabled
+            />
+          </div>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- disable submit button if note/comment is blank -->
+<script>
+  const textarea = document.getElementById("note-content");
+  const submitBtn = document.getElementById("submit-btn");
+
+  function checkTextArea() {
+    if (textarea.value.trim() === "") {
+      submitBtn.disabled = true;
+    } else {
+      submitBtn.disabled = false;
+    }
+  }
+
+  checkTextArea();
+
+  textarea.addEventListener("input", checkTextArea);
+</script>
+
+<%- include('../../partials/footer') %>

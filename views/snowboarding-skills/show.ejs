@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <table class="table">
+  <table class="table" id="current-stats-table">
     <tbody>
       <tr>
         <td>Difficulty Level:</td>
         <td><%= snowboardingSkill.difficultyLevel %></td>
       </tr>
       <tr>
-        <td>My Proficiency Level:</td>
+        <td>My Proficiency Level (/10):</td>
         <td><%= snowboardingSkill.myProficiency %></td>
       </tr>
     </tbody>
@@ -42,27 +42,60 @@
     action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments"
   >
     <div>
-      <textarea name="content" placeholder="Add a note/comment..."></textarea>
+      <textarea name="content" id="note-content" placeholder="Add a note/comment..."></textarea>
     </div>
 
     <div class="add-comment-btn">
-    <input type="submit" value="Add Note/Comment"/>
+    <input type="submit" id="submit-btn" value="Add Note/Comment" disabled/>
     </div>
   </form>
+
+  <!-- disable submit button if note/comment is blank -->
+<script>
+  const textarea = document.getElementById("note-content");
+  const submitBtn = document.getElementById("submit-btn");
+
+  textarea.addEventListener("input", function () {
+    if (textarea.value.trim() === "") {
+      submitBtn.disabled = true;
+    } else {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
 
   <% if (snowboardingSkill.notesComments.length) { %>
   <table id="comments-table" class="table">
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Note/Comment</th>
+        <th id="note-comment-date">Date</th>
+        <th id="note-comment">Note/Comment</th>
+        <th id="note-comment-interaction"></th>
       </tr>
     </thead>
     <tbody>
       <% snowboardingSkill.notesComments.forEach(function(n) { %>
       <tr>
         <td><%= n.createdAt.toLocaleDateString() %></td>
-        <td><%= n.content %></td>
+        <td class="note-comment-content"><%= n.content %></td>
+        <td>
+          <div class="comment-interaction">
+          <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>/edit" method="GET">
+            <button type="submit" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-pencil"></i>
+            </button>
+          </form>
+        
+          <form
+            action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" class="btn btn-danger btn-sm">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </form>
+        </div>
+        </td>
       </tr>
       <% }); %>
     </tbody>

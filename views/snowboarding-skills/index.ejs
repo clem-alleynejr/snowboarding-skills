@@ -12,7 +12,7 @@
     <tr>
       <th id="skill-column">Skill</th>
       <th id="difficulty-column">Difficulty Level</th>
-      <th id="proficiency-column">My<br />Proficiency Level</th>
+      <th id="proficiency-column">My<br />Proficiency Level<br />(/10)</th>
       <th id="interaction-column"></th>
     </tr>
   </thead>
@@ -24,9 +24,6 @@
       <td><%= s.myProficiency %></td>
       <td>
         <div class="skill-interaction">
-          <!-- <a href="/snowboarding-skills/<%= s._id %>"
-            >View Notes/<br />Comments Log</a
-          > -->
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
             <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
               <i class="fa-solid fa-book"></i>
