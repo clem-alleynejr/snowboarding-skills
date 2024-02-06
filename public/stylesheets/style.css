@@ -535,6 +535,11 @@ a.nav-link {
   .skills-table .skill-interaction.hidden {
     display: none;
   }
+
+  .toggle-btn {
+    margin: 0 auto 10px;
+
+  }
 }
 
 

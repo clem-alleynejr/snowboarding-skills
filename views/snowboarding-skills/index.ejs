@@ -23,7 +23,10 @@
       <td><%= s.difficultyLevel %></td>
       <td><%= s.myProficiency %></td>
       <td>
-
+                <!-- toggle skill interaction button for mobile: -->
+                <button type="button" class="btn btn-secondary toggle-btn" data-skill-id="<%= s._id %>">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
 
         <div class="skill-interaction hidden" data-skill-id="<%= s._id %>">
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
@@ -48,10 +51,6 @@
             </button>
           </form>
         </div>
-        <!-- toggle skill interaction button for mobile: -->
-        <button type="button" class="btn btn-secondary toggle-btn" data-skill-id="<%= s._id %>">
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </button>
       </td>
 
 
