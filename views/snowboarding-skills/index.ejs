@@ -23,6 +23,8 @@
       <td><%= s.difficultyLevel %></td>
       <td><%= s.myProficiency %></td>
       <td>
+
+
         <div class="skill-interaction">
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
             <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
@@ -46,7 +48,12 @@
             </button>
           </form>
         </div>
+        <button type="button" class="btn btn-secondary toggle-btn" data-skill-id="<%= s._id %>">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
       </td>
+
+
     </tr>
     <% }); %>
   </tbody>
@@ -54,7 +61,7 @@
 
 <script>
   function skillMenu() {
-    
+
   }
 
 </script>
