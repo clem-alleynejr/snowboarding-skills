@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('../images/homepage-photo.JPG');
   background-size: cover;
@@ -70,6 +69,9 @@ a {
 
 
 /* NavBar CSS */
+nav {
+  position: relative;
+}
 
 a.nav-link {
   color: lightskyblue;
