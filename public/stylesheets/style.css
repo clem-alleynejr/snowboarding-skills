@@ -69,9 +69,6 @@ a {
 
 
 /* NavBar CSS */
-nav {
-  position: relative;
-}
 
 a.nav-link {
   color: lightskyblue;
@@ -120,15 +117,6 @@ a.nav-link {
   width: 30px;
 }
 
-#navbarSupportedContent {
-  justify-content: space-between;
-  align-items: center;
-}
-
-#navbarSupportedContentNoUser {
-  justify-content: space-between;
-}
-
 .navbar {
   align-items: center;
 }
@@ -150,10 +138,9 @@ a.nav-link {
   gap: 8px;
 }
 
-#navbarSupportedContentNoUser .nav-item {
-  margin-right: 10px;
+.non-auth-links {
+  align-items: center;
 }
-
 
 
 /* Homepage CSS */
@@ -513,4 +500,22 @@ a.nav-link {
 
 .Edit.Note\/Comment-content-container .add-comment-btn {
   margin-bottom: 0;
+}
+
+
+@media (max-width: 991px) {
+  .non-auth-links {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .authorization {
+    margin-top: 60px;
+  }
+
+  .authorization li:first-child {
+    border-top: 1px solid white;
+    padding-top: 25px;
+    border-radius: 0;
+  }
 }
