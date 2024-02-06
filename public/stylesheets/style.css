@@ -532,6 +532,9 @@ a.nav-link {
     width: 180px;
   }
 
+  .skills-table .skill-interaction.hidden {
+    display: none;
+  }
 }
 
 

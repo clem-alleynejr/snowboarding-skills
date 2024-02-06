@@ -25,7 +25,7 @@
       <td>
 
 
-        <div class="skill-interaction">
+        <div class="skill-interaction hidden" data-skill-id="<%= s._id %>">
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
             <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
               <i class="fa-solid fa-book"></i>
@@ -48,6 +48,7 @@
             </button>
           </form>
         </div>
+        <!-- toggle skill interaction button for mobile: -->
         <button type="button" class="btn btn-secondary toggle-btn" data-skill-id="<%= s._id %>">
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </button>
@@ -60,9 +61,29 @@
 </table>
 
 <script>
-  function skillMenu() {
+// Add event listener to toggle buttons once DOM is loaded and parsed
+document.addEventListener('DOMContentLoaded', function() {
 
+  // Only have the toggle button behavior when window is less than 991px
+  if (window.matchMedia('(max-width: 991px)').matches) {
+
+    // Select all the toggle buttons and add 'click' listeners on them
+    var toggleButtons = document.querySelectorAll('.toggle-btn');
+    toggleButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+
+        //get the data-skill-id attribute of a clicked toggle button and select the skill's respective skill interaction buttons
+        var skillId = this.getAttribute('data-skill-id');
+        var skillInteractionDiv = document.querySelector(`.skill-interaction[data-skill-id="${skillId}"]`);
+        
+        //toggle the 'hidden' class on the interaction buttons
+        if (skillInteractionDiv) {
+          skillInteractionDiv.classList.toggle('hidden');
+        }
+      });
+    });
   }
+});
 
 </script>
 
