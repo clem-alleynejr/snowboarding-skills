@@ -84,7 +84,7 @@
 
           // Hide all skillInteractionDivs except the one for the toggle clicked
           skillInteractionDivs.forEach(function (div) {
-            // Note: in the left side of the condition statement, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
+            // Note: in the left side of the condition statement below, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
             // 'data-skill-id' ==> 'skillId'
             // The right side of the condition statement is the specific skillId of the clicked toggle
             if (div.dataset.skillId !== skillId) {

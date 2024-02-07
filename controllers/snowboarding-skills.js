@@ -125,6 +125,9 @@ async function create(req, res) {
     return errors;
   };
 
+    // Add the user info to req.body
+    req.body.user = req.user._id;
+
   try {
     await SnowboardingSkill.create(req.body);
     res.redirect("/snowboarding-skills");
@@ -134,10 +137,11 @@ async function create(req, res) {
       skill: req.body.skill,
       difficultyLevel: req.body.difficultyLevel,
       myProficiency: req.body.myProficiency,
-      viewType: "Add Skill",
+      viewType: "Add Skill", 
       title: "Add Snowboarding Skill Below:",
       errorMsg: validationErrors,
     });
+    console.log(err)
   }
 }
 
