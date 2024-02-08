@@ -2,9 +2,6 @@
 var toggleButtons = document.querySelectorAll(".toggle-btn");
 var skillInteractionDivs = document.querySelectorAll(".skill-interaction");
 
-// Initialize tracking for window size
-var currentWindowWidth = window.innerWidth;
-
 // add 'click' event listeners to each toggle button
 toggleButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -24,7 +21,7 @@ toggleButtons.forEach(function (button) {
         if (div.classList.contains("active")) {
           div.classList.remove("active");
 
-        // if not already active, toggle it active:
+          // if not already active, toggle it active:
         } else {
           div.classList.add("active");
         }
@@ -47,6 +44,10 @@ document.addEventListener("click", function () {
   });
 });
 
+// Initialize tracking for window size
+var currentWindowWidth = window.innerWidth;
+
+// resets the 'active' classes if page shrinks from desktop to mobile
 window.addEventListener("resize", function () {
   if (window.innerWidth <= 991 && currentWindowWidth > 991) {
     skillInteractionDivs.forEach(function (div) {
@@ -57,4 +58,35 @@ window.addEventListener("resize", function () {
   }
   // Update current window width tracking
   currentWindowWidth = window.innerWidth;
+});
+
+// Select all skill interaction buttons
+var skillInteractionbuttons = document.querySelectorAll(
+  '.skill-interaction button[type="submit"]'
+);
+
+// makes the buttons larger upon initial page load if on mobile (550 or less pixels)
+skillInteractionbuttons.forEach(function (button) {
+  if (currentWindowWidth <= 550) {
+    if (button.classList.contains("btn-sm")) {
+      button.classList.remove("btn-sm");
+    }
+  }
+});
+
+// makes the skill interaction buttons bigger or smaller depending on what size the window is resized to
+window.addEventListener("resize", function () {
+    skillInteractionbuttons.forEach(function (button) {
+        // if the window is less that 550px, make the buttons bigger
+      if (window.innerWidth <= 550) {
+        if (button.classList.contains("btn-sm")) {
+          button.classList.remove("btn-sm");
+        }
+        // if the window size is bigger than 550px, make the buttons smaller
+      } else {
+        if (!button.classList.contains('btn-sm')) {
+            button.classList.add("btn-sm")
+        }
+      }
+    })
 });

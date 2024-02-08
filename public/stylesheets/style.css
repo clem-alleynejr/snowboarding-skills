@@ -608,3 +608,15 @@ a.nav-link {
 
 }
 
+@media (max-width: 425px) {
+
+  .page-title {
+    font: 35px "Rubik Doodle Shadow";
+  }
+
+  .content-container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
