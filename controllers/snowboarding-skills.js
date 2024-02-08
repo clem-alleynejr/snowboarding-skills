@@ -141,7 +141,6 @@ async function create(req, res) {
       title: "Add Snowboarding Skill Below:",
       errorMsg: validationErrors,
     });
-    console.log(err)
   }
 }
 

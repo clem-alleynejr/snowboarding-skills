@@ -39,12 +39,18 @@
               <span class="my-skills-btn-span"
                 >View My Notes/<br />Comments Log</span
               >
+              <span class="tablet-span">
+                View
+              </span>
             </button>
           </form>
           <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
               <span class="my-skills-btn-span">Edit Skill</span>
+              <span class="tablet-span">
+                Edit
+              </span>
             </button>
           </form>
           <form
@@ -52,8 +58,11 @@
             method="POST"
           >
             <button type="submit" class="btn btn-danger btn-sm">
-              <i class="fa-solid fa-x"></i>
+              <i class="fa-solid fa-trash"></i>
               <span class="my-skills-btn-span">Delete Skill</span>
+              <span class="tablet-span">
+                Delete
+              </span>
             </button>
           </form>
         </div>
