@@ -567,7 +567,7 @@ a.nav-link {
   }
 
   .skills-table .skill-interaction {
-    display: flex;
+    display: none;
   }
 
   .skills-table #interaction-column {
