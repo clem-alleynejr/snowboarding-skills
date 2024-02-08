@@ -23,7 +23,7 @@
       <td><%= s.difficultyLevel %></td>
       <td><%= s.myProficiency %></td>
       <td>
-        <!-- toggle skill interaction button for mobile: -->
+        <!-- "toggle skill interactions" button for mobile: -->
         <button
           type="button"
           class="btn btn-secondary toggle-btn"
@@ -32,25 +32,21 @@
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </button>
 
-        <div class="skill-interaction hidden" data-skill-id="<%= s._id %>">
+        <div class="skill-interaction" data-skill-id="<%= s._id %>">
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
             <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
               <i class="fa-solid fa-book"></i>
               <span class="my-skills-btn-span"
                 >View My Notes/<br />Comments Log</span
               >
-              <span class="tablet-span">
-                View
-              </span>
+              <span class="tablet-span"> View </span>
             </button>
           </form>
           <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
               <span class="my-skills-btn-span">Edit Skill</span>
-              <span class="tablet-span">
-                Edit
-              </span>
+              <span class="tablet-span"> Edit </span>
             </button>
           </form>
           <form
@@ -60,9 +56,7 @@
             <button type="submit" class="btn btn-danger btn-sm">
               <i class="fa-solid fa-trash"></i>
               <span class="my-skills-btn-span">Delete Skill</span>
-              <span class="tablet-span">
-                Delete
-              </span>
+              <span class="tablet-span"> Delete </span>
             </button>
           </form>
         </div>
@@ -73,51 +67,41 @@
 </table>
 
 <script>
-  // Add event listener to toggle buttons once DOM is loaded and parsed
-  document.addEventListener("DOMContentLoaded", function () {
-    // Only have the toggle button behavior when window is less than 991px
-    if (window.matchMedia("(max-width: 991px)").matches) {
-      // Select all the toggle buttons and all sets of skill interaction buttons
-      var toggleButtons = document.querySelectorAll(".toggle-btn");
-      var skillInteractionDivs =
-        document.querySelectorAll(".skill-interaction");
+  // Select all the toggle buttons and all sets of skill interaction buttons
+  var toggleButtons = document.querySelectorAll(".toggle-btn");
+  var skillInteractionDivs = document.querySelectorAll(".skill-interaction");
 
-      // add 'click' event listeners to each toggle button
-      toggleButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-          // Prevents Click event from propogating outside
-          event.stopPropagation();
+  // add 'click' event listeners to each toggle button
+  toggleButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Prevents Click event from propogating outside
+      event.stopPropagation();
 
-          // get the 'data-skill-id' attribute of the clicked toggle button
-          var skillId = this.getAttribute("data-skill-id");
+      // get the 'data-skill-id' attribute of the clicked toggle button
+      var skillId = this.getAttribute("data-skill-id");
 
-          // Hide all skillInteractionDivs except the one for the toggle clicked
-          skillInteractionDivs.forEach(function (div) {
-            // Note: in the left side of the condition statement below, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
-            // 'data-skill-id' ==> 'skillId'
-            // The right side of the condition statement is the specific skillId of the clicked toggle
-            if (div.dataset.skillId !== skillId) {
-              div.classList.add("hidden");
-            }
-          });
-
-          // Toggle the visibility of the skillInteractionDiv corresponding to the clicked button
-          var skillInteractionDiv = document.querySelector(
-            `.skill-interaction[data-skill-id="${skillId}"]`
-          );
-          if (skillInteractionDiv) {
-            skillInteractionDiv.classList.toggle("hidden");
-          }
-        });
+      // show the skillInteractionDiv for the toggle clicked
+      skillInteractionDivs.forEach(function (div) {
+        if (div.classList.contains("active")) {
+          div.classList.remove("active");
+        }
+        // Note: in the left side of the condition statement below, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
+        // 'data-skill-id' ==> 'skillId'
+        // The right side of the condition statement is the specific skillId of the clicked toggle
+        if (div.dataset.skillId === skillId) {
+          div.classList.add("active");
+        }
       });
+    });
+  });
 
-      // Add click event listener to whole page to hide all skillInteractionDivs when anything else but the toggles are clicked
-      document.addEventListener("click", function () {
-        skillInteractionDivs.forEach(function (div) {
-          div.classList.add("hidden");
-        });
-      });
-    }
+  // Add click event listener to whole page to hide all skillInteractionDivs when anything else but the toggles are clicked
+  document.addEventListener("click", function () {
+    skillInteractionDivs.forEach(function (div) {
+      if (div.classList.contains("active")) {
+        div.classList.remove("active");
+      }
+    });
   });
 </script>
 

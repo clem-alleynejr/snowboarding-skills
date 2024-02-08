@@ -534,16 +534,17 @@ a.nav-link {
   }
 
   .skills-table .skill-interaction {
+    display: none;
+  }
+
+  .skills-table .skill-interaction.active {
+    display: flex;
     flex-direction: column;
     gap: 15px;
     }
 
   .skills-table #interaction-column {
     width: 180px;
-  }
-
-  .skills-table .skill-interaction.hidden {
-    display: none;
   }
 
   .skills-table button.toggle-btn {
