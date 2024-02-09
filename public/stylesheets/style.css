@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('../images/homepage-photo.JPG');
   background-size: cover;
@@ -69,6 +68,14 @@ a {
 }
 
 
+.skills-table button.toggle-btn {
+  display: none;
+}
+
+.tablet-span {
+  display: none;
+}
+
 /* NavBar CSS */
 
 a.nav-link {
@@ -118,15 +125,6 @@ a.nav-link {
   width: 30px;
 }
 
-#navbarSupportedContent {
-  justify-content: space-between;
-  align-items: center;
-}
-
-#navbarSupportedContentNoUser {
-  justify-content: space-between;
-}
-
 .navbar {
   align-items: center;
 }
@@ -138,15 +136,19 @@ a.nav-link {
   gap: 8px;
 }
 
+#username-and-photo img {
+  width: 30px;
+  height: 30px;
+}
+
 .authorization {
   align-items: center;
   gap: 8px;
 }
 
-#navbarSupportedContentNoUser .nav-item {
-  margin-right: 10px;
+.non-auth-links {
+  align-items: center;
 }
-
 
 
 /* Homepage CSS */
@@ -229,6 +231,12 @@ a.nav-link {
 
 #skill-column {
   width: 165px;
+}
+
+.skills-table td:nth-child(1) {
+  max-width: 165px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 #difficulty-column {
@@ -506,4 +514,157 @@ a.nav-link {
 
 .Edit.Note\/Comment-content-container .add-comment-btn {
   margin-bottom: 0;
+}
+
+
+
+
+
+/* Mobile Design */
+
+
+@media (max-width: 991px) {
+  .non-auth-links {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .authorization {
+    margin-top: 60px;
+  }
+
+  .authorization li:first-child {
+    border-top: 1px solid white;
+    padding-top: 25px;
+    border-radius: 0;
+  }
+
+  .skills-table .skill-interaction {
+    display: none;
+  }
+
+  .skills-table .skill-interaction.active {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 25px auto;
+    }
+
+  .skills-table #interaction-column {
+    width: 180px;
+  }
+
+  .skills-table button.toggle-btn {
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
+
+
+@media (max-width: 737px) {
+
+  .tablet-span {
+    display: inline-block;
+  }
+  
+  .my-skills-btn-span {
+    display: none;
+  }
+
+  .skills-table #difficulty-column {
+    width: 105px;
+  }
+
+  .skills-table #interaction-column {
+    width: 120px;
+  }
+
+  .skills-table #proficiency-column {
+    width: 90px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .tablet-span {
+    display: none;
+  }
+
+  .skills-table .skill-interaction {
+    margin-right: 0;
+  }
+
+  .skills-table #interaction-column {
+    width: 60px;
+  }
+
+}
+
+@media (max-width: 490px) {
+  .skills-table #difficulty-column {
+    width: 105px;
+  }
+
+  .skills-table #skill-column {
+    width: 100px;
+  }
+
+  .skills-table td:nth-child(1) {
+    max-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 425px) {
+  .skills-table #proficiency-column {
+    padding: 8px 0;
+  }
+
+  .skills-table #interaction-column {
+    /* padding-left: 0; */
+    padding: 8px 0;
+  }
+
+  .skills-table tr td:last-child {
+    /* padding-left: 0; */
+    padding: 8px 0;
+  }
+  
+  
+  .page-title {
+    font: 40px "Rubik Doodle Shadow";
+  }
+  
+  .content-container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .page-title {
+    font: 35px "Rubik Doodle Shadow";
+  }
+
+  .skills-table tr td:nth-child(2) {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .skills-table #skill-column {
+    width: 60px;
+  }
+
+  .skills-table td:nth-child(1) {
+    max-width: 60px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
 }

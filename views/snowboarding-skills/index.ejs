@@ -23,17 +23,30 @@
       <td><%= s.difficultyLevel %></td>
       <td><%= s.myProficiency %></td>
       <td>
-        <div class="skill-interaction">
+        <!-- "toggle skill interactions" button for mobile: -->
+        <button
+          type="button"
+          class="btn btn-secondary toggle-btn"
+          data-skill-id="<%= s._id %>"
+        >
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+
+        <div class="skill-interaction" data-skill-id="<%= s._id %>">
           <form action="/snowboarding-skills/<%= s._id %>" method="GET">
             <button type="submit" class="btn btn-warning view-notes-btn btn-sm">
               <i class="fa-solid fa-book"></i>
-              <span>View My Notes/<br />Comments Log</span>
+              <span class="my-skills-btn-span"
+                >View My Notes/<br />Comments Log</span
+              >
+              <span class="tablet-span"> View </span>
             </button>
           </form>
           <form action="/snowboarding-skills/<%= s._id %>/edit" method="GET">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
-              Edit Skill
+              <span class="my-skills-btn-span">Edit Skill</span>
+              <span class="tablet-span"> Edit </span>
             </button>
           </form>
           <form
@@ -41,8 +54,9 @@
             method="POST"
           >
             <button type="submit" class="btn btn-danger btn-sm">
-              <i class="fa-solid fa-x"></i>
-              Delete Skill
+              <i class="fa-solid fa-trash"></i>
+              <span class="my-skills-btn-span">Delete Skill</span>
+              <span class="tablet-span"> Delete </span>
             </button>
           </form>
         </div>
