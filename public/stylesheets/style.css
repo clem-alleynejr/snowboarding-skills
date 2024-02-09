@@ -82,15 +82,12 @@ a.nav-link {
   color: lightskyblue;
 }
 
-.nav-item {
+.nav-link {
   border-radius: 6px;
 }
 
-.nav-item.active {
+.navbar-nav .nav-link.active {
   background-color: gold;
-}
-
-.nav-item.active > a {
   color: red;
 }
 
