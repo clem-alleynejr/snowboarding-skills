@@ -547,7 +547,7 @@ a.nav-link {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-top: 25px;
+    margin: 25px auto;
     }
 
   .skills-table #interaction-column {
@@ -555,7 +555,7 @@ a.nav-link {
   }
 
   .skills-table button.toggle-btn {
-    margin: 0 auto 10px;
+    margin: 0 auto;
     display: block;
   }
 
@@ -626,11 +626,13 @@ a.nav-link {
   }
 
   .skills-table #interaction-column {
-    padding-left: 0;
+    /* padding-left: 0; */
+    padding: 8px 0;
   }
 
   .skills-table tr td:last-child {
-    padding-left: 0;
+    /* padding-left: 0; */
+    padding: 8px 0;
   }
   
   
@@ -648,37 +650,21 @@ a.nav-link {
   .page-title {
     font: 35px "Rubik Doodle Shadow";
   }
-}
 
-
-/* @media (max-width: 385px) {
-  .skills-table #difficulty-column {
-    width: 105px;
-  }
-
-  .skills-table #interaction-column {
-    width: 60px;
-  }
-  
-  .skills-table th,
-  .skills-table td {
-    padding: 8px 0px;
+  .skills-table tr td:nth-child(2) {
+    padding: 8px 0;
   }
 }
-
 
 @media (max-width: 360px) {
-  
-  .skills-table #difficulty-column {
-    width: 90px;
+
+  .skills-table #skill-column {
+    width: 60px;
   }
 
-
-  .skills-table #proficiency-column {
-    width: 80px;
+  .skills-table td:nth-child(1) {
+    max-width: 60px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
-
-  .skills-table #interaction-column {
-    width: 45px;
-  }
-} */
+}
