@@ -298,7 +298,7 @@ a.nav-link {
 
 .Add.Skill-content-container,
 .Edit.Skill-content-container {
-  width: 700px;
+  max-width: 700px;
   padding-bottom: 20px;
 }
 
@@ -626,12 +626,10 @@ a.nav-link {
   }
 
   .skills-table #interaction-column {
-    /* padding-left: 0; */
     padding: 8px 0;
   }
 
   .skills-table tr td:last-child {
-    /* padding-left: 0; */
     padding: 8px 0;
   }
   
