@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url('../images/homepage-photo.JPG');
+  background-image: url("../images/homepage-photo.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .signin {
@@ -66,7 +65,6 @@ a {
   width: fit-content;
   margin-bottom: 5px;
 }
-
 
 .skills-table button.toggle-btn {
   display: none;
@@ -147,7 +145,6 @@ a.nav-link {
   align-items: center;
 }
 
-
 /* Homepage CSS */
 
 .homepage-title {
@@ -178,11 +175,13 @@ a.nav-link {
   display: inline-block;
 }
 
-.homepage form {
+.homepage-container .home-skills-btn,
+.homepage-container .home-new-skill-btn {
   margin-top: 10px;
 }
 
-.home-signin-btn > img, span {
+.home-signin-btn > img,
+span {
   display: inline-block;
   vertical-align: middle;
 }
@@ -194,7 +193,6 @@ a.nav-link {
 .user-home-btn {
   display: inline-block;
 }
-
 
 /* My Skills Page CSS */
 
@@ -281,7 +279,6 @@ a.nav-link {
   gap: 10px;
 }
 
-
 /* Add Skill/Edit Skill Page CSS */
 
 .add-skill-form,
@@ -315,7 +312,6 @@ a.nav-link {
 .Edit.Skill-content-container .mb-3 .form-label {
   align-self: flex-start;
 }
-
 
 /* Show Skill Page CSS */
 
@@ -426,7 +422,6 @@ a.nav-link {
   background-color: skyblue;
 }
 
-
 #comments-table thead tr,
 #edit-comment-table thead tr {
   background-color: skyblue;
@@ -472,7 +467,6 @@ a.nav-link {
   margin-right: 0;
 }
 
-
 .note-comment-content {
   text-align: left;
 }
@@ -481,8 +475,6 @@ a.nav-link {
   padding-right: 13px;
 }
 
-
-
 /* Sample Skills/Progression CSS */
 
 .Sample.Skills\/Progression-content-container #interaction-column {
@@ -490,14 +482,18 @@ a.nav-link {
 }
 
 .Sample.Skills\/Progression-content-container table {
-  margin: 20px auto;
+  margin-bottom: 25px;
 }
 
 .list-source {
   color: white;
 }
 
-
+.Sample.Skills\/Progression-content-container .home-skills-btn,
+.Sample.Skills\/Progression-content-container .home-new-skill-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 /* Edit Note/Comment Page CSS */
 
@@ -513,12 +509,7 @@ a.nav-link {
   margin-bottom: 0;
 }
 
-
-
-
-
 /* Mobile Design */
-
 
 @media (max-width: 991px) {
   .non-auth-links {
@@ -545,7 +536,7 @@ a.nav-link {
     flex-direction: column;
     gap: 40px;
     margin: 25px auto;
-    }
+  }
 
   .skills-table #interaction-column {
     width: 180px;
@@ -555,17 +546,13 @@ a.nav-link {
     margin: 0 auto;
     display: block;
   }
-
 }
 
-
-
 @media (max-width: 737px) {
-
   .tablet-span {
     display: inline-block;
   }
-  
+
   .my-skills-btn-span {
     display: none;
   }
@@ -581,12 +568,9 @@ a.nav-link {
   .skills-table #proficiency-column {
     width: 90px;
   }
-
 }
 
-
 @media (max-width: 550px) {
-
   .tablet-span {
     display: none;
   }
@@ -599,6 +583,9 @@ a.nav-link {
     width: 60px;
   }
 
+  .Sample.Skills\/Progression-content-container .page-title {
+    font: 38px "Rubik Doodle Shadow"
+  }
 }
 
 @media (max-width: 490px) {
@@ -615,6 +602,7 @@ a.nav-link {
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
+
 }
 
 @media (max-width: 425px) {
@@ -629,15 +617,18 @@ a.nav-link {
   .skills-table tr td:last-child {
     padding: 8px 0;
   }
-  
-  
+
   .page-title {
     font: 40px "Rubik Doodle Shadow";
   }
-  
+
   .My.Skills-content-container {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .Sample.Skills\/Progression-content-container .page-title {
+    font: 28px "Rubik Doodle Shadow"
   }
 }
 
@@ -652,7 +643,6 @@ a.nav-link {
 }
 
 @media (max-width: 360px) {
-
   .skills-table #skill-column {
     width: 60px;
   }
