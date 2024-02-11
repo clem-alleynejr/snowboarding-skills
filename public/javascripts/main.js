@@ -96,8 +96,12 @@ var difficultyCells = document.querySelectorAll(
   ".skills-table tbody tr td:nth-child(2)"
 );
 
-// if page initialized is less than or equal to 425px
+// select 'My proficiency level' header
+var proficiencyHeader = document.getElementById("proficiency-column");
+
+// if page initialized is less than or equal to 425px, make the difficulties shorthand and the proficiency header shorthand
 if (currentWindowWidth <= 425) {
+  proficiencyHeader.textContent = "My Prof. Level (/10)";
   difficultyCells.forEach((cell) => {
     const difficultyLevel = cell.textContent.trim();
     switch (difficultyLevel) {
@@ -119,8 +123,9 @@ if (currentWindowWidth <= 425) {
 
 // Difficulty level shorthand for resizing window
 window.addEventListener("resize", function () {
-  difficultyCells.forEach((cell) => {
-    if (this.window.innerWidth <= 425) {
+  if (this.window.innerWidth <= 425) {
+    proficiencyHeader.textContent = "My Prof. Level (/10)";
+    difficultyCells.forEach((cell) => {
       const difficultyLevel = cell.textContent.trim();
       switch (difficultyLevel) {
         case "Beginner":
@@ -140,7 +145,10 @@ window.addEventListener("resize", function () {
           cell.textContent = "Exp.";
           break;
       }
-    } else {
+    });
+  } else {
+    difficultyCells.forEach((cell) => {
+      proficiencyHeader.textContent = "My Proficiency Level (/10)";
       const difficultyLevel = cell.textContent.trim();
       switch (difficultyLevel) {
         case "Beginner":
@@ -160,6 +168,6 @@ window.addEventListener("resize", function () {
           cell.textContent = "Expert";
           break;
       }
-    }
-  });
+    });
+  }
 });
