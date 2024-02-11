@@ -555,6 +555,10 @@ span {
 }
 
 @media (max-width: 737px) {
+  .My.Skills-content-container .page-title {
+    max-width: 450px;
+  }
+
   .tablet-span {
     display: inline-block;
   }
@@ -577,6 +581,9 @@ span {
 }
 
 @media (max-width: 550px) {
+  .My.Skills-content-container .page-title {
+    max-width: 400px;
+  }
   .tablet-span {
     display: none;
   }
@@ -600,7 +607,7 @@ span {
   }
 
   .skills-table #skill-column {
-    width: 100px;
+    width: 140px;
   }
 
   .skills-table td:nth-child(1) {
@@ -613,6 +620,9 @@ span {
 
 @media (max-width: 425px) {
 
+  .My.Skills-content-container .page-title {
+    max-width: 350px;
+  }
 
   .skills-table #proficiency-column {
     width: 77px;
@@ -634,6 +644,10 @@ span {
 }
 
 @media (max-width: 375px) {
+  .My.Skills-content-container .page-title {
+    max-width: 300px;
+  }
+
   .page-title {
     font: 35px "Rubik Doodle Shadow";
   }
