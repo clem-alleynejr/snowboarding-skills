@@ -546,6 +546,12 @@ span {
     margin: 0 auto;
     display: block;
   }
+
+  .navbar-nav .nav-link.active {
+    background-color: gold;
+    color: red;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 737px) {
