@@ -606,26 +606,21 @@ span {
 }
 
 @media (max-width: 425px) {
+
+
   .skills-table #proficiency-column {
-    padding: 8px 0;
+    width: 77px;
   }
 
-  .skills-table #interaction-column {
-    padding: 8px 0;
-  }
-
-  .skills-table tr td:last-child {
-    padding: 8px 0;
+  .skills-table #difficulty-column {
+    width: 95px;
   }
 
   .page-title {
     font: 40px "Rubik Doodle Shadow";
   }
 
-  .My.Skills-content-container {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+
 
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
@@ -637,8 +632,17 @@ span {
     font: 35px "Rubik Doodle Shadow";
   }
 
-  .skills-table tr td:nth-child(2) {
-    padding: 8px 0;
+  .skills-table #proficiency-column {
+    width: 70px;
   }
+
+  .skills-table #difficulty-column {
+    width: 60px;
+  }
+
+  .My.Skills-content-container {
+    padding: 10px 15px;
+  }
+
 }
 

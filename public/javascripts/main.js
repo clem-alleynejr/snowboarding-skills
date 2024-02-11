@@ -99,8 +99,12 @@ var difficultyCells = document.querySelectorAll(
 // select 'My proficiency level' header
 var proficiencyHeader = document.getElementById("proficiency-column");
 
+// select 'Difficulty level' header
+var diffLvlHeader = document.getElementById('difficulty-column');
+
 // if page initialized is less than or equal to 425px, make the difficulties shorthand and the proficiency header shorthand
 if (currentWindowWidth <= 425) {
+    diffLvlHeader.textContent = "Diff. Level";
   proficiencyHeader.textContent = "My Prof. Level (/10)";
   difficultyCells.forEach((cell) => {
     const difficultyLevel = cell.textContent.trim();
@@ -124,6 +128,7 @@ if (currentWindowWidth <= 425) {
 // Difficulty level shorthand for resizing window
 window.addEventListener("resize", function () {
   if (this.window.innerWidth <= 425) {
+    diffLvlHeader.textContent = "Diff. Level";
     proficiencyHeader.textContent = "My Prof. Level (/10)";
     difficultyCells.forEach((cell) => {
       const difficultyLevel = cell.textContent.trim();
@@ -148,6 +153,7 @@ window.addEventListener("resize", function () {
     });
   } else {
     difficultyCells.forEach((cell) => {
+        diffLvlHeader.textContent = "Difficulty Level";
       proficiencyHeader.textContent = "My Proficiency Level (/10)";
       const difficultyLevel = cell.textContent.trim();
       switch (difficultyLevel) {
