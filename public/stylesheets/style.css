@@ -601,24 +601,19 @@ span {
   }
 }
 
+
+
 @media (max-width: 490px) {
-  .skills-table #difficulty-column {
-    width: 105px;
-  }
 
   .skills-table #skill-column {
     width: 140px;
   }
 
   .skills-table td:nth-child(1) {
-    max-width: 100px;
+    max-width: 140px;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
-
-}
-
-@media (max-width: 425px) {
 
   .My.Skills-content-container .page-title {
     max-width: 350px;
@@ -636,14 +631,13 @@ span {
     font: 40px "Rubik Doodle Shadow";
   }
 
-
-
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
   }
 }
 
-@media (max-width: 375px) {
+
+@media (max-width: 424px) {
   .My.Skills-content-container .page-title {
     max-width: 300px;
   }
@@ -663,6 +657,17 @@ span {
   .My.Skills-content-container {
     padding: 10px 15px;
   }
+}
 
+@media (max-width: 374px) {
+  .skills-table #skill-column {
+    width: 100px;
+  }
+
+  .skills-table td:nth-child(1) {
+    max-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
 }
 
