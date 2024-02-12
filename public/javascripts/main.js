@@ -76,17 +76,104 @@ skillInteractionbuttons.forEach(function (button) {
 
 // makes the skill interaction buttons bigger or smaller depending on what size the window is resized to
 window.addEventListener("resize", function () {
-    skillInteractionbuttons.forEach(function (button) {
-        // if the window is less that 550px, make the buttons bigger
-      if (window.innerWidth <= 550) {
-        if (button.classList.contains("btn-sm")) {
-          button.classList.remove("btn-sm");
-        }
-        // if the window size is bigger than 550px, make the buttons smaller
-      } else {
-        if (!button.classList.contains('btn-sm')) {
-            button.classList.add("btn-sm")
-        }
+  skillInteractionbuttons.forEach(function (button) {
+    // if the window is less that 550px, make the buttons bigger
+    if (window.innerWidth <= 550) {
+      if (button.classList.contains("btn-sm")) {
+        button.classList.remove("btn-sm");
       }
-    })
+      // if the window size is bigger than 550px, make the buttons smaller
+    } else {
+      if (!button.classList.contains("btn-sm")) {
+        button.classList.add("btn-sm");
+      }
+    }
+  });
+});
+
+// select difficulty level td's
+var difficultyCells = document.querySelectorAll(
+  ".skills-table tbody tr td:nth-child(2)"
+);
+
+// select 'My proficiency level' header
+var proficiencyHeader = document.getElementById("proficiency-column");
+
+// select 'Difficulty level' header
+var diffLvlHeader = document.getElementById('difficulty-column');
+
+// if page initialized is less than or equal to 490px, make the difficulties shorthand and the proficiency header shorthand
+if (currentWindowWidth <= 490) {
+    diffLvlHeader.textContent = "Diff. Level";
+  proficiencyHeader.textContent = "My Prof. Level (/10)";
+  difficultyCells.forEach((cell) => {
+    const difficultyLevel = cell.textContent.trim();
+    switch (difficultyLevel) {
+      case "Beginner":
+        cell.textContent = "Beg.";
+        break;
+      case "Intermediate":
+        cell.textContent = "Int.";
+        break;
+      case "Advanced":
+        cell.textContent = "Adv.";
+        break;
+      case "Expert":
+        cell.textContent = "Exp.";
+        break;
+    }
+  });
+}
+
+// Difficulty level shorthand for resizing window
+window.addEventListener("resize", function () {
+  if (this.window.innerWidth <= 490) {
+    diffLvlHeader.textContent = "Diff. Level";
+    proficiencyHeader.textContent = "My Prof. Level (/10)";
+    difficultyCells.forEach((cell) => {
+      const difficultyLevel = cell.textContent.trim();
+      switch (difficultyLevel) {
+        case "Beginner":
+        case "Beg.":
+          cell.textContent = "Beg.";
+          break;
+        case "Intermediate":
+        case "Int.":
+          cell.textContent = "Int.";
+          break;
+        case "Advanced":
+        case "Adv.":
+          cell.textContent = "Adv.";
+          break;
+        case "Expert":
+        case "Exp.":
+          cell.textContent = "Exp.";
+          break;
+      }
+    });
+  } else {
+    difficultyCells.forEach((cell) => {
+        diffLvlHeader.textContent = "Difficulty Level";
+      proficiencyHeader.textContent = "My Proficiency Level (/10)";
+      const difficultyLevel = cell.textContent.trim();
+      switch (difficultyLevel) {
+        case "Beginner":
+        case "Beg.":
+          cell.textContent = "Beginner";
+          break;
+        case "Intermediate":
+        case "Int.":
+          cell.textContent = "Intermediate";
+          break;
+        case "Advanced":
+        case "Adv.":
+          cell.textContent = "Advanced";
+          break;
+        case "Expert":
+        case "Exp.":
+          cell.textContent = "Expert";
+          break;
+      }
+    });
+  }
 });
