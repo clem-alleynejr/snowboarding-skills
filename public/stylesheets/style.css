@@ -194,6 +194,11 @@ span {
   display: inline-block;
 }
 
+.my-skills-and-add-skill-buttons {
+  display: flex;
+  justify-content: center;
+}
+
 /* My Skills Page CSS */
 
 .skills-table {

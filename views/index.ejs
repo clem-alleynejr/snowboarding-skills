@@ -2,42 +2,41 @@
 
 <!-- Note: .homepage-container div needed to allow for .homepage card to be centered -->
 <div class="homepage-container">
-<div class="homepage">
-    <h1 class="homepage-title">
-        Welcome To
-    </h1>
-    <h1 class="homepage-title">
-        Snowboarding Skills Tracker
-    </h1>
-    <p class="homepage-sub-title">
-        Track Your Snowboarding Progression!
-    </p>
+  <div class="homepage">
+    <h1 class="homepage-title">Welcome To</h1>
+    <h1 class="homepage-title">Snowboarding Skills Tracker</h1>
+    <p class="homepage-sub-title">Track Your Snowboarding Progression!</p>
 
-    
     <% if (!user) { %>
-        <form action="/auth/google" method="GET">
-            <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
-                <span>SIGN IN</span>
-                <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
-            </button>
-        </form>
-        <% } else { %>
-            
-            <form action="/snowboarding-skills" method="GET" class="user-home-btn">
-            <button type="submit" class="btn btn-primary btn-lg home-skills-btn">
-                <i class="fa-regular fa-eye"></i>
-                <span>MY SKILLS</span>
-            </button>
-            </form>   
-            
-            <form action="/snowboarding-skills/new" method="GET" class="user-home-btn">
-            <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
-                <i class="fa-solid fa-plus"></i>
-                <span>ADD SKILL</span>
-            </button>
-            </form>
-            
-        <% } %>
+    <form action="/auth/google" method="GET">
+      <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
+        <span>SIGN IN</span>
+        <img src="https://i.imgur.com/FHjYyi0.png" class="signin" />
+      </button>
+    </form>
+    <% } else { %>
+    <div class="my-skills-and-add-skill-buttons">
+      <form action="/snowboarding-skills" method="GET" class="user-home-btn">
+        <button type="submit" class="btn btn-primary btn-lg home-skills-btn">
+          <i class="fa-regular fa-eye"></i>
+          <span>MY SKILLS</span>
+        </button>
+      </form>
 
-<!-- footer partial contains the missing /div tags -->
-<%- include('./partials/footer') %>
+      <form
+        action="/snowboarding-skills/new"
+        method="GET"
+        class="user-home-btn"
+      >
+        <button type="submit" class="btn btn-success btn-lg home-new-skill-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span>ADD SKILL</span>
+        </button>
+      </form>
+    </div>
+    <% } %>
+
+    <!-- footer partial contains the missing /div tags -->
+    <%- include('./partials/footer') %>
+  </div>
+</div>
