@@ -100,11 +100,11 @@ var difficultyCells = document.querySelectorAll(
 var proficiencyHeader = document.getElementById("proficiency-column");
 
 // select 'Difficulty level' header
-var diffLvlHeader = document.getElementById('difficulty-column');
+var diffLvlHeader = document.getElementById("difficulty-column");
 
 // if page initialized is less than or equal to 490px, make the difficulties shorthand and the proficiency header shorthand
-if (currentWindowWidth <= 490) {
-    diffLvlHeader.textContent = "Diff. Level";
+if (currentWindowWidth <= 490 && diffLvlHeader) {
+  diffLvlHeader.textContent = "Diff. Level";
   proficiencyHeader.textContent = "My Prof. Level (/10)";
   difficultyCells.forEach((cell) => {
     const difficultyLevel = cell.textContent.trim();
@@ -153,7 +153,7 @@ window.addEventListener("resize", function () {
     });
   } else {
     difficultyCells.forEach((cell) => {
-        diffLvlHeader.textContent = "Difficulty Level";
+      diffLvlHeader.textContent = "Difficulty Level";
       proficiencyHeader.textContent = "My Proficiency Level (/10)";
       const difficultyLevel = cell.textContent.trim();
       switch (difficultyLevel) {
@@ -176,4 +176,35 @@ window.addEventListener("resize", function () {
       }
     });
   }
+});
+
+// Select 'My Skills' and 'Add Skill' buttons
+var mySkillsAndAddSkillButtons = document.querySelectorAll(
+  '.my-skills-and-add-skill-buttons button[type="submit"]'
+);
+
+// makes the buttons larger upon initial page load if on mobile (425 or less pixels)
+mySkillsAndAddSkillButtons.forEach(function (button) {
+  if (currentWindowWidth <= 425) {
+    if (button.classList.contains("btn-lg")) {
+      button.classList.remove("btn-lg");
+    }
+  }
+});
+
+// makes the buttons bigger or smaller depending on what size the window is resized to
+window.addEventListener("resize", function () {
+  mySkillsAndAddSkillButtons.forEach(function (button) {
+    // if the window is less than 425px, make the buttons smaller
+    if (window.innerWidth <= 425) {
+      if (button.classList.contains("btn-lg")) {
+        button.classList.remove("btn-lg");
+      }
+      // if the window size is bigger than 425px, make the buttons smaller
+    } else {
+      if (!button.classList.contains("btn-lg")) {
+        button.classList.add("btn-lg");
+      }
+    }
+  });
 });

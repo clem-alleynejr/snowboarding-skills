@@ -601,8 +601,9 @@ span {
     width: 60px;
   }
 
-  .Sample.Skills\/Progression-content-container .page-title {
-    font: 38px "Rubik Doodle Shadow"
+  .page-title,
+  .homepage-title {
+    font: 40px "Rubik Doodle Shadow"
   }
 }
 
@@ -632,9 +633,9 @@ span {
     width: 95px;
   }
 
-  .page-title {
+  /* .page-title {
     font: 40px "Rubik Doodle Shadow";
-  }
+  } */
 
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
@@ -647,7 +648,8 @@ span {
     max-width: 300px;
   }
 
-  .page-title {
+  .page-title,
+  .homepage-title {
     font: 35px "Rubik Doodle Shadow";
   }
 
