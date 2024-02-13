@@ -384,7 +384,7 @@ span {
 }
 
 .skill-content-container {
-  width: 700px;
+  max-width: 700px;
 }
 
 #comments-table,
