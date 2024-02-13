@@ -97,7 +97,7 @@ window.addEventListener("resize", function () {
   currentWindowWidth = window.innerWidth;
 });
 
-/*----- 550 -----*/
+/*----- 550px -----*/
 
 // If initial page loaded is <=550px
 if (currentWindowWidth <= 550) {
@@ -136,7 +136,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-/*----- 490 -----*/
+/*----- 490px -----*/
 
 // If initial page loaded is <=490px
 if (currentWindowWidth <= 490) {
@@ -237,30 +237,43 @@ window.addEventListener("resize", function () {
   }
 });
 
-/*----- 425 -----*/
+/*----- 425px -----*/
 
-// makes the buttons larger upon initial page load if on mobile (425 or less pixels)
-mySkillsAndAddSkillButtons.forEach(function (button) {
-  if (currentWindowWidth <= 425) {
-    if (button.classList.contains("btn-lg")) {
-      button.classList.remove("btn-lg");
-    }
-  }
-});
-
-// makes the buttons bigger or smaller depending on what size the window is resized to
-window.addEventListener("resize", function () {
-  mySkillsAndAddSkillButtons.forEach(function (button) {
-    // if the window is less than 425px, make the buttons smaller
-    if (window.innerWidth <= 425) {
+// If initial page loaded is <=425px
+if (currentWindowWidth <= 425) {
+  if (mySkillsAndAddSkillButtons) {
+    mySkillsAndAddSkillButtons.forEach(function (button) {
+      // Make 'My Skills' and 'Add Skills' buttons smaller
       if (button.classList.contains("btn-lg")) {
         button.classList.remove("btn-lg");
       }
-      // if the window size is bigger than 425px, make the buttons smaller
-    } else {
-      if (!button.classList.contains("btn-lg")) {
-        button.classList.add("btn-lg");
-      }
+    });
+  }
+}
+
+// Resizing page (425px breakpoint)
+
+window.addEventListener("resize", function () {
+  // If Window is resized to <= 425px
+  if (window.innerWidth <= 425) {
+    if (mySkillsAndAddSkillButtons) {
+      mySkillsAndAddSkillButtons.forEach(function (button) {
+        // Make the 'My Skills' and 'Add Skill' Buttons smaller
+        if (button.classList.contains("btn-lg")) {
+          button.classList.remove("btn-lg");
+        }
+      });
     }
-  });
+
+    // If Window is resized to > 425px
+  } else {
+    if (mySkillsAndAddSkillButtons) {
+      mySkillsAndAddSkillButtons.forEach(function (button) {
+        // Make the 'My Skills' and 'Add Skill' Buttons larger
+        if (!button.classList.contains("btn-lg")) {
+          button.classList.add("btn-lg");
+        }
+      });
+    }
+  }
 });
