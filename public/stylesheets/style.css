@@ -340,7 +340,7 @@ span {
 }
 
 #current-stats-table {
-  width: 350px;
+  max-width: 350px;
   margin: 0 auto 16px;
 }
 
@@ -454,7 +454,7 @@ span {
 
 #note-comment-date,
 #edit-note-comment-date {
-  min-width: 150px;
+  min-width: 110px;
 }
 
 #note-comment {
