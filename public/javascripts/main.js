@@ -68,8 +68,8 @@ if (toggleButtons) {
 // add event listener to whole page
 document.addEventListener("click", function () {
   if (skillInteractionDivs) {
-    // hide all skillInteractionDivs when anything else but the toggles are clicked
     skillInteractionDivs.forEach(function (div) {
+      // hide all skillInteractionDivs when anything else but the toggles are clicked
       if (div.classList.contains("active")) {
         div.classList.remove("active");
       }
@@ -85,8 +85,8 @@ window.addEventListener("resize", function () {
   // if page shrinks from >991px to <991px
   if (window.innerWidth <= 991 && currentWindowWidth > 991) {
     if (skillInteractionDivs) {
-      // resets the 'active' classes of the skill interactions
       skillInteractionDivs.forEach(function (div) {
+        // resets the 'active' classes of the skill interactions
         if (div.classList.contains("active")) {
           div.classList.remove("active");
         }
@@ -103,6 +103,7 @@ window.addEventListener("resize", function () {
 if (currentWindowWidth <= 550) {
   if (skillInteractionbuttons) {
     skillInteractionbuttons.forEach(function (button) {
+      // make the skill interaction buttons bigger for easier tapping
       if (button.classList.contains("btn-sm")) {
         button.classList.remove("btn-sm");
       }
@@ -110,52 +111,64 @@ if (currentWindowWidth <= 550) {
   }
 }
 
-
-// makes the skill interaction buttons bigger or smaller depending on what size the window is resized to
+// Resizing page (550px breakpoint)
 window.addEventListener("resize", function () {
-    skillInteractionbuttons.forEach(function (button) {
-      // if the window is less that 550px, make the buttons bigger
-      if (window.innerWidth <= 550) {
+  // Window resized to <= 550px
+  if (window.innerWidth <= 550) {
+    if (skillInteractionbuttons) {
+      skillInteractionbuttons.forEach(function (button) {
         if (button.classList.contains("btn-sm")) {
+          // make the skill interaction buttons bigger for easier tapping
           button.classList.remove("btn-sm");
         }
-        // if the window size is bigger than 550px, make the buttons smaller
-      } else {
+      });
+    }
+    // Window resized to > 550px
+  } else {
+    if (skillInteractionbuttons) {
+      skillInteractionbuttons.forEach(function (button) {
         if (!button.classList.contains("btn-sm")) {
+          // make the skill interaction buttons smaller to make room for desktop button labels
           button.classList.add("btn-sm");
         }
-      }
-    });
-  });
+      });
+    }
+  }
+});
 
 /*----- 490 -----*/
+// If initial page loaded is <=490px
+if (currentWindowWidth <= 490) {
+  if (diffLvlHeader) {
+    diffLvlHeader.textContent = "Diff. Level";
+  }
+  if (proficiencyHeader) {
+    proficiencyHeader.textContent = "My Prof. Level (/10)";
+  }
+  if (difficultyCells) {
+    difficultyCells.forEach((cell) => {
+      const difficultyLevel = cell.textContent.trim();
+      switch (difficultyLevel) {
+        case "Beginner":
+          cell.textContent = "Beg.";
+          break;
+        case "Intermediate":
+          cell.textContent = "Int.";
+          break;
+        case "Advanced":
+          cell.textContent = "Adv.";
+          break;
+        case "Expert":
+          cell.textContent = "Exp.";
+          break;
+      }
+    });
+  }
+}
 
 /*----- 425 -----*/
 
-
-
 // if page initialized is less than or equal to 490px, make the difficulties shorthand and the proficiency header shorthand
-if (currentWindowWidth <= 490 && diffLvlHeader) {
-  diffLvlHeader.textContent = "Diff. Level";
-  proficiencyHeader.textContent = "My Prof. Level (/10)";
-  difficultyCells.forEach((cell) => {
-    const difficultyLevel = cell.textContent.trim();
-    switch (difficultyLevel) {
-      case "Beginner":
-        cell.textContent = "Beg.";
-        break;
-      case "Intermediate":
-        cell.textContent = "Int.";
-        break;
-      case "Advanced":
-        cell.textContent = "Adv.";
-        break;
-      case "Expert":
-        cell.textContent = "Exp.";
-        break;
-    }
-  });
-}
 
 // Difficulty level shorthand for resizing window
 window.addEventListener("resize", function () {
