@@ -603,7 +603,11 @@ span {
 
   .page-title,
   .homepage-title {
-    font: 40px "Rubik Doodle Shadow"
+    font: 40px "Rubik Doodle Shadow";
+  }
+
+  .homepage-sub-title {
+    font: 20px "Rubik Doodle Shadow";
   }
 }
 
@@ -633,9 +637,6 @@ span {
     width: 95px;
   }
 
-  /* .page-title {
-    font: 40px "Rubik Doodle Shadow";
-  } */
 
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
