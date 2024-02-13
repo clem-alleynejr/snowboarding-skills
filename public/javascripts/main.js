@@ -113,7 +113,7 @@ if (currentWindowWidth <= 550) {
 
 // Resizing page (550px breakpoint)
 window.addEventListener("resize", function () {
-  // Window resized to <= 550px
+  // If Window is resized to <= 550px
   if (window.innerWidth <= 550) {
     if (skillInteractionbuttons) {
       skillInteractionbuttons.forEach(function (button) {
@@ -123,7 +123,7 @@ window.addEventListener("resize", function () {
         }
       });
     }
-    // Window resized to > 550px
+    // If Window is resized to > 550px
   } else {
     if (skillInteractionbuttons) {
       skillInteractionbuttons.forEach(function (button) {
@@ -137,17 +137,21 @@ window.addEventListener("resize", function () {
 });
 
 /*----- 490 -----*/
+
 // If initial page loaded is <=490px
 if (currentWindowWidth <= 490) {
   if (diffLvlHeader) {
+    // Make Diffficulty Level header shorthand
     diffLvlHeader.textContent = "Diff. Level";
   }
   if (proficiencyHeader) {
+    // Make Proficiency Level header shorthand
     proficiencyHeader.textContent = "My Prof. Level (/10)";
   }
   if (difficultyCells) {
     difficultyCells.forEach((cell) => {
       const difficultyLevel = cell.textContent.trim();
+      // Make the Skill Level data shorthand
       switch (difficultyLevel) {
         case "Beginner":
           cell.textContent = "Beg.";
@@ -166,62 +170,74 @@ if (currentWindowWidth <= 490) {
   }
 }
 
-/*----- 425 -----*/
-
-// if page initialized is less than or equal to 490px, make the difficulties shorthand and the proficiency header shorthand
-
-// Difficulty level shorthand for resizing window
+// Resizing page (490px breakpoint)
 window.addEventListener("resize", function () {
+  // If Window is resized to <= 490px
   if (this.window.innerWidth <= 490) {
-    diffLvlHeader.textContent = "Diff. Level";
-    proficiencyHeader.textContent = "My Prof. Level (/10)";
-    difficultyCells.forEach((cell) => {
-      const difficultyLevel = cell.textContent.trim();
-      switch (difficultyLevel) {
-        case "Beginner":
-        case "Beg.":
-          cell.textContent = "Beg.";
-          break;
-        case "Intermediate":
-        case "Int.":
-          cell.textContent = "Int.";
-          break;
-        case "Advanced":
-        case "Adv.":
-          cell.textContent = "Adv.";
-          break;
-        case "Expert":
-        case "Exp.":
-          cell.textContent = "Exp.";
-          break;
-      }
-    });
+    if (diffLvlHeader) {
+      diffLvlHeader.textContent = "Diff. Level";
+    }
+    if (proficiencyHeader) {
+      proficiencyHeader.textContent = "My Prof. Level (/10)";
+    }
+    if (difficultyCells) {
+      difficultyCells.forEach((cell) => {
+        const difficultyLevel = cell.textContent.trim();
+        switch (difficultyLevel) {
+          case "Beginner":
+          case "Beg.":
+            cell.textContent = "Beg.";
+            break;
+          case "Intermediate":
+          case "Int.":
+            cell.textContent = "Int.";
+            break;
+          case "Advanced":
+          case "Adv.":
+            cell.textContent = "Adv.";
+            break;
+          case "Expert":
+          case "Exp.":
+            cell.textContent = "Exp.";
+            break;
+        }
+      });
+    }
+    // If Window is resized to > 490px
   } else {
-    difficultyCells.forEach((cell) => {
+    if (diffLvlHeader) {
       diffLvlHeader.textContent = "Difficulty Level";
+    }
+    if (proficiencyHeader) {
       proficiencyHeader.textContent = "My Proficiency Level (/10)";
-      const difficultyLevel = cell.textContent.trim();
-      switch (difficultyLevel) {
-        case "Beginner":
-        case "Beg.":
-          cell.textContent = "Beginner";
-          break;
-        case "Intermediate":
-        case "Int.":
-          cell.textContent = "Intermediate";
-          break;
-        case "Advanced":
-        case "Adv.":
-          cell.textContent = "Advanced";
-          break;
-        case "Expert":
-        case "Exp.":
-          cell.textContent = "Expert";
-          break;
-      }
-    });
+    }
+    if (difficultyCells) {
+      difficultyCells.forEach((cell) => {
+        const difficultyLevel = cell.textContent.trim();
+        switch (difficultyLevel) {
+          case "Beginner":
+          case "Beg.":
+            cell.textContent = "Beginner";
+            break;
+          case "Intermediate":
+          case "Int.":
+            cell.textContent = "Intermediate";
+            break;
+          case "Advanced":
+          case "Adv.":
+            cell.textContent = "Advanced";
+            break;
+          case "Expert":
+          case "Exp.":
+            cell.textContent = "Expert";
+            break;
+        }
+      });
+    }
   }
 });
+
+/*----- 425 -----*/
 
 // makes the buttons larger upon initial page load if on mobile (425 or less pixels)
 mySkillsAndAddSkillButtons.forEach(function (button) {
