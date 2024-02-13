@@ -454,7 +454,7 @@ span {
 
 #note-comment-date,
 #edit-note-comment-date {
-  width: 150px;
+  min-width: 150px;
 }
 
 #note-comment {
