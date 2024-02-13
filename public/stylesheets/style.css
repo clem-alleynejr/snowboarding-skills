@@ -461,24 +461,22 @@ span {
   text-align: left;
 }
 
-#note-comment-interaction {
+/* #note-comment-interaction {
   width: 105px;
-}
+} */
 
 #comments-table .comment-interaction {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-right: 0;
+  gap: 15px;
 }
 
 .note-comment-content {
   text-align: left;
 }
 
-.comment-interaction {
-  padding-right: 13px;
-}
 
 /* Sample Skills/Progression CSS */
 
@@ -608,6 +606,10 @@ span {
 
   .homepage-sub-title {
     font: 20px "Rubik Doodle Shadow";
+  }
+
+  #comments-table #note-comment-date {
+    width: 110px;
   }
 }
 

@@ -25,14 +25,14 @@
       </button>
     </form>
     <form
-    action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=DELETE"
-    method="POST"
-  >
-    <button type="submit" class="btn btn-danger">
-      <i class="fa-solid fa-trash"></i>
-      Delete Skill
-    </button>
-  </form>
+      action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit" class="btn btn-danger">
+        <i class="fa-solid fa-trash"></i>
+        Delete Skill
+      </button>
+    </form>
   </div>
 
   <h2>Notes/Comments:</h2>
@@ -42,27 +42,31 @@
     action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments"
   >
     <div>
-      <textarea name="content" id="note-content" placeholder="Add a note/comment..."></textarea>
+      <textarea
+        name="content"
+        id="note-content"
+        placeholder="Add a note/comment..."
+      ></textarea>
     </div>
 
     <div class="add-comment-btn">
-    <input type="submit" id="submit-btn" value="Add Note/Comment" disabled/>
+      <input type="submit" id="submit-btn" value="Add Note/Comment" disabled />
     </div>
   </form>
 
   <!-- disable submit button if note/comment is blank -->
-<script>
-  const textarea = document.getElementById("note-content");
-  const submitBtn = document.getElementById("submit-btn");
+  <script>
+    const textarea = document.getElementById("note-content");
+    const submitBtn = document.getElementById("submit-btn");
 
-  textarea.addEventListener("input", function () {
-    if (textarea.value.trim() === "") {
-      submitBtn.disabled = true;
-    } else {
-      submitBtn.disabled = false;
-    }
-  });
-</script>
+    textarea.addEventListener("input", function () {
+      if (textarea.value.trim() === "") {
+        submitBtn.disabled = true;
+      } else {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 
   <% if (snowboardingSkill.notesComments.length) { %>
   <table id="comments-table" class="table">
@@ -74,27 +78,30 @@
       </tr>
     </thead>
     <tbody>
-      <% snowboardingSkill.notesComments.forEach(function(n) { %>
+      <% snowboardingSkill.notesComments.reverse().forEach(function(n) { %>
       <tr>
         <td><%= n.createdAt.toLocaleDateString() %></td>
         <td class="note-comment-content"><%= n.content %></td>
         <td>
           <div class="comment-interaction">
-          <form action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>/edit" method="GET">
-            <button type="submit" class="btn btn-primary btn-sm">
-              <i class="fa-solid fa-pencil"></i>
-            </button>
-          </form>
-        
-          <form
-            action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit" class="btn btn-danger btn-sm">
-              <i class="fa-solid fa-x"></i>
-            </button>
-          </form>
-        </div>
+            <form
+              action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>/edit"
+              method="GET"
+            >
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </form>
+
+            <form
+              action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-x"></i>
+              </button>
+            </form>
+          </div>
         </td>
       </tr>
       <% }); %>
