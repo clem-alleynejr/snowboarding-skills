@@ -17,9 +17,7 @@
           action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= noteComment._id %>?_method=PUT"
         >
           <div>
-            <textarea name="content" id="note-content">
-          <%= noteComment.content.trim() %></textarea
-            >
+            <textarea name="content" id="note-content"><%= noteComment.content %></textarea>
           </div>
 
           <div class="add-comment-btn">
