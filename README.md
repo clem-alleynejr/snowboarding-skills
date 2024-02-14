@@ -34,10 +34,7 @@ Create your own customizable list of snowboarding skills you wish to track. Each
 
 # 👞 Next Steps
 
-- Add the ability to edit or delete note/comment entries 
-- Add to "Sample List of Skills" page
 - Allow any mastered skill (proficiency level 10) in a user skill list to stand out stylistically (i.e shiny, bold, ect.)
-- Add more advanced overall app styling
 - (Far future): Expand the scope of the app to track more things involved with snowboarding (Snowboard/Equipment Tracker, Resort tracker, etc.)
 
 [Trello Board](https://trello.com/b/6sle4SVB/snowboard-skills)
