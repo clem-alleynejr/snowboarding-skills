@@ -123,12 +123,12 @@ document.addEventListener("click", function () {
 
 // Set the initial height to fit the content
 if (commentTextArea) {
-commentTextArea.style.height = commentTextArea.scrollHeight + "px";
+commentTextArea.style.height = commentTextArea.scrollHeight + 15 + "px";
 
 // Update the height as the user types
 commentTextArea.addEventListener("input", function () {
   commentTextArea.style.height = "auto";
-  commentTextArea.style.height = commentTextArea.scrollHeight + "px";
+  commentTextArea.style.height = commentTextArea.scrollHeight + 15 + "px";
 });
 }
 
