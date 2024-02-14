@@ -205,7 +205,6 @@ span {
 .skills-table {
   text-align: center;
   border-collapse: collapse;
-  vertical-align: middle;
   background-color: white;
   border-radius: 1.8vw;
   margin: 20px auto;
@@ -268,7 +267,8 @@ span {
   background-color: lightgray;
 }
 
-.skills-table tbody td {
+.skills-table tbody td,
+#comments-table tbody td {
   height: 80px;
 }
 
@@ -670,6 +670,10 @@ span {
     flex-direction: column;
     gap: 40px;
     margin: 25px auto;
+  }
+
+  #comments-table #note-comment-interaction {
+  min-width: 50px;
   }
 }
 
