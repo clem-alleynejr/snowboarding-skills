@@ -553,7 +553,7 @@ span {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin: 25px auto;
+    margin-top: 25px;
   }
 
   .skills-table #interaction-column {
