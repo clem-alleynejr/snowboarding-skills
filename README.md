@@ -12,7 +12,7 @@ This app is used to track your snowboarding progression from beginner to pro!
 
 Create your own customizable list of snowboarding skills you wish to track. Each individual skill can then be tracked further by skill level, user proficiency level, and any self notes/comments. You can view and edit these skill properties at any time, as you get better and better. 💪 
 
-(Coming Soon) If you need ideas on what skills you should focus on improving, navigate to the "Sample Skills List" for some inspiration. 😃
+If you need ideas on what skills you should focus on improving, navigate to the "Sample Skills List" for some inspiration. 😃
 
 # 📷 Screenshots
 
