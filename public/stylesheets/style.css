@@ -66,13 +66,16 @@ a {
   margin-bottom: 5px;
 }
 
-.skills-table button.toggle-btn {
+.skills-table button.toggle-btn,
+#comments-table button.toggle-btn {
   display: none;
 }
 
 .tablet-span {
   display: none;
 }
+
+
 
 /* NavBar CSS */
 
@@ -267,8 +270,10 @@ span {
   background-color: lightgray;
 }
 
-.skills-table tbody td {
-  height: 80px;
+.skills-table tbody td,
+#comments-table tbody td {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .skill-interaction {
@@ -340,8 +345,12 @@ span {
 }
 
 #current-stats-table {
-  width: 350px;
+  max-width: 350px;
   margin: 0 auto 16px;
+}
+
+#current-stats-table td {
+  vertical-align: middle;
 }
 
 #current-stats-table tr td:first-child {
@@ -384,7 +393,7 @@ span {
 }
 
 .skill-content-container {
-  width: 700px;
+  max-width: 700px;
 }
 
 #comments-table,
@@ -454,31 +463,35 @@ span {
 
 #note-comment-date,
 #edit-note-comment-date {
-  width: 150px;
+  min-width: 110px;
 }
 
 #note-comment {
   text-align: left;
 }
 
-#note-comment-interaction {
+/* #note-comment-interaction {
   width: 105px;
+} */
+
+#comments-table td:nth-child(2) {
+  max-width: 460px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 #comments-table .comment-interaction {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-right: 0;
+  gap: 15px;
 }
 
 .note-comment-content {
   text-align: left;
 }
 
-.comment-interaction {
-  padding-right: 13px;
-}
 
 /* Sample Skills/Progression CSS */
 
@@ -557,6 +570,10 @@ span {
     color: red;
     padding: 10px;
   }
+
+  .skills-table td {
+    vertical-align: baseline;
+  }
 }
 
 @media (max-width: 737px) {
@@ -601,8 +618,17 @@ span {
     width: 60px;
   }
 
-  .Sample.Skills\/Progression-content-container .page-title {
-    font: 38px "Rubik Doodle Shadow"
+  .page-title,
+  .homepage-title {
+    font: 40px "Rubik Doodle Shadow";
+  }
+
+  .homepage-sub-title {
+    font: 20px "Rubik Doodle Shadow";
+  }
+
+  #comments-table #note-comment-date {
+    width: 110px;
   }
 }
 
@@ -632,12 +658,36 @@ span {
     width: 95px;
   }
 
-  .page-title {
-    font: 40px "Rubik Doodle Shadow";
-  }
 
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
+  }
+}
+
+
+@media (max-width: 425px) {
+  /* #comments-table .comment-interaction {
+    flex-direction: column;
+  } */
+
+  #comments-table button.toggle-btn {
+    margin: 0 auto;
+    display: block;
+  }
+
+  #comments-table .comment-interaction {
+    display: none;
+  }
+
+  #comments-table .comment-interaction.active {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 25px auto;
+  }
+
+  #comments-table #note-comment-interaction {
+  min-width: 50px;
   }
 }
 
@@ -647,7 +697,8 @@ span {
     max-width: 300px;
   }
 
-  .page-title {
+  .page-title,
+  .homepage-title {
     font: 35px "Rubik Doodle Shadow";
   }
 
@@ -659,9 +710,10 @@ span {
     width: 60px;
   }
 
-  .My.Skills-content-container {
+  .content-container {
     padding: 10px 15px;
   }
+
 }
 
 @media (max-width: 374px) {

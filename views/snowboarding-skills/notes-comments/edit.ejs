@@ -9,7 +9,10 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= noteComment.createdAt.toLocaleDateString() %></td>
+      <td>
+        <%= new Date(noteComment.createdAt).toLocaleDateString('en-US', { month:
+        'short', day: 'numeric', year: 'numeric' }) %>
+      </td>
       <td>
         <form
           id="add-note-form"
@@ -17,9 +20,7 @@
           action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= noteComment._id %>?_method=PUT"
         >
           <div>
-            <textarea name="content" id="note-content">
-          <%= noteComment.content %></textarea
-            >
+            <textarea name="content" id="note-content"><%= noteComment.content %></textarea>
           </div>
 
           <div class="add-comment-btn">
