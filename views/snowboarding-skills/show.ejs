@@ -89,11 +89,11 @@
           <button
           type="button"
           class="btn btn-secondary toggle-btn"
-          data-skill-id="<%= n._id %>"
+          data-note-comment-id="<%= n._id %>"
         >
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </button>
-          <div class="comment-interaction">
+          <div class="comment-interaction" data-note-comment-id="<%= n._id %>">
             <form
               action="/snowboarding-skills/<%= snowboardingSkill._id %>/notes-comments/<%= n._id %>/edit"
               method="GET"

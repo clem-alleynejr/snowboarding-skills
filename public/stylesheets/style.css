@@ -66,7 +66,8 @@ a {
   margin-bottom: 5px;
 }
 
-.skills-table button.toggle-btn {
+.skills-table button.toggle-btn,
+#comments-table button.toggle-btn {
   display: none;
 }
 
@@ -651,8 +652,24 @@ span {
 
 
 @media (max-width: 425px) {
-  #comments-table .comment-interaction {
+  /* #comments-table .comment-interaction {
     flex-direction: column;
+  } */
+
+  #comments-table button.toggle-btn {
+    margin: 0 auto;
+    display: block;
+  }
+
+  #comments-table .comment-interaction {
+    display: none;
+  }
+
+  #comments-table .comment-interaction.active {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 25px auto;
   }
 }
 

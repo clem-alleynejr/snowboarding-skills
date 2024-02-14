@@ -1,8 +1,9 @@
 /*----- Variable Initialization -----*/
 
-// Select all the toggle buttons and all sets of skill interaction buttons
+// Select all the toggle buttons and all sets of skill or comment interaction buttons
 var toggleButtons = document.querySelectorAll(".toggle-btn");
 var skillInteractionDivs = document.querySelectorAll(".skill-interaction");
+var commentInteractionDivs = document.querySelectorAll(".comment-interaction");
 
 // Initialize tracking for window size
 var currentWindowWidth = window.innerWidth;
@@ -31,15 +32,28 @@ var mySkillsAndAddSkillButtons = document.querySelectorAll(
 /*----- Toggle Buttons For Skill Interaction  -----*/
 
 // add 'click' event listeners to each toggle button
+
+
+
+
+
+
+
+
 if (toggleButtons) {
   toggleButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       // Prevents Click event from propogating outside
       event.stopPropagation();
 
-      // get the 'data-skill-id' attribute of the clicked toggle button
+      // get the value of the clicked toggle's 'data-skill-id' attribute (if applicable)
       var skillId = this.getAttribute("data-skill-id");
 
+      //get the value of the clicked toggle's 'data-note-comment-id' attribute (if applicable)
+      var noteCommentId = this.getAttribute("data-note-comment-id");
+
+
+    if (skillInteractionDivs) {
       // show the skillInteractionDiv for the toggle clicked
       skillInteractionDivs.forEach(function (div) {
         // Note: on the left side of the condition statement below, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
@@ -61,6 +75,31 @@ if (toggleButtons) {
           }
         }
       });
+    }
+
+    if (commentInteractionDivs) {
+              // show the CommentInteractionDiv for the toggle clicked
+      commentInteractionDivs.forEach(function (div) {
+        // Note: on the left side of the condition statement below, to access the custom data attribute (data-*) of the div (data-skill-id) through the 'dataset' property, we need to remove the 'data-' and convert to camelCase:
+        // 'data-note-comment-id' ==> 'noteCommentId'
+        // The right side of the condition statement is the specific noteId of the clicked toggle
+        if (div.dataset.noteCommentId === noteCommentId) {
+          // if toggle already active, untoggle it to hide note/comment interaction
+          if (div.classList.contains("active")) {
+            div.classList.remove("active");
+
+            // if not already active, toggle it active:
+          } else {
+            div.classList.add("active");
+          }
+          // untoggle all other note/comment interactions
+        } else {
+          if (div.classList.contains("active")) {
+            div.classList.remove("active");
+          }
+        }
+      });
+    }
     });
   });
 }
@@ -75,6 +114,16 @@ document.addEventListener("click", function () {
       }
     });
   }
+
+  if (commentInteractionDivs) {
+    commentInteractionDivs.forEach(function (div) {
+      // hide all commentInteractionDivs when anything else but the toggles are clicked
+      if (div.classList.contains("active")) {
+        div.classList.remove("active");
+      }
+    });
+  }
+
 });
 
 /*----- Screen size dependant functionality  -----*/
