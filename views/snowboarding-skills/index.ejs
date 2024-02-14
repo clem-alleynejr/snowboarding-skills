@@ -17,7 +17,13 @@
     </tr>
   </thead>
   <tbody>
-    <% snowboardingSkills.forEach(function(s) { %>
+    <% 
+      // Sort the snowboardingSkills array by difficulty level
+      snowboardingSkills.sort((a, b) => {
+        const difficultyOrder = ['Beginner', 'Intermediate', 'Advanced', 'Expert'];
+        return difficultyOrder.indexOf(a.difficultyLevel) - difficultyOrder.indexOf(b.difficultyLevel);
+      }).forEach(function(s) { 
+    %>
     <tr>
       <td><%= s.skill %></td>
       <td><%= s.difficultyLevel %></td>
