@@ -545,9 +545,25 @@ span {
     border-radius: 0;
   }
 
+  /* .skills-table .skill-interaction {
+    display: flex;
+    max-height: 0;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 25px;
+    opacity: 0; 
+    transition: all 0.3s; 
+  }
+
+  .skills-table .skill-interaction.active {
+    max-height: 500px;
+    opacity: 1; 
+}  */
+
   .skills-table .skill-interaction {
     display: none;
   }
+
 
   .skills-table .skill-interaction.active {
     display: flex;
