@@ -75,6 +75,8 @@ a {
   display: none;
 }
 
+
+
 /* NavBar CSS */
 
 a.nav-link {
@@ -269,7 +271,8 @@ span {
 
 .skills-table tbody td,
 #comments-table tbody td {
-  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .skill-interaction {
@@ -469,6 +472,12 @@ span {
 /* #note-comment-interaction {
   width: 105px;
 } */
+
+#comments-table td:nth-child(2) {
+  max-width: 460px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 
 #comments-table .comment-interaction {
   display: flex;
