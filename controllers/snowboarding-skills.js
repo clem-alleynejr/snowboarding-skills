@@ -161,10 +161,7 @@ async function createNoteComment(req, res) {
 }
 
 async function show(req, res) {
-  const snowboardingSkill = await SnowboardingSkill.findOne({
-    _id: req.params.id,
-    user: req.user._id,
-  });
+  const snowboardingSkill = await SnowboardingSkill.findById(req.params.id);
   res.render("snowboarding-skills/show", {
     viewType: `Skill: ${snowboardingSkill.skill}`,
     title: snowboardingSkill.skill,
