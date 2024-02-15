@@ -55,18 +55,18 @@ async function update(req, res) {
     await updatedSnowboardSkill.save();
 
     // if successful, return the previous page
-    const referer = req.header('Referer');
+  //   const referer = req.header('Referer');
 
-      // Check if the Referer header exists and if it is from the snowboarding skills domain (for security purposes)
-  if (referer && referer.includes("snowboarding-skills.herokuapp.com")) {
-    // Redirect the user back to the previous page
-    return res.redirect(referer);
-    // else, redirect to the snowboarding skills home page
-  } else {
-    return res.redirect('/');
-  }
+  //     // Check if the Referer header exists and if it is from the snowboarding skills domain (for security purposes)
+  // if (referer && referer.includes("snowboarding-skills.herokuapp.com")) {
+  //   // Redirect the user back to the previous page
+  //   return res.redirect(referer);
+  //   // else, redirect to the snowboarding skills home page
+  // } else {
+  //   return res.redirect('/');
+  // }
 
-    // return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
+    return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
 
     //if unsuccessful...
   } catch (err) {
