@@ -36,6 +36,9 @@ async function update(req, res) {
     user: req.user._id,
   });
 
+  // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page)
+  const source = req.query.source;
+
   // update skill with updated properties
   updatedSnowboardSkill.skill = req.body.skill;
   updatedSnowboardSkill.difficultyLevel = req.body.difficultyLevel;
@@ -66,7 +69,13 @@ async function update(req, res) {
   //   return res.redirect('/');
   // }
 
-    return res.redirect(`/snowboarding-skills/${updatedSnowboardSkill._id}`);
+    let redirectUrl = '/snowboarding-skills'
+    
+    if (source === 'show') {
+      redirectUrl += `/${updatedSnowboardSkill._id}`;
+    }
+
+    return res.redirect(redirectUrl);
 
     //if unsuccessful...
   } catch (err) {
