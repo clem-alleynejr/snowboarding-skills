@@ -35,7 +35,8 @@ If you need ideas on what skills you should focus on improving, navigate to the 
 # 👞 Next Steps
 
 - Allow any mastered skill (proficiency level 10) in a user skill list to stand out stylistically (i.e shiny, bold, ect.)
-- Make the toggle buttons feel less clunky
+- Make the toggle buttons feel react more smoothly
+- Add filter feature onto the skills and comments tables
 - Expand the scope of the app to track more things involved with snowboarding (Snowboard/Equipment Tracker, Resort tracker, etc.)
 
 [Trello Board](https://trello.com/b/6sle4SVB/snowboard-skills)
