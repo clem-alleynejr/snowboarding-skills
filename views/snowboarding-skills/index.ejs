@@ -48,13 +48,13 @@
               <span class="tablet-span"> View </span>
             </button>
           </form>
-          <form action="/snowboarding-skills/<%= s._id %>/edit?source=index" method="GET">
+          <a href="/snowboarding-skills/<%= s._id %>/edit?source=index">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa-solid fa-pencil"></i>
               <span class="my-skills-btn-span">Edit Skill</span>
               <span class="tablet-span"> Edit </span>
             </button>
-          </form>
+          </a>
           <form
             action="/snowboarding-skills/<%= s._id %>?_method=DELETE"
             method="POST"
