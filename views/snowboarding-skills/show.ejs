@@ -17,16 +17,11 @@
   <div class="skill-interaction">
 
 
-    <a href="/snowboarding-skills/<%= snowboardingSkill._id %>/edit?source=show">
-    <!-- <form
-      action="/snowboarding-skills/<%= snowboardingSkill._id %>/edit?source=show"
-      method="GET"
-    > -->
+    <a href="/snowboarding-skills/<%= snowboardingSkill._id %>/edit?source=show" class="edit-skill">
       <button type="submit" class="btn btn-primary edit-btn">
         <i class="fa-solid fa-pencil"></i>
         Edit Skill
       </button>
-    <!-- </form> -->
     </a>
     <form
       action="/snowboarding-skills/<%= snowboardingSkill._id %>?_method=DELETE"
