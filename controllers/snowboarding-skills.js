@@ -40,7 +40,7 @@ async function update(req, res) {
     user: req.user._id,
   });
 
-  // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page)
+  // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page). used for the redirect after
   const source = req.query.source;
 
   // update skill with updated properties
@@ -61,20 +61,10 @@ async function update(req, res) {
     // save skill
     await updatedSnowboardSkill.save();
 
-    // if successful, return the previous page
-  //   const referer = req.header('Referer');
-
-  //     // Check if the Referer header exists and if it is from the snowboarding skills domain (for security purposes)
-  // if (referer && referer.includes("snowboarding-skills.herokuapp.com")) {
-  //   // Redirect the user back to the previous page
-  //   return res.redirect(referer);
-  //   // else, redirect to the snowboarding skills home page
-  // } else {
-  //   return res.redirect('/');
-  // }
-
+    // default redirect to my skills page
     let redirectUrl = '/snowboarding-skills'
     
+    // redirect to show page if that was where 'edit skill' was initially clicked
     if (source === 'show') {
       redirectUrl += `/${updatedSnowboardSkill._id}`;
     }
