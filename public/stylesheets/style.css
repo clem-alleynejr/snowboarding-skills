@@ -32,7 +32,7 @@ a {
 }
 
 .content-container {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   padding: 10px 20px;
   border-radius: 3vw;
   margin-top: 20px;
@@ -396,7 +396,7 @@ span {
 }
 
 .skill-content-container {
-  max-width: 700px;
+  width: 700px;
 }
 
 #comments-table,
@@ -618,6 +618,10 @@ span {
 
   .skills-table #proficiency-column {
     width: 90px;
+  }
+
+  .skill-content-container {
+    max-width: 95vw;
   }
 }
 
