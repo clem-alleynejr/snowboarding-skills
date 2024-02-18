@@ -80,6 +80,8 @@ a.edit-skill {
 }
 
 
+
+
 /* NavBar CSS */
 
 a.nav-link {
@@ -173,12 +175,13 @@ a.nav-link {
 
 .homepage {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 3vw;
   padding: 10px 20px;
   padding-bottom: 20px;
   margin: 20px auto 0;
   display: inline-block;
+  max-width: 95vw;
 }
 
 .homepage-container .home-skills-btn,
@@ -595,9 +598,10 @@ span {
   }
 }
 
-@media (max-width: 425px) {
-  .My.Skills-content-container {
-    padding: 10px 15px;
+@media (max-width: 768px) {
+  .homepage,
+  .Add.Skill-content-container {
+    width: 85vw;
   }
 }
 
@@ -718,6 +722,15 @@ span {
   #comments-table #note-comment-interaction {
   min-width: 50px;
   }
+
+  .My.Skills-content-container {
+    padding: 10px 15px;
+  }
+
+  .homepage,
+  .Add.Skill-content-container {
+width: 90vw;
+  }
 }
 
 
@@ -758,6 +771,17 @@ span {
 
   .My.Skills-content-container {
     padding: 10px 2px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .homepage-container .homepage h1 {
+    font: 30px "Rubik Doodle Shadow";
+  }
+
+  .homepage-container .homepage-sub-title {
+    font: 17px "Rubik Doodle Shadow";
   }
 }
 

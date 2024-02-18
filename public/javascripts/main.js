@@ -332,3 +332,44 @@ window.addEventListener("resize", function () {
     }
   }
 });
+
+
+
+/*----- 320px -----*/
+
+// If initial page loaded is <=320px
+if (currentWindowWidth <= 320) {
+  if (mySkillsAndAddSkillButtons) {
+    mySkillsAndAddSkillButtons.forEach(function (button) {
+      // make the buttons smaller to fit screen
+      if (!button.classList.contains("btn-sm")) {
+        button.classList.add("btn-sm");
+      }
+    });
+  }
+}
+
+// Resizing page (320px breakpoint)
+window.addEventListener("resize", function () {
+  // If Window is resized to <= 320px
+  if (window.innerWidth <= 320) {
+    if (mySkillsAndAddSkillButtons) {
+      mySkillsAndAddSkillButtons.forEach(function (button) {
+        if (!button.classList.contains("btn-sm")) {
+          // make the buttons bigger for easier tapping
+          button.classList.add("btn-sm");
+        }
+      });
+    }
+    // If Window is resized to > 320px
+  } else {
+    if (mySkillsAndAddSkillButtons) {
+      mySkillsAndAddSkillButtons.forEach(function (button) {
+        if (button.classList.contains("btn-sm")) {
+          // make the buttons smaller to make room for desktop button labels
+          button.classList.remove("btn-sm");
+        }
+      });
+    }
+  }
+});
