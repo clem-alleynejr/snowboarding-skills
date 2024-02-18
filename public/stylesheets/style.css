@@ -595,6 +595,12 @@ span {
   }
 }
 
+@media (max-width: 425px) {
+  .My.Skills-content-container {
+    padding: 10px 15px;
+  }
+}
+
 @media (max-width: 737px) {
   .My.Skills-content-container .page-title {
     max-width: 450px;
@@ -734,7 +740,7 @@ span {
   }
 
   .content-container {
-    padding: 10px 15px;
+    padding: 10px 12px;
   }
 
 }
@@ -748,6 +754,10 @@ span {
     max-width: 100px;
     overflow-wrap: break-word;
     word-wrap: break-word;
+  }
+
+  .My.Skills-content-container {
+    padding: 10px 2px;
   }
 }
 
