@@ -603,6 +603,22 @@ span {
   .Add.Skill-content-container {
     width: 85vw;
   }
+
+  .Sample.Skills\/Progression-content-container {
+    max-width: 85vw;
+  }
+}
+
+@media (max-width: 615px) {
+  .Sample.Skills\/Progression-content-container {
+  h1 {
+      font: 7.8vw "Rubik Doodle Shadow"
+  }
+
+  .list-source {
+    font-size: clamp(10px, 2.3vw, 14px);
+  }
+}
 }
 
 @media (max-width: 737px) {
@@ -731,6 +747,11 @@ span {
   .Add.Skill-content-container {
 width: 90vw;
   }
+
+  .Sample.Skills\/Progression-content-container {
+    max-width: 90vw;
+  }
+
 }
 
 
@@ -771,6 +792,10 @@ width: 90vw;
 
   .My.Skills-content-container {
     padding: 10px 2px;
+  }
+
+  .Sample.Skills\/Progression-content-container .page-title {
+    font: 7.4vw "Rubik Doodle Shadow";
   }
 }
 
