@@ -777,6 +777,11 @@ width: 90vw;
     font-size: 20px;
   }
 
+  #note-comment-date,
+#edit-note-comment-date {
+  width: 70px;
+}
+
 }
 
 
