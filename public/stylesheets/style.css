@@ -248,7 +248,7 @@ span {
   word-wrap: break-word;
 }
 
-#difficulty-column {
+.difficulty-column {
   width: 165px;
 }
 
@@ -638,7 +638,7 @@ span {
     display: none;
   }
 
-  .skills-table #difficulty-column {
+  .skills-table .difficulty-column {
     width: 105px;
   }
 
@@ -703,7 +703,7 @@ span {
     width: 77px;
   }
 
-  .skills-table #difficulty-column {
+  .skills-table .difficulty-column {
     width: 95px;
   }
 
@@ -773,7 +773,7 @@ width: 90vw;
     width: 70px;
   }
 
-  .skills-table #difficulty-column {
+  .skills-table .difficulty-column {
     width: 60px;
   }
 

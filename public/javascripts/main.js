@@ -22,7 +22,7 @@ var difficultyCells = document.querySelectorAll(
 var proficiencyHeader = document.getElementById("proficiency-column");
 
 // select 'Difficulty level' header
-var diffLvlHeader = document.getElementById("difficulty-column");
+var diffLvlHeader = document.querySelectorAll(".difficulty-column");
 
 // Select 'My Skills' and 'Add Skill' buttons
 var mySkillsAndAddSkillButtons = document.querySelectorAll(
@@ -196,8 +196,16 @@ window.addEventListener("resize", function () {
 // If initial page loaded is <=490px
 if (currentWindowWidth <= 490) {
   if (diffLvlHeader) {
-    // Make Diffficulty Level header shorthand
-    diffLvlHeader.textContent = "Diff. Level";
+
+
+    diffLvlHeader.forEach((header) => {
+
+      // Make Diffficulty Level header shorthand
+      diffLvlHeader.textContent = "Diff. Level";
+    })
+
+
+
   }
   if (proficiencyHeader) {
     // Make Proficiency Level header shorthand
@@ -230,7 +238,11 @@ window.addEventListener("resize", function () {
   // If Window is resized to <= 490px
   if (this.window.innerWidth <= 490) {
     if (diffLvlHeader) {
-      diffLvlHeader.textContent = "Diff. Level";
+      diffLvlHeader.forEach((header) => {
+
+        // Make Diffficulty Level header shorthand
+        header.textContent = "Diff. Level";
+      })
     }
     if (proficiencyHeader) {
       proficiencyHeader.textContent = "My Prof. Level (/10)";
@@ -261,7 +273,11 @@ window.addEventListener("resize", function () {
     // If Window is resized to > 490px
   } else {
     if (diffLvlHeader) {
-      diffLvlHeader.textContent = "Difficulty Level";
+      diffLvlHeader.forEach((header) => {
+
+        // Make Diffficulty Level full text
+        header.textContent = "Difficulty Level";
+      })
     }
     if (proficiencyHeader) {
       proficiencyHeader.textContent = "My Proficiency Level (/10)";
