@@ -600,7 +600,8 @@ span {
 
 @media (max-width: 768px) {
   .homepage,
-  .Add.Skill-content-container {
+  .Add.Skill-content-container,
+  .Edit.Note\/Comment-content-container {
     width: 76vw;
   }
 
@@ -710,10 +711,13 @@ span {
     width: 95px;
   }
 
-
   .Sample.Skills\/Progression-content-container .page-title {
     font: 28px "Rubik Doodle Shadow"
   }
+
+  .Edit.Note\/Comment-content-container {
+    width: 90vw;
+      }
 }
 
 
@@ -758,6 +762,15 @@ width: 90vw;
 
   .Add.Skill-content-container .mb-3 .form-label {
     font-size: 18px;
+  }
+
+  .page-title,
+  .homepage-title {
+    font: 35px "Rubik Doodle Shadow";
+  }
+
+  #comment-edit-subtitle {
+    font-size: 20px;
   }
 
 }
@@ -805,6 +818,15 @@ width: 90vw;
   .Sample.Skills\/Progression-content-container .page-title {
     font: 7.4vw "Rubik Doodle Shadow";
   }
+
+  .Edit.Note\/Comment-content-container {
+  .page-title {
+    font-size: 9.3vw;
+  }
+  #comment-edit-subtitle {
+    font-size: 5.3vw;
+  }
+}
 }
 
 
