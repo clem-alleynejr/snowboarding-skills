@@ -469,7 +469,7 @@ span {
 
 #note-comment-date,
 #edit-note-comment-date {
-  min-width: 110px;
+  width: 110px;
 }
 
 #note-comment {
@@ -601,11 +601,15 @@ span {
 @media (max-width: 768px) {
   .homepage,
   .Add.Skill-content-container {
-    width: 85vw;
+    width: 76vw;
   }
 
   .Sample.Skills\/Progression-content-container {
     max-width: 85vw;
+  }
+
+  #comments-table td:nth-child(2) {
+    max-width: 59vw;
   }
 }
 
@@ -674,10 +678,6 @@ span {
 
   .homepage-sub-title {
     font: 20px "Rubik Doodle Shadow";
-  }
-
-  #comments-table #note-comment-date {
-    width: 110px;
   }
 }
 
@@ -750,6 +750,10 @@ width: 90vw;
 
   .Sample.Skills\/Progression-content-container {
     max-width: 90vw;
+  }
+
+  .Add.Skill-content-container .mb-3 .form-label {
+    font-size: 18px;
   }
 
 }
