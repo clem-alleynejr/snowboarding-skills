@@ -604,7 +604,8 @@ span {
     width: 76vw;
   }
 
-  .Sample.Skills\/Progression-content-container {
+  .Sample.Skills\/Progression-content-container,
+  .skill-content-container {
     max-width: 85vw;
   }
 
@@ -613,17 +614,7 @@ span {
   }
 }
 
-@media (max-width: 615px) {
-  .Sample.Skills\/Progression-content-container {
-  h1 {
-      font: 7.8vw "Rubik Doodle Shadow"
-  }
 
-  .list-source {
-    font-size: clamp(10px, 2.3vw, 14px);
-  }
-}
-}
 
 @media (max-width: 737px) {
   .My.Skills-content-container .page-title {
@@ -650,9 +641,21 @@ span {
     width: 90px;
   }
 
-  .skill-content-container {
+  /* .skill-content-container {
     max-width: 95vw;
+  } */
+}
+
+@media (max-width: 615px) {
+  .Sample.Skills\/Progression-content-container {
+  h1 {
+      font: 7.8vw "Rubik Doodle Shadow"
   }
+
+  .list-source {
+    font-size: clamp(10px, 2.3vw, 14px);
+  }
+}
 }
 
 @media (max-width: 550px) {
@@ -748,8 +751,9 @@ span {
 width: 90vw;
   }
 
-  .Sample.Skills\/Progression-content-container {
-    max-width: 90vw;
+  .Sample.Skills\/Progression-content-container,
+  .skill-content-container {
+    max-width: 91vw;
   }
 
   .Add.Skill-content-container .mb-3 .form-label {
