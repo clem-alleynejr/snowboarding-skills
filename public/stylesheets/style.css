@@ -601,6 +601,7 @@ span {
 @media (max-width: 768px) {
   .homepage,
   .Add.Skill-content-container,
+  .Edit.Skill-content-container,
   .Edit.Note\/Comment-content-container {
     width: 76vw;
   }
@@ -715,7 +716,8 @@ span {
     font: 28px "Rubik Doodle Shadow"
   }
 
-  .Edit.Note\/Comment-content-container {
+  .Edit.Note\/Comment-content-container,
+  .Edit.Skill-content-container {
     width: 90vw;
       }
 }
@@ -750,6 +752,7 @@ span {
     padding: 10px 15px;
   }
 
+
   .homepage,
   .Add.Skill-content-container {
 width: 90vw;
@@ -760,7 +763,8 @@ width: 90vw;
     max-width: 91vw;
   }
 
-  .Add.Skill-content-container .mb-3 .form-label {
+  .Add.Skill-content-container .mb-3 .form-label,
+  .Edit.Skill-content-container .mb-3 .form-label {
     font-size: 18px;
   }
 
