@@ -14,7 +14,6 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var snowboardingSkillsRouter = require('./routes/snowboarding-skills');
 var sampleSkillsProgressionRouter = require('./routes/sample-skills-progression');
 
@@ -43,7 +42,6 @@ app.use(function (req, res, next) {
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/snowboarding-skills', snowboardingSkillsRouter);
 app.use('/sample-skills-progression', sampleSkillsProgressionRouter);
 
