@@ -79,9 +79,6 @@ a.edit-skill {
   text-decoration: none;
 }
 
-
-
-
 /* NavBar CSS */
 
 a.nav-link {
@@ -498,7 +495,6 @@ span {
   text-align: left;
 }
 
-
 /* Sample Skills/Progression CSS */
 
 .Sample.Skills\/Progression-content-container #interaction-column {
@@ -551,21 +547,6 @@ span {
     border-radius: 0;
   }
 
-  /* .skills-table .skill-interaction {
-    display: flex;
-    max-height: 0;
-    flex-direction: column;
-    gap: 40px;
-    margin-top: 25px;
-    opacity: 0; 
-    transition: all 0.3s; 
-  }
-
-  .skills-table .skill-interaction.active {
-    max-height: 500px;
-    opacity: 1; 
-}  */
-
   .skills-table .skill-interaction {
     display: flex;
     flex-direction: column;
@@ -574,7 +555,6 @@ span {
     overflow: hidden;
     transition: all 0.3s;
   }
-
 
   .skills-table .skill-interaction.active {
     max-height: 500px; /* Dummy value for smooth transition purposes. Just needs to be larger than content */
@@ -620,8 +600,6 @@ span {
   }
 }
 
-
-
 @media (max-width: 737px) {
   .My.Skills-content-container .page-title {
     max-width: 450px;
@@ -654,14 +632,14 @@ span {
 
 @media (max-width: 615px) {
   .Sample.Skills\/Progression-content-container {
-  h1 {
-      font: 7.8vw "Rubik Doodle Shadow"
-  }
+    h1 {
+      font: 7.8vw "Rubik Doodle Shadow";
+    }
 
-  .list-source {
-    font-size: clamp(10px, 2.3vw, 14px);
+    .list-source {
+      font-size: clamp(10px, 2.3vw, 14px);
+    }
   }
-}
 }
 
 @media (max-width: 550px) {
@@ -690,10 +668,7 @@ span {
   }
 }
 
-
-
 @media (max-width: 490px) {
-
   .skills-table #skill-column {
     width: 140px;
   }
@@ -717,15 +692,14 @@ span {
   }
 
   .Sample.Skills\/Progression-content-container .page-title {
-    font: 28px "Rubik Doodle Shadow"
+    font: 28px "Rubik Doodle Shadow";
   }
 
   .Edit.Note\/Comment-content-container,
   .Edit.Skill-content-container {
     width: 90vw;
-      }
+  }
 }
-
 
 @media (max-width: 425px) {
   /* #comments-table .comment-interaction {
@@ -748,23 +722,22 @@ span {
   }
 
   #comments-table .comment-interaction.active {
-    max-height: 500px;  /* Dummy value for smooth transition purposes. Just needs to be larger than content */
+    max-height: 500px; /* Dummy value for smooth transition purposes. Just needs to be larger than content */
     margin: 25px auto;
     gap: 40px;
   }
 
   #comments-table #note-comment-interaction {
-  min-width: 50px;
+    min-width: 50px;
   }
 
   .My.Skills-content-container {
     padding: 10px 15px;
   }
 
-
   .homepage,
   .Add.Skill-content-container {
-width: 90vw;
+    width: 90vw;
   }
 
   .Sample.Skills\/Progression-content-container,
@@ -787,12 +760,10 @@ width: 90vw;
   }
 
   #note-comment-date,
-#edit-note-comment-date {
-  width: 70px;
+  #edit-note-comment-date {
+    width: 70px;
+  }
 }
-
-}
-
 
 @media (max-width: 424px) {
   .My.Skills-content-container .page-title {
@@ -815,7 +786,6 @@ width: 90vw;
   .content-container {
     padding: 10px 12px;
   }
-
 }
 
 @media (max-width: 374px) {
@@ -838,15 +808,14 @@ width: 90vw;
   }
 
   .Edit.Note\/Comment-content-container {
-  .page-title {
-    font-size: 9.3vw;
-  }
-  #comment-edit-subtitle {
-    font-size: 5.3vw;
+    .page-title {
+      font-size: 9.3vw;
+    }
+    #comment-edit-subtitle {
+      font-size: 5.3vw;
+    }
   }
 }
-}
-
 
 @media (max-width: 320px) {
   .homepage-container .homepage h1 {
@@ -857,4 +826,3 @@ width: 90vw;
     font: 17px "Rubik Doodle Shadow";
   }
 }
-
