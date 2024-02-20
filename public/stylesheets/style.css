@@ -577,7 +577,7 @@ span {
 
 
   .skills-table .skill-interaction.active {
-    max-height: 500px;
+    max-height: 500px; /* Dummy value for smooth transition purposes. Just needs to be larger than content */
     margin-top: 25px;
     gap: 40px;
   }
@@ -738,14 +738,19 @@ span {
   }
 
   #comments-table .comment-interaction {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: all 0.3s;
   }
 
   #comments-table .comment-interaction.active {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    max-height: 500px;  /* Dummy value for smooth transition purposes. Just needs to be larger than content */
     margin: 25px auto;
+    gap: 40px;
   }
 
   #comments-table #note-comment-interaction {
