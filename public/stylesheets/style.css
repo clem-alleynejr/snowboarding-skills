@@ -567,15 +567,18 @@ span {
 }  */
 
   .skills-table .skill-interaction {
-    display: none;
-  }
-
-
-  .skills-table .skill-interaction.active {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-top: 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+  }
+
+
+  .skills-table .skill-interaction.active {
+    max-height: 500px;
   }
 
   .skills-table #interaction-column {
