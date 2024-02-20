@@ -569,16 +569,17 @@ span {
   .skills-table .skill-interaction {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 25px;
+    gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in;
+    transition: all 0.3s;
   }
 
 
   .skills-table .skill-interaction.active {
     max-height: 500px;
+    margin-top: 25px;
+    gap: 40px;
   }
 
   .skills-table #interaction-column {
