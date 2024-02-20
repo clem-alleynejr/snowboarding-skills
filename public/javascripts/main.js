@@ -96,40 +96,40 @@ if (toggleButtons) {
       }
     });
   });
+
+  // add event listener to whole page
+  document.addEventListener("click", function () {
+    if (skillInteractionDivs) {
+      skillInteractionDivs.forEach(function (div) {
+        // hide all skillInteractionDivs when anything else but the toggles are clicked
+        if (div.classList.contains("active")) {
+          div.classList.remove("active");
+        }
+      });
+    }
+
+    if (commentInteractionDivs) {
+      commentInteractionDivs.forEach(function (div) {
+        // hide all commentInteractionDivs when anything else but the toggles are clicked
+        if (div.classList.contains("active")) {
+          div.classList.remove("active");
+        }
+      });
+    }
+  });
 }
-
-// add event listener to whole page
-document.addEventListener("click", function () {
-  if (skillInteractionDivs) {
-    skillInteractionDivs.forEach(function (div) {
-      // hide all skillInteractionDivs when anything else but the toggles are clicked
-      if (div.classList.contains("active")) {
-        div.classList.remove("active");
-      }
-    });
-  }
-
-  if (commentInteractionDivs) {
-    commentInteractionDivs.forEach(function (div) {
-      // hide all commentInteractionDivs when anything else but the toggles are clicked
-      if (div.classList.contains("active")) {
-        div.classList.remove("active");
-      }
-    });
-  }
-});
 
 /*----- Update user input text area sizes depending on content  -----*/
 
 // Set the initial height to fit the content
 if (commentTextArea) {
-commentTextArea.style.height = commentTextArea.scrollHeight + 15 + "px";
-
-// Update the height as the user types
-commentTextArea.addEventListener("input", function () {
-  commentTextArea.style.height = "auto";
   commentTextArea.style.height = commentTextArea.scrollHeight + 15 + "px";
-});
+
+  // Update the height as the user types
+  commentTextArea.addEventListener("input", function () {
+    commentTextArea.style.height = "auto";
+    commentTextArea.style.height = commentTextArea.scrollHeight + 15 + "px";
+  });
 }
 
 /*----- Screen size dependant functionality  -----*/
@@ -196,16 +196,10 @@ window.addEventListener("resize", function () {
 // If initial page loaded is <=490px
 if (currentWindowWidth <= 490) {
   if (diffLvlHeader) {
-
-
     diffLvlHeader.forEach((header) => {
-
       // Make Diffficulty Level header shorthand
       diffLvlHeader.textContent = "Diff. Level";
-    })
-
-
-
+    });
   }
   if (proficiencyHeader) {
     // Make Proficiency Level header shorthand
@@ -239,10 +233,9 @@ window.addEventListener("resize", function () {
   if (this.window.innerWidth <= 490) {
     if (diffLvlHeader) {
       diffLvlHeader.forEach((header) => {
-
         // Make Diffficulty Level header shorthand
         header.textContent = "Diff. Level";
-      })
+      });
     }
     if (proficiencyHeader) {
       proficiencyHeader.textContent = "My Prof. Level (/10)";
@@ -274,10 +267,9 @@ window.addEventListener("resize", function () {
   } else {
     if (diffLvlHeader) {
       diffLvlHeader.forEach((header) => {
-
         // Make Diffficulty Level full text
         header.textContent = "Difficulty Level";
-      })
+      });
     }
     if (proficiencyHeader) {
       proficiencyHeader.textContent = "My Proficiency Level (/10)";
@@ -348,8 +340,6 @@ window.addEventListener("resize", function () {
     }
   }
 });
-
-
 
 /*----- 320px -----*/
 

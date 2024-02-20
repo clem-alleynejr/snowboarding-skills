@@ -220,6 +220,20 @@ span {
   width: auto;
 }
 
+.skills-table tr {
+  height: 105px;
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.skills-table tr.expanded {
+  height: auto;
+}
+
+/* .skills-table tr.collapsed {
+  height: 105px;
+} */
+
 .skills-table tr:first-child th:first-child {
   border-top-left-radius: 1.8vw;
 }
@@ -566,16 +580,22 @@ span {
     opacity: 1; 
 }  */
 
-  .skills-table .skill-interaction {
+  /* .skills-table .skill-interaction {
     display: none;
-  }
+  } */
 
 
-  .skills-table .skill-interaction.active {
+  .skills-table .skill-interaction {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-top: 25px;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .skills-table .skill-interaction.active {
+    height: auto;
   }
 
   .skills-table #interaction-column {
