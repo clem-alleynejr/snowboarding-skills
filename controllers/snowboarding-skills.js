@@ -40,8 +40,6 @@ async function update(req, res) {
     user: req.user._id,
   });
 
-  if (!updatedSnowboardSkill) return res.redirect("/");
-
   // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page). used for the redirect after
   const source = req.query.source;
 
