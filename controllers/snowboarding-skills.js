@@ -20,16 +20,16 @@ async function edit(req, res) {
     _id: req.params.id,
     user: req.user._id,
   });
-    // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page)
-    const source = req.query.source;
-    console.log(source);
+  // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page)
+  const source = req.query.source;
+  console.log(source);
   if (!snowboardingSkill) return res.redirect("/snowboarding-skills");
   res.render("snowboarding-skills/edit", {
     viewType: "Edit Skill",
     title: "Edit Snowboarding Skill Below:",
     snowboardingSkill,
     errorMsg: "",
-    source
+    source,
   });
 }
 
@@ -39,6 +39,8 @@ async function update(req, res) {
     _id: req.params.id,
     user: req.user._id,
   });
+
+  if (!updatedSnowboardSkill) return res.redirect("/");
 
   // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page). used for the redirect after
   const source = req.query.source;
@@ -62,10 +64,10 @@ async function update(req, res) {
     await updatedSnowboardSkill.save();
 
     // default redirect to my skills page
-    let redirectUrl = '/snowboarding-skills'
-    
+    let redirectUrl = "/snowboarding-skills";
+
     // redirect to show page if that was where 'edit skill' was initially clicked
-    if (source === 'show') {
+    if (source === "show") {
       redirectUrl += `/${updatedSnowboardSkill._id}`;
     }
 
@@ -139,8 +141,8 @@ async function create(req, res) {
     return errors;
   };
 
-    // Add the user info to req.body
-    req.body.user = req.user._id;
+  // Add the user info to req.body
+  req.body.user = req.user._id;
 
   try {
     await SnowboardingSkill.create(req.body);
@@ -151,7 +153,7 @@ async function create(req, res) {
       skill: req.body.skill,
       difficultyLevel: req.body.difficultyLevel,
       myProficiency: req.body.myProficiency,
-      viewType: "Add Skill", 
+      viewType: "Add Skill",
       title: "Add Snowboarding Skill Below:",
       errorMsg: validationErrors,
     });
@@ -260,5 +262,5 @@ async function deleteNoteComment(req, res) {
   await snowboardingSkill.save();
 
   // Redirect to the Snowboarding Skill page
-  res.redirect(`/snowboarding-skills/${snowboardingSkillId}`)
+  res.redirect(`/snowboarding-skills/${snowboardingSkillId}`);
 }
