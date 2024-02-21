@@ -20,10 +20,9 @@ async function edit(req, res) {
     _id: req.params.id,
     user: req.user._id,
   });
+  if (!snowboardingSkill) return res.redirect("/snowboarding-skills");
   // source from where the 'update' button was clicked (i.e from 'show' page or from 'index' page)
   const source = req.query.source;
-  console.log(source);
-  if (!snowboardingSkill) return res.redirect("/snowboarding-skills");
   res.render("snowboarding-skills/edit", {
     viewType: "Edit Skill",
     title: "Edit Snowboarding Skill Below:",
@@ -200,10 +199,14 @@ async function editNoteComment(req, res) {
     user: req.user._id,
   });
 
+  if (!snowboardingSkill) return res.redirect("/");
+
   // Find the Specific Comment
   const noteComment = snowboardingSkill.notesComments.find(
     (nc) => nc._id.toString() === noteCommentId
   );
+
+  if (!noteComment) return res.redirect("/");
 
   res.render("snowboarding-skills/notes-comments/edit", {
     viewType: "Edit Note/Comment",
