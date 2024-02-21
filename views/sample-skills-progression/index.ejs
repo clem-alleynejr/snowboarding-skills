@@ -11,12 +11,12 @@
 
 
 <% if (!user) { %>
-  <form action="/auth/google" method="GET">
+  <a href="/auth/google?source=sample-skills">
       <button type="submit" class="btn btn-primary btn-lg home-signin-btn">
           <span>SIGN IN</span>
           <img src="https://i.imgur.com/FHjYyi0.png" class="signin">
       </button>
-  </form>
+    </a>
   <% } else { %>
     <div class="my-skills-and-add-skill-buttons">
       <form action="/snowboarding-skills" method="GET" class="user-home-btn">
