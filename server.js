@@ -16,6 +16,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var snowboardingSkillsRouter = require('./routes/snowboarding-skills');
 var sampleSkillsProgressionRouter = require('./routes/sample-skills-progression');
+var resortsAndConditionsRouter = require('./routes/resorts-and-conditions');
 
 var app = express();
 
