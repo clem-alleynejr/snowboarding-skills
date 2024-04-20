@@ -1,3 +1,14 @@
 <%- include('../partials/header') %>
 
+<form action="/resorts-and-conditions" method="GET" class="resort-input-form">
+    <div class="mb-3">
+        <label class="form-label">Enter Resort Below:</label>
+        <input type="text" name="resort" class="form-control" autocomplete="off" value="<%= locals.resort ? locals.resort : null %>" placeholder="<%= !locals.skill ? "Ex. Lake Louise" : null %>">
+    </div>      
+
+    <button type="submit" class="btn btn-success btn-lg">
+        <span>SEARCH RESORT</span>
+    </button>
+</form>
+
 <%- include('../partials/footer') %>
