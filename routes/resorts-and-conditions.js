@@ -6,6 +6,14 @@ router.get("/", async function (req, res, next) {
   
   const searchedResort = encodeURIComponent(req.query.searchedResort);
 
+  if (!searchedResort) {
+    res.render("resorts-and-conditions/index", {
+      title: 'Resorts and Conditions',
+      viewType: 'Resorts and Conditions',
+      user: req.user
+    });
+  }
+
   const options = {
     method: 'GET',
     headers: {
