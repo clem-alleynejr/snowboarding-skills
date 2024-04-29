@@ -4,6 +4,7 @@ const passport = require("passport");
 
 router.get("/", async function (req, res, next) {
   
+  const resort = req.query.searchedResort;
   const searchedResort = encodeURIComponent(req.query.searchedResort);
   
   // when resort page initially loaded (i.e not a search)
@@ -46,7 +47,8 @@ router.get("/", async function (req, res, next) {
       fiveDayForecast,
       hourlyForecast,
       snowConditions,
-      resortTitle
+      resortTitle,
+      resort
     });
   } catch (error) {
     console.error('Error fetching data:', error);
