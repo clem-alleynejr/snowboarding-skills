@@ -295,7 +295,8 @@ span {
 /* Add Skill/Edit Skill Page CSS */
 
 .add-skill-form,
-.edit-skill-form {
+.edit-skill-form,
+.resort-input-form {
   margin-top: 20px;
 }
 
@@ -304,25 +305,29 @@ span {
 }
 
 .Add.Skill-content-container,
-.Edit.Skill-content-container {
+.Edit.Skill-content-container,
+.content-container.Resorts.and.Conditions-content-container {
   max-width: 700px;
   padding-bottom: 20px;
 }
 
 .Add.Skill-content-container form div:first-child,
-.Edit.Skill-content-container form div:first-child {
+.Edit.Skill-content-container form div:first-child,
+.Resorts.and.Conditions-content-container form div:first-child {
   margin-top: -5px;
 }
 
 .Add.Skill-content-container .mb-3,
-.Edit.Skill-content-container .mb-3 {
+.Edit.Skill-content-container .mb-3,
+.Resorts.and.Conditions-content-container .mb-3 {
   display: flex;
   flex-direction: column;
   padding-bottom: 15px;
 }
 
 .Add.Skill-content-container .mb-3 .form-label,
-.Edit.Skill-content-container .mb-3 .form-label {
+.Edit.Skill-content-container .mb-3 .form-label,
+.Resorts.and.Conditions-content-container .mb-3 .form-label {
   align-self: flex-start;
 }
 
@@ -535,6 +540,8 @@ span {
 .resort-info {
   color: white;
 }
+
+
 
 /* Mobile Design */
 
