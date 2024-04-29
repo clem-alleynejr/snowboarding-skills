@@ -27,9 +27,9 @@ router.get("/", async function (req, res, next) {
   
   
   try {
-    const fiveDayForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/forecast?units=i&el=top`, options);
-    const hourlyForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/hourly?units=i&el=top&c=false`, options);
-    const snowConditionsRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/snowConditions?units=i`, options);
+    const fiveDayForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/forecast?units=m&el=top`, options);
+    const hourlyForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/hourly?units=m&el=top&c=false`, options);
+    const snowConditionsRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/snowConditions?units=m`, options);
 
     const fiveDayForecast = await fiveDayForecastRes.json();
     const hourlyForecast = await hourlyForecastRes.json();
