@@ -306,7 +306,7 @@ span {
 
 .Add.Skill-content-container,
 .Edit.Skill-content-container,
-.content-container.Resorts.and.Conditions-content-container {
+.Resorts.and.Conditions-content-container {
   max-width: 700px;
   padding-bottom: 20px;
 }
@@ -537,10 +537,26 @@ span {
 
 /* Resorts and Conditions Page */
 
+
+.content-container.Resorts.and.Conditions-content-container form div:first-child {
+  margin-top: 25px;
+}
+
+.content-container.Resorts.and.Conditions-content-container .mb-3 {
+  padding-bottom: 5px;
+}
+
 .resort-info {
   color: white;
 }
 
+.resort-info h1 {
+  margin-top: 25px;
+}
+
+.resort-info .five-day-forecast {
+  margin-top: 20px;
+}
 
 
 /* Mobile Design */
@@ -600,7 +616,8 @@ span {
   .homepage,
   .Add.Skill-content-container,
   .Edit.Skill-content-container,
-  .Edit.Note\/Comment-content-container {
+  .Edit.Note\/Comment-content-container,
+  .Resorts.and.Conditions-content-container {
     width: 76vw;
   }
 
@@ -639,9 +656,6 @@ span {
     width: 90px;
   }
 
-  /* .skill-content-container {
-    max-width: 95vw;
-  } */
 }
 
 @media (max-width: 615px) {
@@ -716,9 +730,6 @@ span {
 }
 
 @media (max-width: 425px) {
-  /* #comments-table .comment-interaction {
-    flex-direction: column;
-  } */
 
   #comments-table button.toggle-btn {
     margin: 0 auto;
@@ -750,7 +761,8 @@ span {
   }
 
   .homepage,
-  .Add.Skill-content-container {
+  .Add.Skill-content-container,
+  .Resorts.and.Conditions-content-container {
     width: 90vw;
   }
 
@@ -760,7 +772,8 @@ span {
   }
 
   .Add.Skill-content-container .mb-3 .form-label,
-  .Edit.Skill-content-container .mb-3 .form-label {
+  .Edit.Skill-content-container .mb-3 .form-label,
+  .Resorts.and.Conditions-content-container .mb-3 .form-label {
     font-size: 18px;
   }
 
