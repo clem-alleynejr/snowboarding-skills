@@ -11,9 +11,22 @@
     </button>
 </form>
 
+
 <% if (resortTitle) { %>
     
-<h1><%= resortTitle %></h1>
+<div class="resort-info">
+
+    <h1><%= resortTitle %></h1>
+
+    <div class="five-day-forecast">
+
+        <h2>Five Day Forecast Summary:</h2>
+        <p><%= fiveDayForecast.summary3Day %></p>
+        <p><%= fiveDayForecast.summaryDays4To6 %></p>
+
+    </div>
+
+</div>
 
 <% } %>
 
