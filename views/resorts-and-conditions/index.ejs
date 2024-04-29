@@ -13,6 +13,14 @@
 
 
 <% if (locals.resortTitle) { %>
+
+<% const weekday =  ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]%> 
+<% const date = new Date() %>
+<% let day0 = weekday[date.getDay()] %>
+<% let day2 = weekday[date.getDay()+2] %>
+<% let day3 = weekday[date.getDay()+3] %>
+<% let day5 = weekday[date.getDay()+5] %>
+
     
 <div class="resort-info">
 
@@ -20,8 +28,12 @@
 
     <div class="five-day-forecast">
 
-        <h2>Five Day Forecast Summary:</h2>
+        <h2>Forecast Summary:</h2>
+        
+        <h3><%= day0 %> to <%= day2 %></h3>
         <p><%= fiveDayForecast.summary3Day %></p>
+
+        <h3><%= day3 %> to <%= day5 %></h3>
         <p><%= fiveDayForecast.summaryDays4To6 %></p>
 
     </div>
