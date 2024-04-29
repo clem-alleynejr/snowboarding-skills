@@ -5,16 +5,18 @@ const passport = require("passport");
 router.get("/", async function (req, res, next) {
   
   const searchedResort = encodeURIComponent(req.query.searchedResort);
-
+  
   // when resort page initially loaded (i.e not a search)
-  if (!searchedResort) {
+  if (!req.query.searchedResort) {
+    console.log(searchedResort);
     res.render("resorts-and-conditions/index", {
       title: 'Resorts and Conditions',
       viewType: 'Resorts and Conditions',
       user: req.user
     });
-  }
+  } 
 
+  console.log('else')
   const options = {
     method: 'GET',
     headers: {
@@ -22,8 +24,8 @@ router.get("/", async function (req, res, next) {
       'X-RapidAPI-Host': 'ski-resort-forecast.p.rapidapi.com'
     }
   };
-
-
+  
+  
   try {
     const fiveDayForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/forecast?units=i&el=top`, options);
     const hourlyForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/hourly?units=i&el=top&c=false`, options);
@@ -35,7 +37,7 @@ router.get("/", async function (req, res, next) {
 
     const resortTitle = hourlyForecast.basicInfo.name;
 
-    console.log(fiveDayForecast, hourlyForecast, snowConditions, resortTitle);
+    // console.log(fiveDayForecast, hourlyForecast, snowConditions, resortTitle);
 
     res.render("resorts-and-conditions/index", {
       title: 'Resorts and Conditions',
@@ -51,6 +53,7 @@ router.get("/", async function (req, res, next) {
     // Render an error page or handle the error appropriately
     res.render("error", { error });
   }
+  
 });
 
 module.exports = router;
