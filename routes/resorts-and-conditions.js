@@ -6,6 +6,15 @@ router.get("/", async function (req, res, next) {
   
   const searchedResort = encodeURIComponent(req.query.searchedResort);
 
+  // when resort page initially loaded (i.e not a search)
+  if (!searchedResort) {
+    res.render("resorts-and-conditions/index", {
+      title: 'Resorts and Conditions',
+      viewType: 'Resorts and Conditions',
+      user: req.user
+    });
+  }
+
   const options = {
     method: 'GET',
     headers: {
@@ -24,7 +33,9 @@ router.get("/", async function (req, res, next) {
     const hourlyForecast = await hourlyForecastRes.json();
     const snowConditions = await snowConditionsRes.json();
 
-    console.log(fiveDayForecast, hourlyForecast, snowConditions);
+    const resortTitle = hourlyForecast.basicInfo.name;
+
+    console.log(fiveDayForecast, hourlyForecast, snowConditions, resortTitle);
 
     res.render("resorts-and-conditions/index", {
       title: 'Resorts and Conditions',
@@ -32,7 +43,8 @@ router.get("/", async function (req, res, next) {
       user: req.user,
       fiveDayForecast,
       hourlyForecast,
-      snowConditions
+      snowConditions,
+      resortTitle
     });
   } catch (error) {
     console.error('Error fetching data:', error);

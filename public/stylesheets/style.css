@@ -529,6 +529,13 @@ span {
   margin-bottom: 0;
 }
 
+
+/* Resorts and Conditions Page */
+
+.resort-info {
+  color: white;
+}
+
 /* Mobile Design */
 
 @media (max-width: 991px) {
