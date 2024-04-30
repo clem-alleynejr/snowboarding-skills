@@ -14,6 +14,8 @@ Create your own customizable list of snowboarding skills you wish to track. Each
 
 If you need ideas on what skills you should focus on improving, navigate to the "Sample Skills List" for some inspiration. 😃
 
+BONUS: You can also catch a glimpse of your favorite resort's conditions to prepare for your next trip! 🚠
+
 # 📷 Screenshots
 
 | Screenshot | Description |
@@ -21,7 +23,9 @@ If you need ideas on what skills you should focus on improving, navigate to the 
 | <h3 align="center">Home Page</h3> | <img src="/public/images/screenshots/homepage-screenshot.png" width="800">  
 | <h3 align="center">User Skills List</h3> | <img src="/public/images/screenshots/skills-screenshot.png" width="800"> 
 | <h3 align="center">Skill Details Page</h3> | <img src="/public/images/screenshots/show-screenshot.png" width="800"> 
-| <h3 align="center">Add Skills Page</h3> | <img src="/public/images/screenshots/add-screenshot.png" width="800"> 
+| <h3 align="center">Add Skills Page</h3> | <img src="/public/images/screenshots/add-screenshot.png" width="800">
+| <h3 align="center">Resort Conditions Page</h3> | <img src="/public/images/screenshots/resort-conditions-screenshot.png" width="800"> 
+
 
 # 💻 Technologies Used
 
@@ -36,7 +40,6 @@ If you need ideas on what skills you should focus on improving, navigate to the 
 
 - Allow any mastered skill (proficiency level 10) in a user skill list to stand out stylistically (i.e shiny, bold, ect.)
 - Add filter/search features onto the skills and comments tables
-- Consume and implement an API for ski resort temperatures and conditions
 - Adjust Signin redirection for better user experience
 - add "Add skill to my list" button for each of the sample snowboarding skills
 
