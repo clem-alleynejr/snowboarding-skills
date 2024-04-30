@@ -14,21 +14,31 @@
 
 <% if (locals.resortTitle) { %>
 
-<% const weekday =  ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]%> 
-<% const date = new Date() %>
-<% let day0 = weekday[date.getDay()] %>
-<% let day2 = weekday[date.getDay()+2] %>
-<% let day3 = weekday[date.getDay()+3] %>
-<% let day5 = weekday[date.getDay()+5] %>
+<% const weekdays =  ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]%> 
 
-    
+<% const months =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]%> 
+
+<% const date = new Date() %>
+
+
+<% let day0 = weekdays[date.getDay()] %>
+<% let month0 = months[date.getMonth()] %>
+<% let dateNum0 = date.getDate() %>
+<% let day2 = weekdays[date.getDay()+2] %>
+<% let dateNum2 = date.getDate() + 2 %>
+<% let day3 = weekdays[date.getDay()+3] %>
+<% let day5 = weekdays[date.getDay()+5] %>
+
+
 <div class="resort-info">
 
     <h1><%= resortTitle %></h1>
 
     <div class="five-day-forecast">
 
-        <h3>Five Day Forecast Summary:</h3>
+        <h3>Five Day Forecast Summary <br/> 
+            (As of <%= day0 %>, <%= month0 %> <%= dateNum0 %>)</h3>
+      
         
         <h5><%= day0 %> to <%= day2 %></h5>
         <p><%= fiveDayForecast.summary3Day %></p>

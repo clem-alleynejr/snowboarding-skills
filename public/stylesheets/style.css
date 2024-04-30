@@ -547,15 +547,18 @@ span {
 }
 
 .resort-info {
-  color: white;
+  background-color: white;
+  border-radius: 15px;
 }
 
 .resort-info h1 {
   margin-top: 25px;
+  padding-top: 10px;
 }
 
 .resort-info .five-day-forecast {
   margin-top: 20px;
+  padding-bottom: 10px;
 }
 
 
