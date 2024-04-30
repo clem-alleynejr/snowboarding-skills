@@ -38,8 +38,6 @@ router.get("/", async function (req, res, next) {
 
     const resortTitle = hourlyForecast.basicInfo.name;
 
-    // console.log(fiveDayForecast, hourlyForecast, snowConditions, resortTitle);
-
     res.render("resorts-and-conditions/index", {
       title: 'Resorts and Conditions',
       viewType: 'Resorts and Conditions',

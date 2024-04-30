@@ -551,16 +551,16 @@ span {
   border-radius: 15px;
 }
 
-.resort-info h1 {
+.resort-info .name-and-region {
   margin-top: 25px;
-  padding: 10px;
+  padding: 10px 10px 5px;
   background-color: skyblue;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
 
 .resort-info .five-day-forecast {
-  padding: 15px 10px 10px;
+  padding: 20px 10px 10px;
 }
 
 .five-day-forecast .summaries {
