@@ -553,12 +553,18 @@ span {
 
 .resort-info h1 {
   margin-top: 25px;
-  padding-top: 10px;
+  padding: 10px;
+  background-color: skyblue;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .resort-info .five-day-forecast {
-  margin-top: 20px;
-  padding-bottom: 10px;
+  padding: 15px 10px 10px;
+}
+
+.five-day-forecast .summaries {
+  margin-top: 15px;
 }
 
 
