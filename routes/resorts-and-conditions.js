@@ -17,7 +17,6 @@ router.get("/", async function (req, res, next) {
     });
   } 
 
-  console.log('else')
   const options = {
     method: 'GET',
     headers: {
@@ -31,6 +30,7 @@ router.get("/", async function (req, res, next) {
     const fiveDayForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/forecast?units=m&el=top`, options);
     const hourlyForecastRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/hourly?units=m&el=top&c=false`, options);
     const snowConditionsRes = await fetch(`https://ski-resort-forecast.p.rapidapi.com/${searchedResort}/snowConditions?units=m`, options);
+
 
     const fiveDayForecast = await fiveDayForecastRes.json();
     const hourlyForecast = await hourlyForecastRes.json();
@@ -48,6 +48,8 @@ router.get("/", async function (req, res, next) {
       resortTitle,
       resort
     });
+
+
   } catch (error) {
     console.error('Error fetching data:', error);
     // Render an error page or handle the error appropriately
