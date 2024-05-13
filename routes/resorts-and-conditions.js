@@ -20,7 +20,7 @@ router.get("/", async function (req, res, next) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '4e1e820731msh235cf838225aa6dp1dc113jsn8dd04336584a',
+      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'ski-resort-forecast.p.rapidapi.com'
     }
   };
